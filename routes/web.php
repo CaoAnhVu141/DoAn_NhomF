@@ -14,9 +14,7 @@ use App\Http\Controllers\AdminLoginAndRegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);

@@ -22,6 +22,7 @@
 </head>
 
 <body>
+ 
     <section class="h-100 bg-dark">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,7 +37,7 @@
                             <div class="col-xl-6">
                                 <div class="card-body p-md-5 text-black">
                                     <h3 class="mb-5 text-uppercase">Student registration form</h3>
-
+                                <form action="{{url('register/registerrun')}}" method="get">
                                     <div class="row">
                                         <div class="col-md-6 mb-4">
                                             <div data-mdb-input-init class="form-outline">
@@ -122,12 +123,15 @@
                                         
                                     </div>
                                     <div class="d-flex justify-content-end pt-3">
-                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                            class="btn btn-light btn-lg">Reset all</button>
-                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                            class="btn btn-warning btn-lg ms-2">Submit</button>
+                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-4">
+                                            <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-danger mb-3 btn-lg btn-block">Submit</button>
+                                        </div>
+                                        <div class="col-lg-4"></div>
+                                      
                                     </div>
-
+                                </form>
                                 </div>
                             </div>
                         </div>
