@@ -24,3 +24,7 @@ Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
 Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 //Show homepage
 Route::get('home',[AdminLoginAndRegisterController::class,'ShowHomePage']);
+// Thực thi dăng nhập
+Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'AdminLogin']);
+// Thực thi đăng ký
+Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'adminRegister']);
