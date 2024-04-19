@@ -37,12 +37,7 @@
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="home" class="">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li class="dropdown has-dropdown"><a href="#"><span>Danh Mục</span> <i class="bi bi-chevron-down"></i></a>
+                        <li class="dropdown has-dropdown"><a href="#"><span>?</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="#">Danh Mục Chi Tiết Sản Phẩm</a></li>
                                 <li class="dropdown has-dropdown"><a href="#"><span>Danh Mục Sản Phẩm</span> <i class="bi bi-chevron-down"></i></a>
@@ -59,7 +54,7 @@
                                 <li><a href="#">Dropdown 4</a></li>
                             </ul>
                         </li>
-                        <li class="megamenu has-dropdown"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
+                        <li class="megamenu has-dropdown me-3"><a href="#"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li>
                                     <a href="#">Column 1 link 1</a>
@@ -88,7 +83,14 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown has-dropdown"><i class="bi bi-chevron-down mt-5"><img src=""  class="img-fluid ms-5" alt="Tôi"></i></a>
+                            <ul>
+                                <li><a href="#">Setting</a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#">-----------</a></li>
+                                <li><a href="#">Đăng Xuất</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
