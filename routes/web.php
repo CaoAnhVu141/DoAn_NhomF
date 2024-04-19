@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminLoginAndRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Show Login
+Route::get('Login',[AdminLoginAndRegisterController::class,'ShowLogin']);
+//Show Register
+Route::get('Register',[AdminLoginAndRegisterController::class,'ShowRegister']);
+//Show homepage
+Route::get('home',[AdminLoginAndRegisterController::class,'ShowHomePage']);
