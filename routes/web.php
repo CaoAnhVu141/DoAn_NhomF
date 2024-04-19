@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 //Show Login
-Route::get('Login',[AdminLoginAndRegisterController::class,'ShowLogin']);
+Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
 //Show Register
-Route::get('Register',[AdminLoginAndRegisterController::class,'ShowRegister']);
+Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 //Show homepage
 Route::get('home',[AdminLoginAndRegisterController::class,'ShowHomePage']);
