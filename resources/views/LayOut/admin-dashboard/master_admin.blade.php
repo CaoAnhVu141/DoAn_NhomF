@@ -200,37 +200,37 @@
             </li>
 
             <li class="{{ Request::is('admin-datn/type-product*') ? 'active' : '' }}">
-                <a href="{{ route('showrelated') }}">
+                <a href="{{ route('indexrelated') }}">
                     <i class="fa fa-spinner"></i> <span>Danh mục liên quan</span>
                 </a>
             </li>
             <li class="{{ Request::is('admin-datn/attribute*') ? 'active' : '' }}">
-                <a href="{{ route('showattribute') }}">
+                <a href="{{ route('indexattribute') }}">
                     <i class="glyphicon glyphicon-asterisk"></i> <span>Thuộc tính</span>
                 </a>
             </li>
 
             <li class="{{ Request::is('admin-datn/product*') ? 'active' : '' }}">
-              <a href="{{ route('showproduct') }}">
+              <a href="{{ route('indexproduct') }}">
                     <i class="fa fa-fw fa-anchor"></i> <span>Sản phẩm</span>
                 </a>
             </li> 
               
             <li class="{{ Request::is('admin-datn/transaction*') ? 'active' : '' }}">
-                <a href="{{ route('showoder') }}">
+                <a href="{{ route('indexoders') }}">
                     <i class="fa fa-cart-arrow-down"></i> <span>Đơn hàng</span>
                 </a>
             </li> 
 
             <li class="{{ Request::is('admin-datn/transaction*') ? 'active' : '' }}">
-              <a href="{{ route('showproducttype') }}">
+              <a href="{{ route('indexproducttype') }}">
                   <i class="fa fa-cart-arrow-down"></i> <span>Loại sản phẩm</span>
               </a>
           </li> 
 
            
             <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
-              <a href="{{ route('showpost') }}">
+              <a href="{{ route('indexpost') }}">
                   <i class="fa fa-circle-o-notch"></i> <span>Bài viết</span>
               </a>
             </li>
