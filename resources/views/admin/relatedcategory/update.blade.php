@@ -40,7 +40,7 @@
                 
             </div>
             <div class="box-footer">
-                <a href="{{ route('showrelated') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Trở Lại</a>
+                <a href="{{ route('indexrelated') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Trở Lại</a>
                 <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Submit</button>
             </div>
             </div>

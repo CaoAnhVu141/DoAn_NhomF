@@ -6,8 +6,8 @@
       <small>Edit</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="{{ route('admin.product.index') }}">Product</a></li>
+      <li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="">Product</a></li>
       <li class="active">Edit</li>
 
     </ol>
