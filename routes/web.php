@@ -37,8 +37,6 @@ Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'admin
 
 // @@@@@@@@@@@@@@abstract
 
-
-
 //@@Thực thi với danh mục (1)
 Route::get('category',[AdminCategoryProductController::class,'showCategory'])->name('indexcategory');
 
@@ -109,5 +107,8 @@ Route::get('edit-producttype',[AdminProductTypeController::class,'showEditProduc
 Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpost');
 
 // thêm bài viết
-
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
+//
+Route::get('categoryuser',[AdminCategoryProductController::class,'ShowCategoryUser']);
+Route::get('addsanpham',[AdminCategoryProductController::class,'ShowAddProduct']);
+Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct']);
