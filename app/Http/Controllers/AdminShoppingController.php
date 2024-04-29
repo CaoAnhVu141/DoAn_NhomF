@@ -11,6 +11,6 @@ class AdminShoppingController extends Controller
 
     public function showIndexShopping()
     {
-        return view('admin.shopping.dashboard');
+        return view('shopping.dashboard');
     }
 }

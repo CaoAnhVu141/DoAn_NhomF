@@ -22,7 +22,9 @@ use App\Http\Controllers\AdminShoppingController;
 |
 */
 
-Route::get('/', function () {return view('welcome');});
+// Route::get('/', function () {return view('welcome');});
+Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
+
 
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
@@ -115,6 +117,4 @@ Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('ad
 
 
 
-///thực thi index
 
-Route::get('index',[AdminShoppingController::class,'showIndexShopping'])->name('haha');

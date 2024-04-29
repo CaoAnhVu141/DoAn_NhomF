@@ -12,13 +12,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/49.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/49.png" alt=" " class="img-responsive" /></a>
                                     <p>orange soft drink (250 ml)</p>
                                     <h4>$5.00 <span>$7.00</span></h4>
                                 </div>
@@ -48,13 +48,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/14.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/14.png" alt=" " class="img-responsive" /></a>
                                     <p>prune juice - sunsweet (1 ltr)</p>
                                     <h4>$4.00 <span>$5.00</span></h4>
                                 </div>
@@ -83,12 +83,12 @@
             <div class="col-md-3 w3ls_w3l_banner_left">
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
+                    <div class="tag"><img src="admin/dashboard/images/tag.png" alt=" " class="img-responsive" /></div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/15.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/15.png" alt=" " class="img-responsive" /></a>
                                     <p>coco cola zero can (330 ml)</p>
                                     <h4>$3.00 <span>$5.00</span></h4>
                                 </div>
@@ -118,13 +118,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/16.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/16.png" alt=" " class="img-responsive" /></a>
                                     <p>sprite bottle (2 ltr)</p>
                                     <h4>$3.00 <span>$4.00</span></h4>
                                 </div>
@@ -158,13 +158,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/13.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/13.png" alt=" " class="img-responsive" /></a>
                                     <p>mixed fruit juice (1 ltr)</p>
                                     <h4>$3.00 <span>$4.00</span></h4>
                                 </div>
@@ -194,13 +194,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/50.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/50.png" alt=" " class="img-responsive" /></a>
                                     <p>aamras juice (250 ml)</p>
                                     <h4>$4.00 <span>$5.00</span></h4>
                                 </div>
@@ -229,12 +229,12 @@
             <div class="col-md-3 w3ls_w3l_banner_left">
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
+                    <div class="tag"><img src="admin/dashboard/images/tag.png" alt=" " class="img-responsive" /></div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/51.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/51.png" alt=" " class="img-responsive" /></a>
                                     <p>coconut water (1000 ml)</p>
                                     <h4>$6.00 <span>$8.00</span></h4>
                                 </div>
@@ -264,13 +264,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/52.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/52.png" alt=" " class="img-responsive" /></a>
                                     <p>ceres orange juice (1 ltr)</p>
                                     <h4>$6.00 <span>$8.00</span></h4>
                                 </div>
@@ -304,13 +304,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/53.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/53.png" alt=" " class="img-responsive" /></a>
                                     <p>dabur glucose D (250 gm)</p>
                                     <h4>$10.00 <span>$12.00</span></h4>
                                 </div>
@@ -340,13 +340,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/54.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/54.png" alt=" " class="img-responsive" /></a>
                                     <p>mix lemon flavour (50 gm)</p>
                                     <h4>$8.00 <span>$10.00</span></h4>
                                 </div>
@@ -375,12 +375,12 @@
             <div class="col-md-3 w3ls_w3l_banner_left">
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
+                    <div class="tag"><img src="admin/dashboard/images/tag.png" alt=" " class="img-responsive" /></div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/55.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/55.png" alt=" " class="img-responsive" /></a>
                                     <p>schweppes water (250 ltr)</p>
                                     <h4>$6.00 <span>$7.00</span></h4>
                                 </div>
@@ -410,13 +410,13 @@
                 <div class="hover14 column">
                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="images/offer.png" alt=" " class="img-responsive" />
+                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="images/56.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="admin/dashboard/images/56.png" alt=" " class="img-responsive" /></a>
                                     <p>red bull energy drink (250 ml)</p>
                                     <h4>$7.00 <span>$9.00</span></h4>
                                 </div>
