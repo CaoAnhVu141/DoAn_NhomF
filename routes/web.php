@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AdminProductTypeController;
 use App\Http\Controllers\AdminRelatedcategoryController;
+use App\Http\Controllers\AdminShoppingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ use App\Http\Controllers\AdminRelatedcategoryController;
 |
 */
 
-Route::get('/', function () {return view('welcome');});
+// Route::get('/', function () {return view('welcome');});
+
+Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('index');
 
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
