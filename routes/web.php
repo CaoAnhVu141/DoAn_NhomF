@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AdminProductTypeController;
 use App\Http\Controllers\AdminRelatedcategoryController;
+use App\Http\Controllers\AdminShoppingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,3 +112,9 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 // thêm bài viết
 
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
+
+
+
+///thực thi index
+
+Route::get('index',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
