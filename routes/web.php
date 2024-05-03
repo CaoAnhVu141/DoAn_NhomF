@@ -24,12 +24,12 @@ use App\Http\Controllers\AdminShoppingController;
 */
 
 // Route::get('/', function () {return view('welcome');});
-<<<<<<< HEAD
 
-Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
 
-Route::get('detail',[AdminShoppingController::class,'showDetailIndexShopping'])->name('indexdetailpro');
-=======
+// Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
+
+// Route::get('detail',[AdminShoppingController::class,'showDetailIndexShopping'])->name('indexdetailpro');
+
 ///thực thi với trang chủ index
 Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
 
@@ -37,7 +37,7 @@ Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha
 
 Route::get('detail',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
 
->>>>>>> caoanhvu141
+
 
 
 //Show Login
@@ -125,29 +125,20 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 
 // thêm bài viết
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 
->>>>>>> caoanhvu141
+
+
+
 //
 Route::get('categoryuser',[AdminCategoryProductController::class,'ShowCategoryUser']);
 Route::get('addsanpham',[AdminCategoryProductController::class,'ShowAddProduct']);
 Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct']);
-<<<<<<< HEAD
-=======
 
 
-
-=======
->>>>>>> caoanhvu141
 
 
 //_____@Giỏ hàng ________
 
 Route::get('cart',[AdminCartController::class,'showIndexCart'])->name('indexcart');
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
 
->>>>>>> caoanhvu141
+
