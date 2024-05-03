@@ -18,7 +18,7 @@
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/49.png" alt=" " class="img-responsive" /></a>
+                                    <a href="{{ route('detailpro') }}"><img src="admin/dashboard/images/49.png" alt=" " class="img-responsive" /></a>
                                     <p>orange soft drink (250 ml)</p>
                                     <h4>$5.00 <span>$7.00</span></h4>
                                 </div>

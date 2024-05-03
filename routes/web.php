@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAttributeController;
+use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminLoginAndRegisterController;
@@ -23,7 +24,13 @@ use App\Http\Controllers\AdminShoppingController;
 */
 
 // Route::get('/', function () {return view('welcome');});
+///thực thi với trang chủ index
 Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
+
+//--hiển thị chi tiết sản phẩm
+
+Route::get('detail',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
+
 
 
 //Show Login
@@ -39,8 +46,6 @@ Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'admin
 
 
 // @@@@@@@@@@@@@@abstract
-
-
 
 //@@Thực thi với danh mục (1)
 Route::get('category',[AdminCategoryProductController::class,'showCategory'])->name('indexcategory');
@@ -115,6 +120,13 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
 
+//
+Route::get('categoryuser',[AdminCategoryProductController::class,'ShowCategoryUser']);
+Route::get('addsanpham',[AdminCategoryProductController::class,'ShowAddProduct']);
+Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct']);
 
 
+//_____@Giỏ hàng ________
+
+Route::get('cart',[AdminCartController::class,'showIndexCart'])->name('indexcart');
 
