@@ -12,5 +12,4 @@ class AdminCartController extends Controller
     {
         return view('cart.index');
     }
-    
 }
