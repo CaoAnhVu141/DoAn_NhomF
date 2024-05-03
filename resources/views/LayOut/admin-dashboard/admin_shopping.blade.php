@@ -50,8 +50,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="product_list_header">  
 			<form action="{{ route('indexcart') }}" method="GET" class="last">
                 <fieldset>
+<<<<<<< HEAD
                     <input type="hidden" name="cmd" value="_cart" />
                     <input type="hidden" name="display" value="1" />
+=======
+                    {{-- <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" /> --}}
+>>>>>>> caoanhvu141
                     <input type="submit" name="submit" value="View your cart" class="button" />
                 </fieldset>
             </form>
@@ -313,7 +318,11 @@ $(document).ready(function(){
 			});
 	</script>
 <!-- //here ends scrolling icon -->
+<<<<<<< HEAD
 <script src="admin/dashboard/js/minicart.js"></script>
+=======
+<script src="js/minicart.js"></script>
+>>>>>>> caoanhvu141
 <script>
 		paypal.minicart.render();
 

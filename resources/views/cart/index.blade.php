@@ -1,11 +1,21 @@
 @extends('LayOut.admin-dashboard.admin_shopping')
+<<<<<<< HEAD
+=======
+
+>>>>>>> caoanhvu141
 @section('content')
 
 <!-- //products-breadcrumb -->
 <!-- banner -->
+<<<<<<< HEAD
     <div class="banner">
     <div class="w3l_banner_nav_right">
     <!-- about -->
+=======
+<div class="banner">
+    <div class="w3l_banner_nav_right">
+<!-- about -->
+>>>>>>> caoanhvu141
     <div class="privacy about">
         <h3>Chec<span>kout</span></h3>
         
@@ -25,7 +35,11 @@
                 </thead>
                 <tbody><tr class="rem1">
                     <td class="invert">1</td>
+<<<<<<< HEAD
                     <td class="invert-image"><a href="#"><img src="admin/dashboard/images/1.png" alt=" " class="img-responsive"></a></td>
+=======
+                    <td class="invert-image"><a href="single.html"><img src="admin/dashboard/images/1.png" alt=" " class="img-responsive"></a></td>
+>>>>>>> caoanhvu141
                     <td class="invert">
                          <div class="quantity"> 
                             <div class="quantity-select">                           
@@ -47,7 +61,11 @@
                 </tr>
                 <tr class="rem2">
                     <td class="invert">2</td>
+<<<<<<< HEAD
                     <td class="invert-image"><a href="#"><img src="admin/dashboard/images/3.png" alt=" " class="img-responsive"></a></td>
+=======
+                    <td class="invert-image"><a href="single.html"><img src="admin/dashboard/images/3.png" alt=" " class="img-responsive"></a></td>
+>>>>>>> caoanhvu141
                     <td class="invert">
                          <div class="quantity"> 
                             <div class="quantity-select">                           
@@ -69,7 +87,11 @@
                 </tr>
                 <tr class="rem3">
                     <td class="invert">3</td>
+<<<<<<< HEAD
                     <td class="invert-image"><a href="#"><img src="admin/dashboard/images/2.png" alt=" " class="img-responsive"></a></td>
+=======
+                    <td class="invert-image"><a href="single.html"><img src="admin/dashboard/images/2.png" alt=" " class="img-responsive"></a></td>
+>>>>>>> caoanhvu141
                     <td class="invert">
                          <div class="quantity"> 
                             <div class="quantity-select">                           
@@ -105,7 +127,11 @@
             </div>
             <div class="col-md-8 address_form_agile">
                   <h4>Add a new Details</h4>
+<<<<<<< HEAD
             <form action="#" method="post" class="creditly-card-form agileinfo_form">
+=======
+            <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+>>>>>>> caoanhvu141
                                 <section class="creditly-wrapper wthree, w3_agileits_wrapper">
                                     <div class="information-wrapper">
                                         <div class="first-row form-group">
@@ -137,7 +163,11 @@
                                                  <select class="form-control option-w3ls">
                                                   <option>Office</option>
                                                   <option>Home</option>
+<<<<<<< HEAD
                                                   <option>Commercial</option>
+=======
+                                                   <option>Commercial</option>
+>>>>>>> caoanhvu141
                                                  </select>
                                                 </div>
                                         </div>
@@ -159,4 +189,8 @@
     </div>
     <div class="clearfix"></div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> caoanhvu141

@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 @extends('LayOut.admin-dashboard.admin_shopping')
 @section('content')
 <div class="w3l_banner_nav_right">
    
+=======
+
+@extends('LayOut.admin-dashboard.admin_shopping')
+@section('content')
+<div class="w3l_banner_nav_right">
+    
+>>>>>>> caoanhvu141
     <div class="agileinfo_single">
         <h5>charminar pulao basmati rice 5 kg</h5>
         <div class="col-md-4 agileinfo_single_left">
@@ -34,9 +42,15 @@
                     <h4>$21.00 <span>$25.00</span></h4>
                 </div>
                 <div class="snipcart-details agileinfo_single_right_details">
+<<<<<<< HEAD
                     <form action="{{ route('indexcart') }}" method="GET">
                         <fieldset>
                             {{-- <input type="hidden" name="cmd" value="_cart" />
+=======
+                    <form action="#" method="post">
+                        <fieldset>
+                            <input type="hidden" name="cmd" value="_cart" />
+>>>>>>> caoanhvu141
                             <input type="hidden" name="add" value="1" />
                             <input type="hidden" name="business" value=" " />
                             <input type="hidden" name="item_name" value="pulao basmati rice" />
@@ -44,7 +58,11 @@
                             <input type="hidden" name="discount_amount" value="1.00" />
                             <input type="hidden" name="currency_code" value="USD" />
                             <input type="hidden" name="return" value=" " />
+<<<<<<< HEAD
                             <input type="hidden" name="cancel_return" value=" " /> --}}
+=======
+                            <input type="hidden" name="cancel_return" value=" " />
+>>>>>>> caoanhvu141
                             <input type="submit" name="submit" value="Add to cart" class="button" />
                         </fieldset>
                     </form>
@@ -54,5 +72,9 @@
         <div class="clearfix"> </div>
     </div>
 </div>
+<<<<<<< HEAD
 <div class="clearfix"></div>
+=======
+
+>>>>>>> caoanhvu141
 @endsection
