@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="product_list_header">  
-			<form action="#" method="post" class="last">
+			<form action="{{ route('indexcart') }}" method="GET" class="last">
                 <fieldset>
                     <input type="hidden" name="cmd" value="_cart" />
                     <input type="hidden" name="display" value="1" />
@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="logo_products">
 		<div class="container">
 			<div class="w3ls_logo_products_left">
-				<h1><a href="index.html"><span>Grocery</span> Store</a></h1>
+				<h1><a href="{{ route('haha') }}"><span>Grocery</span> Store</a></h1>
 			</div>
 			<div class="w3ls_logo_products_left1">
 				<ul class="special_items">
@@ -119,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="products-breadcrumb">
 		<div class="container">
 			<ul>
-				<li><i class="fa fa-home" aria-hidden="true"></i><a href="index.html">Home</a><span>|</span></li>
+				<li><i class="fa fa-home" aria-hidden="true"></i><a href="{{ route('haha') }}">Home</a><span>|</span></li>
 				<li>Beverages</li>
 			</ul>
 		</div>

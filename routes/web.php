@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAttributeController;
+use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminLoginAndRegisterController;
@@ -24,7 +25,10 @@ use App\Http\Controllers\AdminShoppingController;
 
 // Route::get('/', function () {return view('welcome');});
 
-Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('index');
+Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
+
+Route::get('detail',[AdminShoppingController::class,'showDetailIndexShopping'])->name('indexdetailpro');
+
 
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
@@ -111,7 +115,18 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 
 // thêm bài viết
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
+<<<<<<< Updated upstream
 //
 Route::get('categoryuser',[AdminCategoryProductController::class,'ShowCategoryUser']);
 Route::get('addsanpham',[AdminCategoryProductController::class,'ShowAddProduct']);
 Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct']);
+=======
+
+
+
+
+
+//_____@Giỏ hàng ________
+
+Route::get('cart',[AdminCartController::class,'showIndexCart'])->name('indexcart');
+>>>>>>> Stashed changes
