@@ -48,18 +48,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="product_list_header">  
-			<form action="{{ route('indexcart') }}" method="GET" class="last">
+			<a href="{{ route('indexcart') }}">
                 <fieldset>
 
                     <input type="hidden" name="cmd" value="_cart" />
                     <input type="hidden" name="display" value="1" />
 
-                    {{-- <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" /> --}}
-
                     <input type="submit" name="submit" value="View your cart" class="button" />
                 </fieldset>
-            </form>
+            </a>
 		</div>
 		<div class="w3l_header_right">
 			<ul>
