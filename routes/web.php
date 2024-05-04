@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminLoginAndRegisterController;
+use App\Http\Controllers\AdminMangerUserController;
 use App\Http\Controllers\AdminOdersController;
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\AdminProductsController;
@@ -34,7 +35,6 @@ use App\Http\Controllers\AdminShoppingController;
 Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
 
 //--hiển thị chi tiết sản phẩm
-
 Route::get('detail',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
 
 
@@ -135,10 +135,11 @@ Route::get('addsanpham',[AdminCategoryProductController::class,'ShowAddProduct']
 Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct']);
 
 
-
-
 //_____@Giỏ hàng ________
 
 Route::get('cart',[AdminCartController::class,'showIndexCart'])->name('indexcart');
 
 
+///@Giao diện quản lý users
+
+Route::get('manager',[AdminMangerUserController::class,'showManagerUsers'])->name('manageruser');
