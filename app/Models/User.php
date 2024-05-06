@@ -46,4 +46,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    //thiết lập mối quan hệ với yêu thích sản phẩm
+
+    public function favoriteproducts()
+    {
+        return $this->belongsToMany(Product::class,'favoriteproduct','id_product','id_user');
+    }
 }
