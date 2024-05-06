@@ -4,17 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
-
 
 class Product extends Model
 {
-    use HasFactory,Notifiable;
+    use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'image',
-        'price',
-        'quantity',
-    ];
+
+    //thiết lập mối quan hệ với users qua yêu thích sản phẩm
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'favoriteproduct','id_product','id_user');
+    }
 }
