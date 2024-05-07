@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id_invoice');
             $table->string('codeinvoice')->nullable();
-            $table->unsignedBigInteger('id_oder')->comment('mua hàng nè');
             $table->unsignedBigInteger('id_user')->comment('người dùng nè');
             $table->unsignedBigInteger('id_transport')->comment('vận chuyển nè');
-            $table->unsignedBigInteger('id_product')->comment('sảm phẩm nè');
             $table->timestamps();
         });
     }

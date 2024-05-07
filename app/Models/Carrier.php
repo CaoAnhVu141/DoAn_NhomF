@@ -9,10 +9,29 @@ class Carrier extends Model
 {
     use HasFactory;
 
-    protected $primaryKey  = 'id_carrier';
+    protected $table = 'carriers';
+    protected $primaryKey = 'id_carrier';
+
+   
+    protected $fillable = [
+        'name',
+        'email',
+        'averagetime',
+        'averagemoney',
+        'checkactive',
+    ];
 
     public function transports()
     {
-        return $this->hasMany(Transport::class);
+        return $this->hasMany(Transport::class,'id_carrier');
     }
+
+    //thiết lập mối quan hệ admin với nhà cung cấp 1-n
+
+    public function userAdmin()
+    {
+        return $this->belongsTo(AdminandUser::class,'id');
+    }
+
+   
 }
