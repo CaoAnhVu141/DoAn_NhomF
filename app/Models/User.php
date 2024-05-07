@@ -17,15 +17,15 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    protected $primaryKey = 'id_user';
     protected $fillable = [
-        'firtname',
-        'lastname',
         'name',
         'email',
         'password',
-        'image',
         'phone',
-        'gender',
+        'avatar',
+        'address',
     ];
 
     /**
@@ -49,9 +49,46 @@ class User extends Authenticatable
 
 
     //thiết lập mối quan hệ với yêu thích sản phẩm
-
     public function favoriteproducts()
     {
         return $this->belongsToMany(Product::class,'favoriteproduct','id_product','id_user');
     }
+
+
+    ///thiết lập mối quan hệ giữa người mua và sản phẩm qua bảng đánh giá sản phẩm
+
+    public function readProduct()
+    {
+        return $this->belongsToMany(Product::class,'reviewproducts');
+    }
+
+    //thiết lập mối quan hệ giữa người mua và đặt hàng 1-n
+
+    public function oders()
+    {
+        return $this->hasMany(Oder::class,'id_user');
+    }
+
+    //thiết lập mối quan hệ giữa khách hàng và lịch sử mua hàng 1-n
+
+    public function purchadeHistory()
+    {
+        return $this->hasMany(PurchaseHistory::class,'id_user');
+    }
+
+
+    //thiết lập mối quan hệ giữa xếp hạng người dùng và người dùng 1-n
+
+    public function levelUser()
+    {
+        return $this->hasMany(LevelUser::class,'id_user');
+    }
+
+    //thiết lập mối quan hệ người dùng và hoá đơn 1-n
+
+    public function invoice()
+    {
+        return $this->hasMany(Invoice::class,'id_user');
+    }
+
 }
