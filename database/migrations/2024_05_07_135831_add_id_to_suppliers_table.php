@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
+    protected $primaryKey = 'id_supplier';
+    public $incrementing = true;
+
     /**
      * Run the migrations.
      */
