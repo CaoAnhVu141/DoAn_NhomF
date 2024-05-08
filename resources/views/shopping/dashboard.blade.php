@@ -1,451 +1,779 @@
 @extends('LayOut.admin-dashboard.admin_shopping')
 @section('content')
-<div class="w3l_banner_nav_right">
-    <div class="w3l_banner_nav_right_banner7">
-        <h3>Best Deals For New Products<span class="blink_me"></span></h3>
-    </div>
-    <div class="w3ls_w3l_banner_nav_right_grid w3ls_w3l_banner_nav_right_grid_sub">
-        <h3>Beverages</h3>
-        <div class="w3ls_w3l_banner_nav_right_grid1">
-            <h6>soft drinks</h6>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="{{ route('detailpro') }}"><img src="admin/dashboard/images/49.png" alt=" " class="img-responsive" /></a>
-                                    <p>orange soft drink (250 ml)</p>
-                                    <h4>$5.00 <span>$7.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="orange soft drink" />
-                                            <input type="hidden" name="amount" value="5.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
+<div class="container-fluid mb-3">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="1"></li>
+                    <li data-target="#header-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item position-relative active" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="admin/dashboard/img/carousel-1.jpg" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
                             </div>
-                        </figure>
+                        </div>
                     </div>
-                </div>
+                    <div class="carousel-item position-relative" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="admin/dashboard/img/carousel-2.jpg" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Women Fashion</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item position-relative" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="admin/dashboard/img/carousel-3.jpg" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Kids Fashion</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/14.png" alt=" " class="img-responsive" /></a>
-                                    <p>prune juice - sunsweet (1 ltr)</p>
-                                    <h4>$4.00 <span>$5.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="prune juice - sunsweet" />
-                                            <input type="hidden" name="amount" value="4.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="tag"><img src="admin/dashboard/images/tag.png" alt=" " class="img-responsive" /></div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/15.png" alt=" " class="img-responsive" /></a>
-                                    <p>coco cola zero can (330 ml)</p>
-                                    <h4>$3.00 <span>$5.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="coco cola zero can" />
-                                            <input type="hidden" name="amount" value="3.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/16.png" alt=" " class="img-responsive" /></a>
-                                    <p>sprite bottle (2 ltr)</p>
-                                    <h4>$3.00 <span>$4.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="sprite bottle" />
-                                            <input type="hidden" name="amount" value="3.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
         </div>
-        <div class="w3ls_w3l_banner_nav_right_grid1">
-            <h6>Juices</h6>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/13.png" alt=" " class="img-responsive" /></a>
-                                    <p>mixed fruit juice (1 ltr)</p>
-                                    <h4>$3.00 <span>$4.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="mixed fruit juice" />
-                                            <input type="hidden" name="amount" value="3.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
+        <div class="col-lg-4">
+            <div class="product-offer mb-30" style="height: 200px;">
+                <img class="img-fluid" src="admin/dashboard/img/offer-1.jpg" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase">Save 20%</h6>
+                    <h3 class="text-white mb-3">Special Offer</h3>
+                    <a href="" class="btn btn-primary">Shop Now</a>
                 </div>
             </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/50.png" alt=" " class="img-responsive" /></a>
-                                    <p>aamras juice (250 ml)</p>
-                                    <h4>$4.00 <span>$5.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="aamras juice" />
-                                            <input type="hidden" name="amount" value="4.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
+            <div class="product-offer mb-30" style="height: 200px;">
+                <img class="img-fluid" src="admin/dashboard/img/offer-2.jpg" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase">Save 20%</h6>
+                    <h3 class="text-white mb-3">Special Offer</h3>
+                    <a href="" class="btn btn-primary">Shop Now</a>
                 </div>
             </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="tag"><img src="admin/dashboard/images/tag.png" alt=" " class="img-responsive" /></div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/51.png" alt=" " class="img-responsive" /></a>
-                                    <p>coconut water (1000 ml)</p>
-                                    <h4>$6.00 <span>$8.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="coconut water" />
-                                            <input type="hidden" name="amount" value="6.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/52.png" alt=" " class="img-responsive" /></a>
-                                    <p>ceres orange juice (1 ltr)</p>
-                                    <h4>$6.00 <span>$8.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="ceres orange juice" />
-                                            <input type="hidden" name="amount" value="6.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="w3ls_w3l_banner_nav_right_grid1">
-            <h6>Energy Drinks</h6>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/53.png" alt=" " class="img-responsive" /></a>
-                                    <p>dabur glucose D (250 gm)</p>
-                                    <h4>$10.00 <span>$12.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="dabur glucose D" />
-                                            <input type="hidden" name="amount" value="10.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/54.png" alt=" " class="img-responsive" /></a>
-                                    <p>mix lemon flavour (50 gm)</p>
-                                    <h4>$8.00 <span>$10.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="mix lemon flavour" />
-                                            <input type="hidden" name="amount" value="8.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="tag"><img src="admin/dashboard/images/tag.png" alt=" " class="img-responsive" /></div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/55.png" alt=" " class="img-responsive" /></a>
-                                    <p>schweppes water (250 ltr)</p>
-                                    <h4>$6.00 <span>$7.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="schweppes water" />
-                                            <input type="hidden" name="amount" value="6.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3 w3ls_w3l_banner_left">
-                <div class="hover14 column">
-                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                    <div class="agile_top_brand_left_grid_pos">
-                        <img src="admin/dashboard/images/offer.png" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="agile_top_brand_left_grid1">
-                        <figure>
-                            <div class="snipcart-item block">
-                                <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="admin/dashboard/images/56.png" alt=" " class="img-responsive" /></a>
-                                    <p>red bull energy drink (250 ml)</p>
-                                    <h4>$7.00 <span>$9.00</span></h4>
-                                </div>
-                                <div class="snipcart-details">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="red bull energy drink" />
-                                            <input type="hidden" name="amount" value="7.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
         </div>
     </div>
 </div>
+<!-- Carousel End -->
 
 
+<!-- Featured Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured End -->
+
+
+<!-- Categories Start -->
+<div class="container-fluid pt-5">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-1.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-2.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-3.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-4.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-4.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-3.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-2.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-1.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-2.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-1.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-4.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="admin/dashboard/img/cat-3.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Category Name</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Categories End -->
+
+
+<!-- Products Start -->
+<div class="container-fluid pt-5 pb-3">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-1.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-2.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-3.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-4.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-5.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-6.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-7.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-8.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+
+
+<!-- Offer Start -->
+<div class="container-fluid pt-5 pb-3">
+    <div class="row px-xl-5">
+        <div class="col-md-6">
+            <div class="product-offer mb-30" style="height: 300px;">
+                <img class="img-fluid" src="admin/dashboard/img/offer-1.jpg" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase">Save 20%</h6>
+                    <h3 class="text-white mb-3">Special Offer</h3>
+                    <a href="" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="product-offer mb-30" style="height: 300px;">
+                <img class="img-fluid" src="admin/dashboard/img/offer-2.jpg" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase">Save 20%</h6>
+                    <h3 class="text-white mb-3">Special Offer</h3>
+                    <a href="" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Offer End -->
+
+
+<!-- Products Start -->
+<div class="container-fluid pt-5 pb-3">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span></h2>
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-1.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-2.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-3.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-4.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-5.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-6.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-7.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="admin/dashboard/img/product-8.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small class="far fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+
+
+<!-- Vendor Start -->
+<div class="container-fluid py-5">
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="owl-carousel vendor-carousel">
+                <div class="bg-light p-4">
+                    <img src="img/vendor-1.jpg" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="img/vendor-2.jpg" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="img/vendor-3.jpg" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="img/vendor-4.jpg" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="img/vendor-5.jpg" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="img/vendor-6.jpg" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="img/vendor-7.jpg" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="img/vendor-8.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
+
+

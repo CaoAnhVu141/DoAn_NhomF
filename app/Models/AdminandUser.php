@@ -80,4 +80,11 @@ class AdminandUser extends Model
      {
         return $this->hasMany(Carrier::class,'id');
      }
+
+      ///Thiết lập mối quan hệ giữa bảng phân quyền với bảng admin n-n
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class,'user_roles','id','id_role');
+    }
 }
