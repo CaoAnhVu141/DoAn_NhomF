@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id_product');
             $table->string('name');
             $table->unsignedBigInteger('price');
-            $table->text('discription');
+            $table->text('description');
             $table->unsignedBigInteger('discount')->comment('giảm giá');
             $table->string('image');
             $table->unsignedBigInteger('id_category')->comment('danh mục sản phẩm');
