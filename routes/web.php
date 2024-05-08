@@ -12,7 +12,7 @@ use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AdminProductTypeController;
 use App\Http\Controllers\AdminRelatedcategoryController;
 use App\Http\Controllers\AdminShoppingController;
-
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,9 +39,22 @@ Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha
 
 Route::get('detail',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
 
+///show thanh toán
+
+Route::get('checkout',[AdminShoppingController::class,'showCart'])->name('cartpro');
+
+//_____@Giỏ hàng ________
+
+Route::get('cart',[AdminCartController::class,'showIndexCart'])->name('indexcart');
+
+///@Liên hệ/
+
+Route::get('contact',[ContactController::class,'showIndexContact'])->name('contactindex');
 
 
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
 //Show Register
@@ -139,9 +152,7 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 
 
 
-//_____@Giỏ hàng ________
 
-Route::get('cart',[AdminCartController::class,'showIndexCart'])->name('indexcart');
 
 
 //__@Chi tiết users

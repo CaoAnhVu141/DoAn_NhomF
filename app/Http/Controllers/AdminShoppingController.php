@@ -35,4 +35,11 @@ class AdminShoppingController extends Controller
     {
         return view('shopping.detail');
     }
+
+    //hiển thị giỏ hàng
+
+    public function showCart()
+    {
+        return view('shopping.checkout');
+    }
 }
