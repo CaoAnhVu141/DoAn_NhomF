@@ -2,34 +2,44 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
-use App\Models\Supplier;
 
 class SuppliersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
-        // Let's create some dummy data for suppliers
-        $suppliers = [
-            [
-                'name' => 'Supplier 1',
-                'description' => 'Description for Supplier 1',
-                'email' => 'supplier1@example.com',
-                'phone' => '123456789',
-                'address' => '123 Supplier St, City, Country'
-            ],
-            // Add more suppliers as needed
-        ];
+        // Xóa dữ liệu cũ trong bảng (nếu cần)
+        DB::table('suppliers')->truncate();
 
-        // Loop through the suppliers array and insert into the database
-        foreach ($suppliers as $supplierData) {
-            Supplier::create($supplierData);
-        }
+        // Tạo dữ liệu mới
+        DB::table('suppliers')->insert([
+            [
+                'id_supplier' => 1,
+                'name' => 'Supplier A',
+                'description' => 'Description for Supplier A',
+                'email' => 'suppliera@example.com',
+                'phone' => '123456789',
+                'address' => '123 Supplier Street, City, Country',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'id_supplier' => 2,
+                'name' => 'Supplier B',
+                'description' => 'Description for Supplier B',
+                'email' => 'supplierb@example.com',
+                'phone' => '987654321',
+                'address' => '456 Supplier Avenue, Town, Country',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Thêm các dòng dữ liệu khác nếu cần
+        ]);
     }
 }
