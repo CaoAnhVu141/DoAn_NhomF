@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94d49462-a80c-48d0-b230-6d75f4c071a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/database/migrations/2024_04_28_041923_create_products_table.php" beforeDir="false" />
+    <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,11 +14,11 @@
   </component>
   <component name="ComposerConfigs">
     <option name="configs">
-      <option value="$PROJECT_DIR$/public/admin/bower_components/Ionicons/composer.json" />
-      <option value="$PROJECT_DIR$/public/admin/bower_components/jquery-ui/composer.json" />
-      <option value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-datepicker/composer.json" />
-      <option value="$PROJECT_DIR$/public/admin/bower_components/select2/composer.json" />
       <option value="$PROJECT_DIR$/public/admin/bower_components/ckeditor/composer.json" />
+      <option value="$PROJECT_DIR$/public/admin/bower_components/Ionicons/composer.json" />
+      <option value="$PROJECT_DIR$/public/admin/bower_components/select2/composer.json" />
+      <option value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-datepicker/composer.json" />
+      <option value="$PROJECT_DIR$/public/admin/bower_components/jquery-ui/composer.json" />
     </option>
   </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
@@ -145,32 +145,27 @@
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2g2JOArFDUUGsSDoec8uzUKmPAo" />
+  <component name="ProjectId" id="2g5CvQDwtTwG0igkUdhqNdoNazF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;thinhcuti&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Thinh/DoAn_NhomF&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "thinhcuti",
+    "last_opened_file_path": "E:/Thinh/DoAn_NhomF",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
-      <method v="2" />
-    </configuration>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -182,13 +177,19 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="94d49462-a80c-48d0-b230-6d75f4c071a3" name="Changes" comment="" />
-      <created>1714889704554</created>
+      <changelist id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="" />
+      <created>1714978282070</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1714889704554</updated>
-      <workItem from="1714889705615" duration="8730000" />
-      <workItem from="1714899124718" duration="427000" />
+      <updated>1714978282070</updated>
+      <workItem from="1714978283252" duration="1547000" />
+      <workItem from="1714985016597" duration="27000" />
+      <workItem from="1714985044757" duration="1679000" />
+      <workItem from="1715142368955" duration="29000" />
+      <workItem from="1715142401267" duration="208000" />
+      <workItem from="1715142615506" duration="312000" />
+      <workItem from="1715142932131" duration="2995000" />
+      <workItem from="1715155198194" duration="551000" />
     </task>
     <servers />
   </component>
