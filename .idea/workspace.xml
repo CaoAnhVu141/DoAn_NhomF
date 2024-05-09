@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,7 +154,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Phong",
+    "git-widget-placeholder": "Merging Phong",
     "last_opened_file_path": "E:/Thinh/DoAn_NhomF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -193,6 +191,7 @@
       <workItem from="1715167021972" duration="478000" />
       <workItem from="1715171451057" duration="2008000" />
       <workItem from="1715178541154" duration="3534000" />
+      <workItem from="1715239186303" duration="301000" />
     </task>
     <servers />
   </component>
