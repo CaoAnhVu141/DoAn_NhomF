@@ -141,7 +141,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
-                            <li><a href="/index.html" data-toggle="tooltip" data-placement="bottom"
+                            <li><a href="{{ route('admin.logout') }}" data-toggle="tooltip" data-placement="bottom"
                                     title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
                         </ul>
                     </li>

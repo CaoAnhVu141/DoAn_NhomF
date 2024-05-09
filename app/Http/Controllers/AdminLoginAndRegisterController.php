@@ -27,4 +27,12 @@ class AdminLoginAndRegisterController extends Controller
         // Đăng nhập thất bại, hiển thị form đăng nhập lại với thông báo lỗi
         return redirect()->back()->withInput()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác']);
     }
+
+     //viết hàm logout
+
+     public function logoutUser()
+     {
+         Auth::logout();
+         return redirect()->route('showlogin');
+     }
 }

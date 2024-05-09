@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AdminandUser extends Model
+class AdminandUser extends Model implements Authenticatable
 {
+    
     use HasFactory;
+    use \Illuminate\Auth\Authenticatable;
 
     protected $table = 'adminanduser';
     protected $primaryKey = 'id';

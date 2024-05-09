@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminAttributeController;
 use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryProductController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminManagerUsersController;
 use App\Http\Controllers\AdminOdersController;
@@ -13,7 +14,7 @@ use App\Http\Controllers\AdminRelatedcategoryController;
 use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
-
+use App\Http\Controllers\LoginAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ use App\Http\Controllers\AdminLoginAndRegisterController;
 // Route::get('detail',[AdminShoppingController::class,'showDetailIndexShopping'])->name('indexdetailpro');
 
 ///thực thi với trang chủ index
-Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
+Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha')->middleware('auth');
 
 //--hiển thị chi tiết sản phẩm
 
@@ -55,14 +56,23 @@ Route::get('contact',[ContactController::class,'showIndexContact'])->name('conta
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //Show Login
-Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
+Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');    
 //Show Register
 Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 
 // Thực thi dăng nhập
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
+Route::post('logout',[AdminLoginAndRegisterController::class,'logoutUser'])->name('logout');
 // Thực thi đăng ký
 Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'adminRegister']);
+
+
+Route::get('admin-login',[LoginAdminController::class,'showAminLogin'])->name('showadminlogin');
+Route::post('admin-login',[LoginAdminController::class,'UserLoginAdmin'])->name('adminlogin');
+
+///Logout cho admin
+
+Route::get('admin-logout',[AdminController::class,'adminLogout'])->name('admin.logout');
 
 
 // @@@@@@@@@@@@@@abstract

@@ -95,10 +95,22 @@
                     </div>
                 </form>
             </div>
+            @if (Auth::check())
             <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">LongKhanh</p>
-                <h5 class="m-0">+012 345 6789</h5>
+                <div class="d-flex align-items-center">
+                    <div>
+                        <p class="m-0">{{ Auth::user()->name }}</p>
+                        <h7 class="m-0">{{ Auth::user()->email }}</h7>
+                    </div>
+                    <div class="ml-3">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
             </div>
+        @endif
         </div>
     </div>
     <!-- Topbar End -->

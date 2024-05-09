@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'adminandusers',
+        ],
     ],
 
     /*
@@ -64,11 +68,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'adminandusers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AdminandUser::class,
+        ],
     ],
 
     /*
@@ -109,6 +112,20 @@ return [
     | confirmation screen. By default, the timeout lasts for three hours.
     |
     */
+
+     // đây nè
+     'guards' => [
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'adminandusers',
+        ],
+    ],
+    'providers' => [
+        'adminandusers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AdminandUser::class,
+        ],
+    ],
 
     'password_timeout' => 10800,
 
