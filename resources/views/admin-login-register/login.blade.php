@@ -21,10 +21,6 @@
 <div class="text-danger">{{ $message }}</div>
 @enderror
 </div>
-<div class="form-group">
-    <label for="password"><i class="zmdi zmdi-lock"></i></label>
-    <input type="password" name="password" id="password" placeholder="Password" />
-
     <body>
         <section class="vh-100">
             <div class="container py-5 h-100">
