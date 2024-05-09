@@ -60,7 +60,7 @@ Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
 Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 
 // Thực thi dăng nhập
-Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'AdminLogin']);
+Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
 // Thực thi đăng ký
 Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'adminRegister']);
 

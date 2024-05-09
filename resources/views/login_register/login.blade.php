@@ -1,85 +1,90 @@
+<!-- resources/views/auth/login.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
-    .divider:after,
-    .divider:before {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #eee;
-    }
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: #dc3545;
+        }
     </style>
 </head>
-@error('email')
-<div class="text-danger">{{ $message }}</div>
-@enderror
-</div>
-    <body>
-        <section class="vh-100">
-            <div class="container py-5 h-100">
-                <div class="row d-flex align-items-center justify-content-center h-100">
-                    <div class="col-md-8 col-lg-7 col-xl-6">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                            class="img-fluid" alt="Phone image">
-                    </div>
-                    <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                       
-                        <form acction="{{url('login/loginrun')}}" method="get">
-                            <!-- Email input -->
-                            <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="email" id="email" name="email" class="form-control form-control-lg"
-                                    placeholder="Nhập Vào Email" />
-                                <label class="form-label" for="form1Example13">Email</label>
-                            </div>
-                            <!-- bắt lỗi đang nhập email -->
-                            @error('email')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                            <!-- Password input -->
-                            <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="password" id="password" name="pass" class="form-control form-control-lg"
-                                    placeholder="Nhập Vào Mật Khẩu" />
-                                <label class="form-label" for="form1Example23">Password</label>
-                            </div>
-                            @error('password')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                            <div class="d-flex justify-content-around align-items-center mb-4">
-                                <!-- Checkbox -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="form1Example3"
-                                        checked />
-                                    <label class="form-check-label" for="form1Example3">Remember me </label>
-                                </div>
-                                <a href="register">Forgot password?</a>
-                            </div>
-                            <!-- Submit button -->
-                            <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                                class="btn btn-primary btn-lg btn-block">Sign in</button>
+<body>
+    <div class="container">
+        <h2>Đăng nhập</h2>
+        <form method="GET" action="{{url('login/loginrun')}}">
+            @csrf
 
-                            <div class="divider d-flex align-items-center my-4">
-                                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-                            </div>
-
-                            <a data-mdb-ripple-init class="btn btn-primary btn-lg btn-block"
-                                style="background-color: #3b5998" href="https://www.facebook.com/" role="button">
-                                <i class="fab fa-facebook-f me-2"></i>Facebook</a>
-                            <a data-mdb-ripple-init class="btn btn-primary btn-lg btn-block"
-                                style="background-color: #55acee" href="https://twitter.com/?lang=vi" role="button">
-                                <i class="fab fa-twitter me-2"></i>Twitter</a>
-                        </form>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                @error('email')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
             </div>
-        </section>
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input id="password" type="password" class="form-control" name="password" required>
+                @error('password')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-login">Đăng nhập</button>
+            </div>
+        </form>
+    </div>
+</body>
 </html>
