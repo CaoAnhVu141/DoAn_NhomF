@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +20,6 @@
 <div class="text-danger">{{ $message }}</div>
 @enderror
 </div>
-<div class="form-group">
-    <label for="password"><i class="zmdi zmdi-lock"></i></label>
-    <input type="password" name="password" id="password" placeholder="Password" />
-
     <body>
         <section class="vh-100">
             <div class="container py-5 h-100">
@@ -64,7 +59,6 @@
                                 </div>
                                 <a href="register">Forgot password?</a>
                             </div>
-
                             <!-- Submit button -->
                             <button type="submit" data-mdb-button-init data-mdb-ripple-init
                                 class="btn btn-primary btn-lg btn-block">Sign in</button>
@@ -88,5 +82,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
 </html>

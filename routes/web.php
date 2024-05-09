@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminAttributeController;
 use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminLoginAndRegisterController;
 use App\Http\Controllers\AdminManagerUsersController;
 use App\Http\Controllers\AdminOdersController;
 use App\Http\Controllers\AdminPostsController;
@@ -13,6 +12,8 @@ use App\Http\Controllers\AdminProductTypeController;
 use App\Http\Controllers\AdminRelatedcategoryController;
 use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminLoginAndRegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,15 +53,12 @@ Route::get('cart',[AdminCartController::class,'showIndexCart'])->name('indexcart
 Route::get('contact',[ContactController::class,'showIndexContact'])->name('contactindex');
 
 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin']);
 //Show Register
 Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
-//Show homepage
-Route::get('home',[AdminLoginAndRegisterController::class,'ShowHomePage']);
+
 // Thực thi dăng nhập
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'AdminLogin']);
 // Thực thi đăng ký
