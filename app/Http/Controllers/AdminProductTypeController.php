@@ -29,18 +29,4 @@ class AdminProductTypeController extends Controller
     {
         return view('admin.typeproduct.update');
     }
-
-    // show giao dien them san pham
-    public function AddNewProduct(Request $request)
-    {
-        Product::create(
-            [
-                //Luu thong tin vao mysql
-                'name'=>$request->input('name'),
-                'image'=>$request->input('image'),
-                'price'=>$request->input('price'),
-                'quantity'=>$request->input('quantity')]
-            );
-        return redirect('categoryuser')->with("thongbao","Thêm thành công!");
-    }
 }
