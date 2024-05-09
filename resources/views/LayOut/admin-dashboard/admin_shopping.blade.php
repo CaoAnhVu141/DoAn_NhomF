@@ -43,8 +43,8 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
+                            <button class="dropdown-item" type="button"><a href="login">Login</a></button>
+                            <button class="dropdown-item" type="button"><a href="register">register</a></button>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
