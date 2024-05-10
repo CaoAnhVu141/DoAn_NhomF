@@ -11,6 +11,7 @@ return array(
     'App\\Http\\Controllers\\AdminAttributeController' => $baseDir . '/app/Http/Controllers/AdminAttributeController.php',
     'App\\Http\\Controllers\\AdminCartController' => $baseDir . '/app/Http/Controllers/AdminCartController.php',
     'App\\Http\\Controllers\\AdminCategoryProductController' => $baseDir . '/app/Http/Controllers/AdminCategoryProductController.php',
+    'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
     'App\\Http\\Controllers\\AdminLoginAndRegisterController' => $baseDir . '/app/Http/Controllers/AdminLoginAndRegisterController.php',
     'App\\Http\\Controllers\\AdminManagerUsersController' => $baseDir . '/app/Http/Controllers/AdminManagerUsersController.php',
     'App\\Http\\Controllers\\AdminOdersController' => $baseDir . '/app/Http/Controllers/AdminOdersController.php',
@@ -21,6 +22,7 @@ return array(
     'App\\Http\\Controllers\\AdminShoppingController' => $baseDir . '/app/Http/Controllers/AdminShoppingController.php',
     'App\\Http\\Controllers\\ContactController' => $baseDir . '/app/Http/Controllers/ContactController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\LoginAdminController' => $baseDir . '/app/Http/Controllers/LoginAdminController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -179,14 +181,11 @@ return array(
     'Database\\Seeders\\CategoriesSeeder' => $baseDir . '/database/seeders/CategoriesSeeder.php',
     'Database\\Seeders\\CategorydiscountsSeeder' => $baseDir . '/database/seeders/CategorydiscountsSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
-<<<<<<< HEAD
-=======
     'Database\\Seeders\\DiscountsSeeder' => $baseDir . '/database/seeders/DiscountsSeeder.php',
     'Database\\Seeders\\EventsSeeder' => $baseDir . '/database/seeders/EventsSeeder.php',
     'Database\\Seeders\\FavoriteProductSeeder' => $baseDir . '/database/seeders/FavoriteProductSeeder.php',
     'Database\\Seeders\\InvoicesSeeder' => $baseDir . '/database/seeders/InvoicesSeeder.php',
     'Database\\Seeders\\LevelUsersSeeder' => $baseDir . '/database/seeders/LevelUsersSeeder.php',
->>>>>>> Phong
     'Database\\Seeders\\OAuthAuthCodesSeeder' => $baseDir . '/database/seeders/OAuthAuthCodesSeeder.php',
     'Database\\Seeders\\OAuthClientsSeeder' => $baseDir . '/database/seeders/OAuthClientsSeeder.php',
     'Database\\Seeders\\OrderSeeder' => $baseDir . '/database/seeders/OrderSeeder.php',
@@ -195,12 +194,9 @@ return array(
     'Database\\Seeders\\PersonalAccessTokensSeeder' => $baseDir . '/database/seeders/PersonalAccessTokensSeeder.php',
     'Database\\Seeders\\PostsTableSeeder' => $baseDir . '/database/seeders/PostsTableSeeder.php',
     'Database\\Seeders\\ProductAttributeTableSeeder' => $baseDir . '/database/seeders/ProductAttributeTableSeeder.php',
+    'Database\\Seeders\\ProductTypesTableSeeder' => $baseDir . '/database/seeders/ProductTypesTableSeeder.php',
     'Database\\Seeders\\PurchaseHistoryTableSeeder' => $baseDir . '/database/seeders/PurchaseHistoryTableSeeder.php',
     'Database\\Seeders\\RefreshTokenSeeder' => $baseDir . '/database/seeders/RefreshTokenSeeder.php',
-<<<<<<< HEAD
-=======
-    'Database\\Seeders\\ReviewProductsTableSeeder' => $baseDir . '/database/seeders/ReviewProductsTableSeeder.php',
->>>>>>> Phong
     'Database\\Seeders\\RolesTableSeeder' => $baseDir . '/database/seeders/RolesTableSeeder.php',
     'Database\\Seeders\\SuppliersTableSeeder' => $baseDir . '/database/seeders/SuppliersTableSeeder.php',
     'Database\\Seeders\\TransportsTableSeeder' => $baseDir . '/database/seeders/TransportsTableSeeder.php',
