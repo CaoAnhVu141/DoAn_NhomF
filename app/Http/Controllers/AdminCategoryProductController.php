@@ -26,6 +26,8 @@ class AdminCategoryProductController extends Controller
         return view ('admin.category.update');
     }
 
+    
+
     //Show Giao Dien Danh Sach San Pham
     public function ShowCategoryUser()
     {

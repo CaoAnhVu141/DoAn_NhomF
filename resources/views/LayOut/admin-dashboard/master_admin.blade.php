@@ -115,10 +115,13 @@
                   <!-- User image -->
                   <li class="user-header">
                     <img src="{{ asset('admin/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
-                    <p>
-                        test-admin - Web Developer
-                      <small>Member since Nov. 2012</small>
-                    </p>
+                    <div class="pull-left info">
+                      @if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->id_role == 2)
+                          <p class="m-0">{{ Auth::guard('admin')->user()->name }}</p>
+                          <h5 class="m-0">{{ Auth::guard('admin')->user()->email }}</h5>
+                      @endif
+                  </div>
+                  
                   </li>
                   <!-- Menu Body -->
                   <li class="user-body">
@@ -164,10 +167,11 @@
               <img src="{{ asset('admin/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              {{-- @todo --}}
-              {{-- <p>{{ Auth::user()->name }}</p> --}}
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
+              @if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->id_role == 2)
+                  <p class="m-0">{{ Auth::guard('admin')->user()->name }}</p>
+                  <h5 class="m-0">{{ Auth::guard('admin')->user()->email }}</h5>
+              @endif
+          </div>
           </div>
           <!-- search form -->
           <form action="#" method="get" class="sidebar-form">
