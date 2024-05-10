@@ -30,13 +30,12 @@
                     <div class="card card-registration my-4">
                         <div class="row g-0">
                             <div class="col-xl-6 d-none d-xl-block">
-                                Ảnh ở đây
-                                <img src=" Anh~ o day " alt="Sample photo" class="img-fluid"
+                                <img src="image/anhkhanh.jpg" alt="Sample photo" class="img-fluid"
                                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                             </div>
                             <div class="col-xl-6">
                                 <div class="card-body p-md-5 text-black">
-                                    <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                                    <h3 class="mb-5 text-center text-uppercase">register</h3>
                                 <form action="{{url('register/registerrun')}}" method="get">
                                     <div class="row">
                                         <div class="col-md-6 mb-4">
