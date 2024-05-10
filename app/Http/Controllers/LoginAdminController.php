@@ -30,4 +30,15 @@ class LoginAdminController extends Controller
                 return redirect()->route('showadminlogin');
             }
         }
+
+        //logout cho tài khoản bán hàng
+
+        public function logoutUserSell(Request $request)
+        {
+            Auth::guard('web')->logout(); // Sử dụng guard 'web' cho người bán hàng
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+    
+            return redirect()->route('showadminlogin'); // Điều hướng sau khi logout
+        }
 }

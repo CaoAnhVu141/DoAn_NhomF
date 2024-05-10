@@ -154,8 +154,6 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
 
 
-
-
 //
 Route::get('categoryuser',[AdminCategoryProductController::class,'ShowCategoryUser']);
 Route::get('addsanpham',[AdminCategoryProductController::class,'ShowAddProduct']);
