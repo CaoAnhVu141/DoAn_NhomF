@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => 'admin',
+            'password' => Hash::make('admin'),
             'phone' => '0777855202',
             'avatar' => 'phanlongkhanh.jpg',
             'address' => 'Thành Phố Hồ Chí Minh , Streest Long Trường Thủ Đức',
