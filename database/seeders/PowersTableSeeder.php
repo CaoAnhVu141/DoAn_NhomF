@@ -20,16 +20,16 @@ class PowersTableSeeder extends Seeder
         // Chèn dữ liệu mới
         DB::table('powers')->insert([
             [
-                'id_power' => 1,
+
                 'name' => 'Super Strength',
-                'description' => 'This power grants superhuman strength to the user.',
+                'discription' => 'This power grants superhuman strength to the user.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'id_power' => 2,
+
                 'name' => 'Telekinesis',
-                'description' => 'This power allows the user to move objects with their mind.',
+                'discription' => 'This power allows the user to move objects with their mind.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

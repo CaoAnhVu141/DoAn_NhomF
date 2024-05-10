@@ -20,7 +20,7 @@ class SuppliersTableSeeder extends Seeder
         // Tạo dữ liệu mới
         DB::table('suppliers')->insert([
             [
-                'id_supplier' => 1,
+
                 'name' => 'Supplier A',
                 'description' => 'Description for Supplier A',
                 'email' => 'suppliera@example.com',
@@ -28,9 +28,10 @@ class SuppliersTableSeeder extends Seeder
                 'address' => '123 Supplier Street, City, Country',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'id' => 1,
             ],
             [
-                'id_supplier' => 2,
+
                 'name' => 'Supplier B',
                 'description' => 'Description for Supplier B',
                 'email' => 'supplierb@example.com',
@@ -38,6 +39,7 @@ class SuppliersTableSeeder extends Seeder
                 'address' => '456 Supplier Avenue, Town, Country',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'id' => 2,
             ],
             // Thêm các dòng dữ liệu khác nếu cần
         ]);
