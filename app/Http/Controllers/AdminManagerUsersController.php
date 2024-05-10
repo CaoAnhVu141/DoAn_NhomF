@@ -12,4 +12,11 @@ class AdminManagerUsersController extends Controller
     {
         return view('admin.manageruser.index');
     }
+
+    //show toàn bộ tài khoản 
+
+    public function showAllUser()
+    {
+        return view('admin.manageruser.indexuser');
+    }
 }
