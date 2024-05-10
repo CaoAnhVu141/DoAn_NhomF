@@ -74,6 +74,10 @@ Route::post('admin-login',[LoginAdminController::class,'UserLoginAdmin'])->name(
 
 Route::get('admin-logout',[AdminController::class,'adminLogout'])->name('admin.logout');
 
+//show toàn bộ tài khoản user mua
+
+Route::get('showuser',[AdminManagerUsersController::class,'showAllUser'])->name('showalluser');
+
 
 // @@@@@@@@@@@@@@abstract
 
