@@ -43,26 +43,10 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"><a href="login">Login</a></button>
-                            <button class="dropdown-item" type="button"><a href="register">register</a></button>
+                            <a href="admin-login"><button class="dropdown-item" type="button">Login Admin</button></a>  
                         </div>
                     </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AR</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
                     <a href="" class="btn px-0 ml-2">
@@ -99,6 +83,7 @@
             <div class="col-lg-4 col-6 text-right">
                 <div class="d-flex align-items-center">
                     <div>
+                      
                         <p class="m-0">{{ Auth::user()->name }}</p>
                         <h7 class="m-0">{{ Auth::user()->email }}</h7>
                     </div>
