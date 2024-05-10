@@ -16,7 +16,7 @@ return [
     'defaults' => [
         'guard' => 'web',
         'passwords' => 'users',
-    ],
+    ],    
 
     /*
     |--------------------------------------------------------------------------
@@ -112,20 +112,6 @@ return [
     | confirmation screen. By default, the timeout lasts for three hours.
     |
     */
-
-     // đây nè
-     'guards' => [
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'adminandusers',
-        ],
-    ],
-    'providers' => [
-        'adminandusers' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\AdminandUser::class,
-        ],
-    ],
 
     'password_timeout' => 10800,
 
