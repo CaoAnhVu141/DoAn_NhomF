@@ -20,7 +20,7 @@ class PostsTableSeeder extends Seeder
         // Tạo dữ liệu mới
         DB::table('posts')->insert([
             [
-                'id_post' => 1,
+
                 'name' => 'Post 1',
                 'description' => 'Description for Post 1',
                 'content' => 'Content for Post 1',
@@ -28,9 +28,10 @@ class PostsTableSeeder extends Seeder
                 'id_categorypost' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'id' => 1,
             ],
             [
-                'id_post' => 2,
+
                 'name' => 'Post 2',
                 'description' => 'Description for Post 2',
                 'content' => 'Content for Post 2',
@@ -38,6 +39,7 @@ class PostsTableSeeder extends Seeder
                 'id_categorypost' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'id' => 2,
             ],
             // Thêm các dòng dữ liệu khác nếu cần
         ]);

@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Hash;   
+use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => 'admin',
+            'password' => Hash::make('admin'),
             'phone' => '0777855202',
             'avatar' => 'phanlongkhanh.jpg',
             'address' => 'Thành Phố Hồ Chí Minh , Streest Long Trường Thủ Đức',

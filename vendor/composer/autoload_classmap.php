@@ -179,6 +179,14 @@ return array(
     'Database\\Seeders\\CategoriesSeeder' => $baseDir . '/database/seeders/CategoriesSeeder.php',
     'Database\\Seeders\\CategorydiscountsSeeder' => $baseDir . '/database/seeders/CategorydiscountsSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
+<<<<<<< HEAD
+=======
+    'Database\\Seeders\\DiscountsSeeder' => $baseDir . '/database/seeders/DiscountsSeeder.php',
+    'Database\\Seeders\\EventsSeeder' => $baseDir . '/database/seeders/EventsSeeder.php',
+    'Database\\Seeders\\FavoriteProductSeeder' => $baseDir . '/database/seeders/FavoriteProductSeeder.php',
+    'Database\\Seeders\\InvoicesSeeder' => $baseDir . '/database/seeders/InvoicesSeeder.php',
+    'Database\\Seeders\\LevelUsersSeeder' => $baseDir . '/database/seeders/LevelUsersSeeder.php',
+>>>>>>> Phong
     'Database\\Seeders\\OAuthAuthCodesSeeder' => $baseDir . '/database/seeders/OAuthAuthCodesSeeder.php',
     'Database\\Seeders\\OAuthClientsSeeder' => $baseDir . '/database/seeders/OAuthClientsSeeder.php',
     'Database\\Seeders\\OrderSeeder' => $baseDir . '/database/seeders/OrderSeeder.php',
@@ -189,6 +197,10 @@ return array(
     'Database\\Seeders\\ProductAttributeTableSeeder' => $baseDir . '/database/seeders/ProductAttributeTableSeeder.php',
     'Database\\Seeders\\PurchaseHistoryTableSeeder' => $baseDir . '/database/seeders/PurchaseHistoryTableSeeder.php',
     'Database\\Seeders\\RefreshTokenSeeder' => $baseDir . '/database/seeders/RefreshTokenSeeder.php',
+<<<<<<< HEAD
+=======
+    'Database\\Seeders\\ReviewProductsTableSeeder' => $baseDir . '/database/seeders/ReviewProductsTableSeeder.php',
+>>>>>>> Phong
     'Database\\Seeders\\RolesTableSeeder' => $baseDir . '/database/seeders/RolesTableSeeder.php',
     'Database\\Seeders\\SuppliersTableSeeder' => $baseDir . '/database/seeders/SuppliersTableSeeder.php',
     'Database\\Seeders\\TransportsTableSeeder' => $baseDir . '/database/seeders/TransportsTableSeeder.php',

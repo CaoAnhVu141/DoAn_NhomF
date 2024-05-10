@@ -777,6 +777,14 @@ class ComposerStaticInitbfe12996eeecb6fdc8713a9fd9d431f8
         'Database\\Seeders\\CategoriesSeeder' => __DIR__ . '/../..' . '/database/seeders/CategoriesSeeder.php',
         'Database\\Seeders\\CategorydiscountsSeeder' => __DIR__ . '/../..' . '/database/seeders/CategorydiscountsSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+<<<<<<< HEAD
+=======
+        'Database\\Seeders\\DiscountsSeeder' => __DIR__ . '/../..' . '/database/seeders/DiscountsSeeder.php',
+        'Database\\Seeders\\EventsSeeder' => __DIR__ . '/../..' . '/database/seeders/EventsSeeder.php',
+        'Database\\Seeders\\FavoriteProductSeeder' => __DIR__ . '/../..' . '/database/seeders/FavoriteProductSeeder.php',
+        'Database\\Seeders\\InvoicesSeeder' => __DIR__ . '/../..' . '/database/seeders/InvoicesSeeder.php',
+        'Database\\Seeders\\LevelUsersSeeder' => __DIR__ . '/../..' . '/database/seeders/LevelUsersSeeder.php',
+>>>>>>> Phong
         'Database\\Seeders\\OAuthAuthCodesSeeder' => __DIR__ . '/../..' . '/database/seeders/OAuthAuthCodesSeeder.php',
         'Database\\Seeders\\OAuthClientsSeeder' => __DIR__ . '/../..' . '/database/seeders/OAuthClientsSeeder.php',
         'Database\\Seeders\\OrderSeeder' => __DIR__ . '/../..' . '/database/seeders/OrderSeeder.php',
@@ -787,6 +795,10 @@ class ComposerStaticInitbfe12996eeecb6fdc8713a9fd9d431f8
         'Database\\Seeders\\ProductAttributeTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductAttributeTableSeeder.php',
         'Database\\Seeders\\PurchaseHistoryTableSeeder' => __DIR__ . '/../..' . '/database/seeders/PurchaseHistoryTableSeeder.php',
         'Database\\Seeders\\RefreshTokenSeeder' => __DIR__ . '/../..' . '/database/seeders/RefreshTokenSeeder.php',
+<<<<<<< HEAD
+=======
+        'Database\\Seeders\\ReviewProductsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ReviewProductsTableSeeder.php',
+>>>>>>> Phong
         'Database\\Seeders\\RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/RolesTableSeeder.php',
         'Database\\Seeders\\SuppliersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SuppliersTableSeeder.php',
         'Database\\Seeders\\TransportsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/TransportsTableSeeder.php',
