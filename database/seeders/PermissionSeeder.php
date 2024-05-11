@@ -1,8 +1,10 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Permission;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PermissionSeeder extends Seeder
 {
@@ -13,15 +15,19 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        // Tạo dữ liệu mẫu cho bảng permissions
+        // Xóa dữ liệu cũ trong bảng (nếu cần)
+        DB::table('permission')->truncate();
+
+        // Tạo dữ liệu mới
+        $now = Carbon::now();
         $permissions = [
-            ['per_name' => 'permission_1', 'created_at' => now(), 'updated_at' => now()],
-            ['per_name' => 'permission_2', 'created_at' => now(), 'updated_at' => now()],
-            ['per_name' => 'permission_3', 'created_at' => now(), 'updated_at' => now()],
-            // Thêm các dòng dữ liệu khác nếu cần
+            ['per_name' => 'permission_1', 'created_at' => $now, 'updated_at' => $now],
+            ['per_name' => 'permission_2', 'created_at' => $now, 'updated_at' => $now],
+            ['per_name' => 'permission_3', 'created_at' => $now, 'updated_at' => $now],
+            // Thêm dòng dữ liệu khác nếu cần
         ];
 
         // Lưu dữ liệu vào bảng permissions
-        Permission::insert($permissions);
+        DB::table('permission')->insert($permissions);
     }
 }

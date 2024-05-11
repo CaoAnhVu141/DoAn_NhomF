@@ -119,24 +119,17 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                {{-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
-                    LÝ NHÂN VIÊN</a> --}}
-                    @if(Auth::guard('admin')->check())
-                    <div class="col-lg-4 col-6 text-right">
-                    <p class="m-0">{{ Auth::guard('admin')->user()->name }}</p>
-                    <h6 class="m-0">{{ Auth::guard('admin')->user()->email }}</h6>
-                     </div>
-                    @endif
-
+                    LÝ NHÂN VIÊN</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#home" data-toggle="tooltip" data-placement="bottom"
+                    <li class="active"><a href="{{ route('manageruser') }}" data-toggle="tooltip" data-placement="bottom"
                             title="NHÂN VIÊN">NHÂN VIÊN</a></li>
-                    <li><a href="{{ route('showalluser') }}" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">Nhân viên</a></li>
+                    <li><a href="{{ route('showalluser') }}" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
                     <li><a href="" data-toggle="tooltip" data-placement="bottom" title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
                     <li><a href="" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a>
                     </li>
@@ -210,22 +203,7 @@
                                 aria-hidden="true"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Trần Khả Ái</td>
-                    <td>Nữ</td>
-                    <td>12/02/1999</td>
-                    <td>155-157 Trần Quốc Thảo, Quận 3, Hồ Chí Minh</td>
-
-                    <td>Phục Vụ</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
+                
                 <tr>
                     <td>Nguyễn Tấn Trung</td>
                     <td>Nam</td>

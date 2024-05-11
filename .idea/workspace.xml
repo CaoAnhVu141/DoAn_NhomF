@@ -6,21 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/OAuthAccessTokensSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PersonalAccessTokensSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PersonalAccessTokensSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PostsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PostsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PowersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PowersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/ProductTypesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProductTypesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/SuppliersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SuppliersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/TransportsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TransportsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/psr/http-factory/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/psr/http-factory/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/psr/http-factory/src/UploadedFileFactoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/psr/http-factory/src/UploadedFileFactoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/OAuthAuthCodesSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermissionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/RefreshTokenSeeder.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +179,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Phong",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "E:/Thinh/DoAn_NhomF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -235,7 +223,8 @@
       <workItem from="1715171451057" duration="2008000" />
       <workItem from="1715178541154" duration="3534000" />
       <workItem from="1715239186303" duration="1240000" />
-      <workItem from="1715299464027" duration="7213000" />
+      <workItem from="1715299464027" duration="7812000" />
+      <workItem from="1715411964315" duration="7924000" />
     </task>
     <servers />
   </component>
@@ -246,9 +235,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/database/seeders/OAuthAuthCodesSeeder.php</url>
+          <url>file://$PROJECT_DIR$/database/seeders/ReviewProductTableSeeder.php</url>
           <line>18</line>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
