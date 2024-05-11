@@ -80,6 +80,10 @@
                     <span class="error-message">{{ $message }}</span>
                 @enderror
             </div>
+            <div class="form-group">
+                <a href="{{ route('forgotpass') }}">Quên mật khẩu nè</a>
+            </div>
+
 
             <div class="form-group">
                 <button type="submit" class="btn btn-login">Đăng nhập</button>

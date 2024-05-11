@@ -16,6 +16,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -174,3 +176,16 @@ Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->n
 ////demo senmail
 
 Route::get('sendmail',[SendMailController::class,'sendMaill']);
+
+
+///quên mật khẩu
+
+Route::get('forgot',[ForgotPasswordController::class,'showForgotPass'])->name('forgotpass');
+Route::post('forgot',[ForgotPasswordController::class,'sendResetLinkEmail'])->name('getpass');
+
+Route::get('checkmail',[ForgotPasswordController::class, 'showNotificationEmail'])->name('checkmail');
+
+///Đặt lại mật khẩu
+//
+Route::get('password/reset/{token}',[ResetPasswordController::class,'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
