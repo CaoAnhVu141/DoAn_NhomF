@@ -32,13 +32,17 @@ class LoginAdminController extends Controller
         }
 
         //logout cho tài khoản bán hàng
+        // Auth::guard('admin')->check() && Auth::guard('admin')->user()->id_role == 2
 
-        public function logoutUserSell(Request $request)
+        public function logoutUserSell()
         {
-            Auth::guard('web')->logout(); // Sử dụng guard 'web' cho người bán hàng
-            $request->session()->invalidate();
-            $request->session()->regenerateToken();
-    
-            return redirect()->route('showadminlogin'); // Điều hướng sau khi logout
+            if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->id_role == 2)
+            {
+                Auth::guard('admin')->logout();
+                return redirect()->route('showadminlogin');
+            } 
+            else{
+                return redirect('https://www.youtube.com/watch?v=TGSW8jtHkcM');
+            }  
         }
-}
+    }

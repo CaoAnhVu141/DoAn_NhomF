@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
 use App\Http\Controllers\LoginAdminController;
+use App\Http\Controllers\SendMailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,7 @@ Route::post('admin-login',[LoginAdminController::class,'UserLoginAdmin'])->name(
 ///Logout cho admin
 
 Route::get('admin-logout',[AdminController::class,'adminLogout'])->name('admin.logout');
+Route::get('logout-admin',[LoginAdminController::class,'logoutUserSell'])->name('logout.admin');
 
 //show toàn bộ tài khoản user mua
 
@@ -168,3 +170,7 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 //__@Chi tiết users
 
 Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->name('manageruser');
+
+////demo senmail
+
+Route::get('sendmail',[SendMailController::class,'sendMaill']);
