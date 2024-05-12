@@ -12,15 +12,16 @@ class Category extends Model
     protected $table = 'categories';
     protected $primaryKey = 'id_category';
 
-   
+
     protected $fillable = [
         'name',
         'discription',
         'checkactive',
         'id',
+        'image',
     ];
 
-  //thiết lập mối quan hệ sản phẩm và danh mục 
+  //thiết lập mối quan hệ sản phẩm và danh mục
 
   public function category()
   {
@@ -34,5 +35,5 @@ class Category extends Model
     return $this->belongsTo(AdminandUser::class,'id');
   }
 
- 
+
 }
