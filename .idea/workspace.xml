@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/OAuthAuthCodesSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermissionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/RefreshTokenSeeder.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,9 +223,8 @@
       <workItem from="1715171451057" duration="2008000" />
       <workItem from="1715178541154" duration="3534000" />
       <workItem from="1715239186303" duration="1240000" />
-      <workItem from="1715299464027" duration="7213000" />
-      <workItem from="1715354211055" duration="111000" />
-      <workItem from="1715354335543" duration="1889000" />
+      <workItem from="1715299464027" duration="7812000" />
+      <workItem from="1715411964315" duration="7924000" />
     </task>
     <servers />
   </component>
@@ -233,9 +235,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/database/seeders/OAuthAuthCodesSeeder.php</url>
+          <url>file://$PROJECT_DIR$/database/seeders/ReviewProductTableSeeder.php</url>
           <line>18</line>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

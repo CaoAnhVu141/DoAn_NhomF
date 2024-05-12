@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAttributeController;
 use App\Http\Controllers\AdminCartController;
+use App\Http\Controllers\AdminCategoryPost;
 use App\Http\Controllers\AdminCategoryProductController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,9 @@ use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
 use App\Http\Controllers\LoginAdminController;
+use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +77,7 @@ Route::post('admin-login',[LoginAdminController::class,'UserLoginAdmin'])->name(
 ///Logout cho admin
 
 Route::get('admin-logout',[AdminController::class,'adminLogout'])->name('admin.logout');
+Route::get('logout-admin',[LoginAdminController::class,'logoutUserSell'])->name('logout.admin');
 
 //show toàn bộ tài khoản user mua
 
@@ -111,9 +116,22 @@ Route::get('attribute',[AdminAttributeController::class,'showIndexAattribute'])-
 //thêm thuộc tính 
 
 Route::get('add-attribute',[AdminAttributeController::class,'showCreateAttribute'])->name('addattribute');
+Route::post('add-attribute',[AdminAttributeController::class,'addDataAttribute'])->name('adddataattribute');
 
 //sửa thuộc tính
-Route::get('edit-attribute',[AdminAttributeController::class,'showEditAttribute'])->name('editattribute');
+Route::get('edit-attribute/{id}',[AdminAttributeController::class,'showEditAttribute'])->name('editattribute');
+Route::post('edit-attribute/{id}',[AdminAttributeController::class,'updateAttribute'])->name('updateattribute');
+
+
+
+
+// hiện và ẩn checkactive của thuộc tính
+
+Route::get('toggle-attribute/{id}',[AdminAttributeController::class, 'ShowOrHideCheck'])->name('toggleattribute');
+
+// xoá thuộc tính
+
+Route::get('delete-attribute/{id}',[AdminAttributeController::class, 'deleteAttribute'])->name('deleteattribute');
 
 // @@ Thực thi với sản phẩm (4)
 
@@ -153,6 +171,28 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 // thêm bài viết
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
 
+// @Thực thi với danh sách bài viết (8)
+
+Route::get('categorypost',[AdminCategoryPost::class,'showIndexCategoryPost'])->name('indexcategorypost');
+
+Route::get('add-categorypost',[AdminCategoryPost::class, 'showAddIndexCategoryPost'])->name('addcategorypost');
+Route::post('add-categorypost',[AdminCategoryPost::class, 'addDataCategoryPost'])->name('adddatacategorypost');
+
+//
+//hiện và ẩn check status
+
+Route::get('hideorshowpost/{id}',[AdminCategoryPost::class, 'ShowOrHideCategoryPost'])->name('showorhidecategorypost');
+
+// xoá danh mục bài viết
+
+Route::get('delete-categorypost/{id}',[AdminCategoryPost::class, 'deteleCategoryPost'])->name('deletecategorypost');
+
+//sửa danh mục bài viêts
+
+Route::get('update-categorypost/{id}',[AdminCategoryPost::class, 'showIndexUpdate'])->name('updatecategorypost');
+Route::post('update-categorypost/{id}',[AdminCategoryPost::class, 'updateDataCategoryPost'])->name('updatedatacategorypost');
+
+
 
 //
 Route::get('categoryuser',[AdminCategoryProductController::class,'ShowCategoryUser']);
@@ -168,3 +208,20 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 //__@Chi tiết users
 
 Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->name('manageruser');
+
+////demo senmail
+
+Route::get('sendmail',[SendMailController::class,'sendMaill']);
+
+
+///quên mật khẩu
+
+Route::get('forgot',[ForgotPasswordController::class,'showForgotPass'])->name('forgotpass');
+Route::post('forgot',[ForgotPasswordController::class,'sendResetLinkEmail'])->name('getpass');
+
+Route::get('checkmail',[ForgotPasswordController::class, 'showNotificationEmail'])->name('checkmail');
+
+///Đặt lại mật khẩu
+//
+Route::get('password/reset/{token}',[ResetPasswordController::class,'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'resetPassword'])->name('password.update');

@@ -5,10 +5,11 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ReviewProductsTableSeeder extends Seeder
+class ReviewProductTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
      *
      * @return void
      */

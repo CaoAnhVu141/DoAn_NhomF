@@ -2,12 +2,12 @@
 @section('content')
 <section class="content-header">
     <h1>
-      Attribute
+        Category Post
       <small>index</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="">Attribute</a></li>
+      <li><a href=""> Category Post</a></li>
       <li class="active">list</li>
 
     </ol>
@@ -24,7 +24,7 @@
         <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title"><a href="{{ route('addattribute') }}" class="btn btn-primary">Thêm mới </a></h3>
+                <h3 class="box-title"><a href="{{ route('addcategorypost') }}" class="btn btn-primary">Thêm mới </a></h3>
                 <div class="box-tools">
                   <form action="#">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -49,12 +49,12 @@
                       <th>Action</th>
                     </tr>
 
-                    @if($attribute->total() > 0)
+                    @if($categorypost->total() > 0)
                     @php
                     $count = 0;
                   @endphp
-                  @if(isset($attribute))
-                      @foreach ($attribute as $item)
+                  @if(isset($categorypost))
+                      @foreach ($categorypost as $item)
                       @php
                       $count ++;
                     @endphp
@@ -65,16 +65,16 @@
                               {{-- <td><span class="{{ $item->getType($item->atb_type)['class'] }}"></span></td> --}}
                               <td>{{ $item->discription }}</td>
                               <td>
-                                @if ($item->checkactive == 1)
-                                <a href="{{ route('toggleattribute',['id'=>$item->id_attribute]) }}" class="label label-info status-active">Show</a>
+                                @if ($item->checkstatus == 1)
+                                <a href="{{ route('showorhidecategorypost',['id'=>$item->id_category]) }}" class="label label-info status-active">Show</a>
                                 @else
-                                 <a href="{{ route('toggleattribute',['id'=>$item->id_attribute]) }}" class="label label-default status-active">Hide</a>
+                                 <a href="{{ route('showorhidecategorypost',['id'=>$item->id_category]) }}" class="label label-default status-active">Hide</a>
                                  @endif
                                 </td>
                               <td>{{ $item->created_at }}</td>
                               <td>
-                                  <a href="{{ route('editattribute',['id'=>$item->id_attribute]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i class="fa fa-pencil"></i> Edit</a>
-                                  <a  href="{{ route('deleteattribute',['id'=>$item->id_attribute]) }}"  class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn chắc chắn là xoá chứ')"><i class="fa fa-trash"></i> Delete</a>
+                                  <a href="{{ route('updatecategorypost',['id'=>$item->id_category]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i class="fa fa-pencil"></i> Edit</a>
+                                  <a  href="{{ route('deletecategorypost',['id'=>$item->id_category]) }}"  class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn chắc chắn là xoá chứ')"><i class="fa fa-trash"></i> Delete</a>
                               </td>
                           </tr>
                       @endforeach

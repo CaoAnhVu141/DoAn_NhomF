@@ -12,10 +12,10 @@ class PersonalAccessTokensSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Lấy danh sách các user cụ thể mà bạn muốn tạo token cho họ
-        $users = User::whereIn('id_user', [1, 2, 3])->get();
+        $users = User::whereIn('user_id', [1, 2, 3])->get();
 
         // Bỏ lưu trữ token vào CSDL
         Passport::tokensCan([
@@ -24,7 +24,7 @@ class PersonalAccessTokensSeeder extends Seeder
         ]);
 
         // Cấu hình Passport
-//        Passport::routes();
+        //Passport::routes();
 
         // Lặp qua mỗi user và tạo token cho họ
         foreach ($users as $user) {

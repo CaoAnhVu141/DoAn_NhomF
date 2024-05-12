@@ -18,42 +18,23 @@
     <div class="row">
 
     <div class="box box-primary">
-        <form role="form" action="" method="POST">
+        <form action="{{ route('adddataattribute') }}" method="POST">
             @csrf
             <div class="box-body">
-                <div class="col-sm-8">
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label for="name">Names <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="atb_name" placeholder="Name ......">
+                        <label for="name">Name <span class="text-danger">(*)</span></label>
+                        <input type="text" class="form-control" name="attributename" placeholder="Name ......">
                      
                     </div>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label> Nhóm Thuộc Tính <span class="text-danger">(*)</span></label>
-                        <select name="atb_type" class="form-control">
-                            {{--  <option >-- Chọn Nhóm Thuộc Tính --</option>  --}}
-                            {{-- @foreach ($arrType->getType() as $key =>$item)
-                                <option value="{{ $key }}">{{ $item['name'] }}</option>
-                            @endforeach --}}
-                        </select>
-                        
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" name="attributedescription" rows="3" placeholder="Enter ..."></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        <label>Danh Mục <span class="text-danger">(*)</span></label>
-                        <select name="atb_category_id" class="form-control">
-                            {{--  <option >_ Danh Mục _</option>  --}}
-                            {{-- @foreach ($category as $item)
-                                <option value=""></option>
-                            @endforeach --}}
-                        </select>
-                       
-                    </div>
-                </div>
-                <div class="col-sm-4">
-
                 </div>
             </div>
             <div class="box-footer" >
