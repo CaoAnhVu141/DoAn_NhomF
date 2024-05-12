@@ -1,4 +1,4 @@
-<form role="form" action="" method="POST" enctype="multipart/form-data">
+<form action="{{ route('adddatapost') }}" method="POST" enctype="multipart/form-data">
     @csrf
         <div class="col-md-7">
             <div class="box box-danger">
@@ -8,43 +8,42 @@
                   <div class="box-body">
                     <div class="form-group ">
                       <label for="a_name">Name</label>
-                      <input type="text" name="a_name" class="form-control" value=""  placeholder="Name ....">
+                      <input type="text" name="name" class="form-control"  placeholder="Name ....">
                        
                     </div>
                     <div class="form-group ">
                         <label>Description</label>
-                        <textarea class="form-control" value="" name="a_description" rows="3" placeholder="Enter ...">{{ $article->a_description ?? old('a_description') }}</textarea>
+                        <textarea class="form-control" name="description" rows="3" placeholder="Enter ...">{{ $article->a_description ?? old('a_description') }}</textarea>
                         
                     </div>
                     <div class="form-group">
-                        <label>Menu (*)</label>
-                        <select name="a_menu_id" class="form-control">
-                          <option value="">_Click_</option>
-                          {{-- @todo --}}
-                          {{-- @foreach ($menus as $item)
-                            <option value="{{ $item->id }}" {{ (($article->a_menu_id ?? 0) == $item->id) ? 'selected' : '' }}>{{ $item->mn_name }}</option>
-                          @endforeach --}}
-                        </select>
+                        <label>Danh mục bài viết</label>
+                        {{-- <select name="id_category" class="form-control">
+                          @foreach ($categorypost as $item)
+                            <option value="{{ $item->id_categorypost }}">{{ $item->name }}</option>
+                          @endforeach
+                        </select>   --}}
+                       
+                        <select name="category_id" class="form-control">
+                          @foreach ($categorypost as $item)
+                          @if($item->checkstatus == 1)
+                              <option value="{{ $item->id_category }}" >{{ $item->name }}</option>
+                          @endif
+                          @endforeach
+                          
+                          @error('category_id')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                      </select>
                         
+                        
+
                     </div>
                   </div>
               </div>
-
         </div>
 
         <div class="col-md-5">
-            {{--  <div class="box box-warning">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Seo Cơ Bản</h3>
-                </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <label>Textarea</label>
-                        <textarea class="form-control" value="{{ old('a_description_seo') }}" name="a_description_seo" rows="3" placeholder="Enter ..."></textarea>
-                    </div>
-                </div>
-              </div>  --}}
-
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Ảnh Đại Diện</h3>
@@ -53,12 +52,10 @@
                     <div class="form-group">
                         <label>Ảnh Mới</label>
                         <div style="margin-bottom:10px" >
-                        @if(isset($article))
-                            <img src="{{ pare_url_file($article->a_avatar) }}" class="img-thumbnail" style="width: 170px;height:170px" alt="">
-                        @endif
+                      
                             <img id="image_preview_container" src="{{ asset('images/no-image.jpg') }}"class="img-thumbnail" style="width: 170px;height:170px" alt="">
                         </div>
-                        <input type="file" name="a_avatar" id="image"  class="js-upload">
+                        <input type="file" name="avatar" id="image"  class="js-upload">
                     </div>
                 </div>
               </div>
@@ -71,8 +68,7 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label>Nội Dung</label>
-                        <textarea class="form-control" value="" id="editor_js" name="a_content" rows="3" placeholder="Enter ...">{{ $article->a_content ?? old('a_content') }}</textarea>
-                       
+                        <textarea class="form-control" id="editor_js" name="content" rows="3" placeholder="Enter ...">{{ $article->a_content ?? old('a_content') }}</textarea>
                     </div>
                 </div>
               </div>
