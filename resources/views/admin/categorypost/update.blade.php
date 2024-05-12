@@ -2,7 +2,7 @@
 @section('content')
 <section class="content-header">
     <h1>
-      Attribute
+      Category Post
       <small>Carete</small>
     </h1>
     <ol class="breadcrumb">
@@ -16,14 +16,15 @@
   <section class="content">
     <!-- Small boxes (Stat box) -->
     <div class="row">
+
     <div class="box box-primary">
-        <form action="{{ route('updateattribute',$attribute->id_attribute) }}" method="POST">
+        <form action="{{ route('updatedatacategorypost',$categorypost->id_category) }}" method="POST">
             @csrf
             <div class="box-body">
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label for="name">Name <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="attributename" value="{{ $attribute->name }}" placeholder="Name ......">
+                        <input type="text" class="form-control" name="namecategory" value="{{ $categorypost->name }}" placeholder="Name ......">
                      
                     </div>
                 </div>
@@ -31,13 +32,13 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" name="attributedescription" rows="3" placeholder="Enter ...">{{ $attribute->discription }}</textarea>
+                            <textarea class="form-control" name="descriptioncategory" rows="3" placeholder="Enter ...">{{ $categorypost->discription }}</textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="box-footer" >
-                <a href="{{ route('indexattribute') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Trở Lại</a>
+                <a href="{{ route('indexcategorypost') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Trở Lại</a>
                 <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Submit</button>
             </div>
             </div>

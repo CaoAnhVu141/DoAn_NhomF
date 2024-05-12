@@ -232,6 +232,11 @@
               </a>
           </li> 
 
+          <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
+            <a href="{{ route('indexcategorypost') }}">
+                <i class="fa fa-circle-o-notch"></i> <span>Danh sách bài viết</span>
+            </a>
+          </li>
            
             <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
               <a href="{{ route('indexpost') }}">
