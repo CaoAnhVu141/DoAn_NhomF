@@ -60,7 +60,7 @@ Route::get('contact',[ContactController::class,'showIndexContact'])->name('conta
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //Show Login
-Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');    
+Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');
 //Show Register
 Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 
@@ -92,7 +92,7 @@ Route::get('category',[AdminCategoryProductController::class,'showCategory'])->n
 ///thêm danh mục
 
 Route::get('add-category',[AdminCategoryProductController::class,'showAddCategory'])->name('addcategory');
-
+Route::post('add-category',[AdminCategoryProductController::class,'addCategoryProduct'])->name('adddatacategory');
 //sửa danh mục
 
 Route::get('edit-category',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
@@ -113,7 +113,7 @@ Route::get('edit-related',[AdminRelatedcategoryController::class,'showEditRelate
 
 Route::get('attribute',[AdminAttributeController::class,'showIndexAattribute'])->name('indexattribute');
 
-//thêm thuộc tính 
+//thêm thuộc tính
 
 Route::get('add-attribute',[AdminAttributeController::class,'showCreateAttribute'])->name('addattribute');
 Route::post('add-attribute',[AdminAttributeController::class,'addDataAttribute'])->name('adddataattribute');
