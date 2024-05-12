@@ -15,6 +15,11 @@
   <!-- Main content -->
   <section class="content">
     <!-- Small boxes (Stat box) -->
+    @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+     @endif
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -34,10 +39,10 @@
                 <table class="table table-hover">
                   <tbody>
                     <tr>
-                      <th>STT -- ID</th>
-                      <th>name</th>
-                      <th>Type</th>
-                      <th>Category</th>
+                      <th>STT</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>CheckActive</th>
                       <th>Time</th>
                       <th>Action</th>
                     </tr>
@@ -47,16 +52,22 @@
                     @if(isset($attribute))
                         @foreach ($attribute as $item)
                             <tr>
-                                <td>{{ ++$i . ' -- ' .  $item->id }}</td>
-                                <td>{{ $item->atb_name }}</td>
-                                <td><span class="{{ $item->getType($item->atb_type)['class'] }}"></span></td>
+                                {{-- <td>{{ ++$i . ' -- ' .  $item->id }}</td> --}}
+                                <td>1</td>
+                                <td>{{ $item->name }}</td>
+                                {{-- <td><span class="{{ $item->getType($item->atb_type)['class'] }}"></span></td> --}}
+                                <td>{{ $item->discription }}</td>
                                 <td>
-                                    <span class="label label-info">{{ $item->category->c_name ?? '[N\A]'}}</span>
-                                </td>
+                                  @if ($item->checkactive == 1)
+                                  <a href="{{ route('toggleattribute',['id'=>$item->id_attribute]) }}" class="label label-info status-active">Show</a>
+                                  @else
+                                   <a href="{{ route('toggleattribute',['id'=>$item->id_attribute]) }}" class="label label-default status-active">Hide</a>
+                                   @endif
+                                  </td>
                                 <td>{{ $item->created_at }}</td>
                                 <td>
-                                    <a href="" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                    <a  href=""  class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                    <a href="{{ route('editattribute',['id'=>$item->id_attribute]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i class="fa fa-pencil"></i> Edit</a>
+                                    <a  href="{{ route('deleteattribute',['id'=>$item->id_attribute]) }}"  class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn chắc chắn là xoá chứ')"><i class="fa fa-trash"></i> Delete</a>
                                 </td>
                             </tr>
                         @endforeach
