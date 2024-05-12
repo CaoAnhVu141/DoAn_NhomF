@@ -12,9 +12,14 @@ class AdminAttributeController extends Controller
     //
     //show giao diện thuộc tính
 
-    public function showIndexAattribute()
+    public function showIndexAattribute(Request $request)
     {
-        $attribute = Attribute::paginate(5);
+        $key = "";
+       if($request->input('key'))
+       {
+         $key = $request->input('key');
+       }
+        $attribute = Attribute::where('name','LIKE',"%$key%")->paginate(5);
         return view('admin.attribute.index',compact('attribute'));
     }
 

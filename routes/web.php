@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAttributeController;
 use App\Http\Controllers\AdminCartController;
+use App\Http\Controllers\AdminCategoryPost;
 use App\Http\Controllers\AdminCategoryProductController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -169,6 +170,28 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 
 // thêm bài viết
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
+
+// @Thực thi với danh sách bài viết (8)
+
+Route::get('categorypost',[AdminCategoryPost::class,'showIndexCategoryPost'])->name('indexcategorypost');
+
+Route::get('add-categorypost',[AdminCategoryPost::class, 'showAddIndexCategoryPost'])->name('addcategorypost');
+Route::post('add-categorypost',[AdminCategoryPost::class, 'addDataCategoryPost'])->name('adddatacategorypost');
+
+//
+//hiện và ẩn check status
+
+Route::get('hideorshowpost/{id}',[AdminCategoryPost::class, 'ShowOrHideCategoryPost'])->name('showorhidecategorypost');
+
+// xoá danh mục bài viết
+
+Route::get('delete-categorypost/{id}',[AdminCategoryPost::class, 'deteleCategoryPost'])->name('deletecategorypost');
+
+//sửa danh mục bài viêts
+
+Route::get('update-categorypost/{id}',[AdminCategoryPost::class, 'showIndexUpdate'])->name('updatecategorypost');
+Route::post('update-categorypost/{id}',[AdminCategoryPost::class, 'updateDataCategoryPost'])->name('updatedatacategorypost');
+
 
 
 //
