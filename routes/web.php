@@ -59,7 +59,7 @@ Route::get('contact',[ContactController::class,'showIndexContact'])->name('conta
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //Show Login
-Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');    
+Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');
 //Show Register
 Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 
@@ -112,7 +112,7 @@ Route::get('edit-related',[AdminRelatedcategoryController::class,'showEditRelate
 
 Route::get('attribute',[AdminAttributeController::class,'showIndexAattribute'])->name('indexattribute');
 
-//thêm thuộc tính 
+//thêm thuộc tính
 
 Route::get('add-attribute',[AdminAttributeController::class,'showCreateAttribute'])->name('addattribute');
 Route::post('add-attribute',[AdminAttributeController::class,'addDataAttribute'])->name('adddataattribute');
@@ -185,6 +185,13 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 //__@Chi tiết users
 
 Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->name('manageruser');
+//Xoa User
+Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
+//Sua User
+Route::get('/users/{id}/edit', [AdminManagerUsersController::class, 'edit'])->name('editUser');
+Route::put('/users/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
+
+
 
 ////demo senmail
 

@@ -14,7 +14,7 @@
     <meta property="og:title" content="Website TruongBin" />
     <meta property="og:description" content="Wellcome to my Website" />
 
-    <title>Nhân Viên | Quản Lý Bán Hàng</title>
+    <title>Người Dùng | Quản Lý Bán Hàng</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
@@ -109,12 +109,18 @@
                 element.innerHTML = pagerHtml;
             }
         }
+            function confirmDelete(userId) {
+            if (confirm('Bạn có chắc chắn muốn xóa người dùng này không?')) {
+            // Nếu người dùng chấp nhận, chuyển hướng đến tuyến đường xóa
+            window.location.href = '/users/' + userId;
+        }
+    }
     </script>
 </head>
 
 <body onload="time()">
     <script>
-        swal("Xin Chào Admin", "Chúc Bạn 1 Ngày Tốt Lành Nhé", "");
+        // swal("Xin Chào Admin", "Chúc Bạn 1 Ngày Tốt Lành Nhé", "");
     </script>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -123,12 +129,12 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
-                    LÝ NHÂN VIÊN</a>
+                    LÝ Người Dùng</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{{ route('manageruser') }}" data-toggle="tooltip" data-placement="bottom"
-                            title="NHÂN VIÊN">NHÂN VIÊN</a></li>
+                            title="Người Dùng">Người Dùng</a></li>
                     <li><a href="{{ route('showalluser') }}" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
                     <li><a href="" data-toggle="tooltip" data-placement="bottom" title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
                     <li><a href="" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a>
@@ -153,8 +159,8 @@
     <div class="container-fluid al">
         <div id="clock"></div>
         <Br>
-        <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên nhân viên cần tìm...">
+        <p class="timkiemnhanvien"><b>TÌM KIẾM Người Dùng:</b></p><Br><Br>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên Người dùng cần tìm...">
         <i class="fa fa-search" aria-hidden="true"></i>
 
         <form action="">
@@ -162,7 +168,7 @@
         </form>
         <b>CHỨC NĂNG CHÍNH:</b><Br>
         <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
+            title="Thêm Người dùng"><i class="fas fa-user-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
             title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
         <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
@@ -175,168 +181,93 @@
             </div>
 
         </div>
+
         <table class="table table-bordered" id="myTable">
+            <div class="container">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+            </div>
             <thead>
-                <tr class="ex">
-                    <th width="auto">Tên Nhân Viên</th>
-                    <th width="auto">Giới Tính</th>
-                    <th>Ngày Sinh</th>
-                    <th>Địa Chỉ</th>
-                    <th>Chức Vụ</th>
-                    <th width="5px; !important">Tính Năng</th>
-                </tr>
+            <tr class="ex">
+                <th width="50px">ID</th>
+                <th width="100px">Tên Người Dùng</th>
+                <th width="250px">Email</th>
+                <th>PassWord</th>
+                <th>Số Điện Thoại</th>
+                <th>Ảnh</th>
+                <th>Địa chỉ</th>
+                <th>Ngày Tạo</th>
+                <th>Cập Nhật</th>
+                <th width="5px; !important">Tính Năng</th>
+            </tr>
             </thead>
             <tbody>
+            @foreach($users as $user)
                 <tr>
-                    <td>Võ Trường</td>
-                    <td>Nam</td>
-                    <td>15/03/2000</td>
-                    <td>Thông Tin Bảo Mật</td>
-
-                    <td>Admin</td>
+                    <td>{{ $user->user_id }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>Che</td>
+                    <td>{{ $user->phone }}</td>
+                    <td><img src="{{ $user->avatar    }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
+                    <td>{{ $user->address }}</td>
+                    <td>{{ $user->created_at }}</td>
+                    <td>{{ $user->updated_at }}</td>
                     <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        <a href="#" class="add" title="Lưu Lại" data-toggle="tooltip">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                        </a>
+                        <!-- Nút Sửa -->
+                        <a href="{{ route('editUser', ['id' => $user->user_id]) }}" >
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                        <form action="{{ route('deleteUser', ['id' => $user->user_id]) }}" method="POST">
+                            @csrf <!-- Blade directive để tạo CSRF token -->
+                            @method('DELETE') <!-- Blade directive để thiết lập phương thức HTTP là DELETE -->
+                            <button type="submit" class="btn btn-danger" title="Xóa" data-toggle="tooltip" onclick="confirmDelete({{ $user->user_id }})">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
-                
-                <tr>
-                    <td>Nguyễn Tấn Trung</td>
-                    <td>Nam</td>
-                    <td>07/10/1997</td>
-                    <td>6 Nguyễn Lương Bằng, Tân Phú, Quận 7, Hồ Chí Minh</td>
-
-                    <td>Dịch Vụ</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Trần Trúc An</td>
-                    <td>Nữ</td>
-                    <td>22/12/1999</td>
-                    <td>Số 3 Hòa Bình, Phường 3, Quận 11, Hồ Chí Minh</td>
-
-                    <td>Phục Vụ</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Phạm Thu Cúc</td>
-                    <td>Nữ</td>
-                    <td>02/06/1998</td>
-                    <td>19 Đường Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Hồ Chí Minh</td>
-
-                    <td>Thu Ngân</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Thị Kim Ngân</td>
-                    <td>Nữ</td>
-                    <td>06/04/1998</td>
-                    <td>Số 13, Tân Thuận Đông, Quận 7, Hồ Chí Minh</td>
-                    <td>Phục Vụ</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Anh Tuấn</td>
-                    <td>Nam</td>
-                    <td>23/07/1996</td>
-                    <td>59C Nguyễn Đình Chiểu, Quận 3, Hồ Chí Minh</td>
-                    <td>Dịch Vụ</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Huỳnh Cẩm Thu</td>
-                    <td>Nữ</td>
-                    <td>19/01/1997</td>
-                    <td>764 Võ Văn Kiệt, Phường 1, Quận 5, Hồ Chí Minh</td>
-                    <td>Tư Vấn</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Xuân Ly</td>
-                    <td>Nữ</td>
-                    <td>30/10/1999</td>
-                    <td>Đường Kênh T2 Ấp 6 Xã Hưng Long Huyện Bình Chánh, Hưng Long, Bình Chánh, Hồ Chí Minh</td>
-                    <td>Tư Vấn</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoàng Xuân Nam</td>
-                    <td>Nữ</td>
-                    <td>20/7/1989</td>
-                    <td>37 Vạn Tượng, Phường 13, Quận 5, Hồ Chí Minh</td>
-                    <td>QL Kho</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
+            @endforeach
             </tbody>
         </table>
-        <div id="pageNavPosition" class="text-right"></div>
-        <script type="text/javascript">
-            var pager = new Pager('myTable', 5);
-            pager.init();
-            pager.showPageNav('pager', 'pageNavPosition');
-            pager.showPage(1);
-        </script>
-    </div>
+        <!-- Phân trang  bắt đầu-->
+        <div id="pageNavPosition" class="text-right">
+            <ul class="pagination">
+                <!-- Hiển thị link đến trang trước (Previous Page) -->
+                @if ($users->onFirstPage())
+                    <li class="disabled"><span>&laquo;</span></li>
+                @else
+                    <li><a href="{{ $users->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                @endif
+
+                <!-- Hiển thị các số trang đã có -->
+                @for ($i = 1; $i <= $users->lastPage(); $i++)
+                    <li class="{{ $i == $users->currentPage() ? 'active' : '' }}">
+                        <a href="{{ $users->url($i) }}">{{ $i }}</a>
+                    </li>
+                @endfor
+
+                <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
+                @if ($users->hasMorePages())
+                    <li><a href="{{ $users->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                @else
+                    <li class="disabled"><span>&raquo;</span></li>
+                @endif
+            </ul>
+        </div>
+        <!-- Phân trang kết thúc-->
     <hr class="hr1">
     <div class="container-fluid end">
         <div class="row text-center">
@@ -347,7 +278,7 @@
                 <i class="fab fa-google"></i>
             </div>
             <div class="col-lg-12">
-                2019 CopyRight Phan mem quan ly | Design by <a href="#">TruongBinIT</a>
+                2024 Quan Ly Nguoi Dung | Design by <a href="#">GroupF</a>
             </div>
         </div>
     </div>
@@ -477,19 +408,25 @@
                 }
             });
             // Sửa
+            // Thêm thông báo khi nhấn nút "Lưu Lại"
+            $(document).on("click", ".add", function () {
+                Swal.fire(
+                    'Thành Công!',
+                    'Bạn Đã Sửa Thành Công',
+                    'success'
+                );
+            });
+
+// Sửa
             $(document).on("click", ".edit", function () {
                 $(this).parents("tr").find("td:not(:last-child)").each(function () {
-                    $(this).html('<input type="text" class="form-control" value="' + $(this)
-                        .text() + '">');
+                    const text = $(this).text().trim();
+                    $(this).html('<input type="text" class="form-control" value="' + text + '">');
                 });
                 $(this).parents("tr").find(".add, .edit").toggle();
                 $(".add-new").attr("disabled", "disabled");
             });
-            jQuery(function () {
-                jQuery(".add").click(function () {
-                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
-                });
-            });
+
             // Xóa
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();

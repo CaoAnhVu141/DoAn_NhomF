@@ -113,117 +113,34 @@
 </head>
 
 <body onload="time()">
-    <script>
-        swal("Xin Chào Admin", "Chúc Bạn 1 Ngày Tốt Lành Nhé", "");
-    </script>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                {{-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
-                    LÝ NHÂN VIÊN</a> --}}
-                    @if(Auth::guard('admin')->check())
-                    <div class="col-lg-4 col-6 text-right">
-                    <p class="m-0">{{ Auth::guard('admin')->user()->name }}</p>
-                    <h6 class="m-0">{{ Auth::guard('admin')->user()->email }}</h6>
-                     </div>
-                    @endif
 
+
+        <form action="{{ route('updateUser', ['id' => $user->user_id]) }}" method="POST">
+            @csrf
+            @method('PUT')
+
+            <div class="form-group">
+                <label for="name">Tên Người Dùng:</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#home" data-toggle="tooltip" data-placement="bottom"
-                            title="NHÂN VIÊN">NHÂN VIÊN</a></li>
-                    <li><a href="{{ route('showalluser') }}" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">Nhân viên</a></li>
-                    <li><a href="" data-toggle="tooltip" data-placement="bottom" title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
-                    <li><a href="" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a>
-                    </li>
-                    <li><a href="#contact" data-toggle="tooltip" data-placement="bottom" title="BÁO CÁO">BÁO CÁO</a>
-                    </li>
-                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
-                    <li>
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="TÀI KHOẢN"><b>Tài Khoản</b>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown">
-                            <li><a href="{{ route('admin.logout') }}" data-toggle="tooltip" data-placement="bottom"
-                                    title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
-                        </ul>
-                    </li>
-
-                </ul>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
             </div>
-        </div>
-    </nav>
-    <div class="container-fluid al">
-        <div id="clock"></div>
-        <Br>
-        <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên nhân viên cần tìm...">
-        <i class="fa fa-search" aria-hidden="true"></i>
-
-        <form action="">
-
+            <div class="form-group">
+                <label for="phone">Số Điện Thoại:</label>
+                <input type="text" class="form-control" id="phone" name="phone" value="{{ $user->phone }}">
+            </div>
+            <div class="form-group">
+                <label for="avatar">Ảnh:</label>
+                <input type="text" class="form-control" id="avatar" name="avatar" value="{{ $user->avatar }}">
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu Thay Đổi</button>
         </form>
-        <b>CHỨC NĂNG CHÍNH:</b><Br>
-        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
-        <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
-            title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
-        <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
-                class="fas fa-file-import"></i></button>
-        <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
-                class="fas fa-cogs"></i></button>
-        <div class="table-title">
-            <div class="row">
-
-            </div>
-
-        </div>
-        <table class="table table-bordered" id="myTable">
-            <thead>
-            <tr class="ex">
-                <th width="50px">ID</th>
-                <th width="100px">Tên Người Dùng</th>
-                <th width="250px">Email</th>
-                <th>PassWord</th>
-                <th>Số Điện Thoại</th>
-                <th>Ảnh</th>
-                <th>Địa chỉ</th>
-                <th>Ngày Tạo</th>
-                <th>Cập Nhật</th>
-                <th width="5px; !important">Tính Năng</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($users as $user)
-                <tr>
-                    <td>{{ $user->user_id }}</td>
-                    <td><input type="text" class="form-control" value="{{ $user->name }}"></td>
-                    <td><input type="email" class="form-control" value="{{ $user->email }}"></td>
-                    <td>Che</td>
-                    <td><input type="text" class="form-control" value="{{ $user->phone }}"></td>
-                    <td><input type="text" class="form-control" value="{{ $user->avatar }}"></td>
-                    <td><input type="text" class="form-control" value="{{ $user->address }}"></td>
-                    <td>{{ $user->created_at }}</td>
-                    <td>{{ $user->updated_at }}</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o" aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <form action="{{ route('deleteUser', ['id' => $user->user_id]) }}" method="POST">
-                            @csrf <!-- Blade directive để tạo CSRF token -->
-                            @method('DELETE') <!-- Blade directive để thiết lập phương thức HTTP là DELETE -->
-                            <button type="submit" class="btn btn-danger" title="Xóa" data-toggle="tooltip" onclick="confirmDelete({{ $user->user_id }})">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
         <div id="pageNavPosition" class="text-right"></div>
         <script type="text/javascript">
             var pager = new Pager('myTable', 5);
