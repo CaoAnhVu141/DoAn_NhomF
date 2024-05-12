@@ -144,7 +144,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                       <a href="" class="btn btn-default btn-flat">Sign out</a> 
+                       <a href="{{ route('logout.admin') }}" class="btn btn-default btn-flat">Sign out</a> 
                     </div>
                   </li>
                 </ul>
@@ -210,7 +210,7 @@
             </li>
             <li class="{{ Request::is('admin-datn/attribute*') ? 'active' : '' }}">
                 <a href="{{ route('indexattribute') }}">
-                    <i class="glyphicon glyphicon-asterisk"></i> <span>Thuộc tính</span>
+                    <i class="glyphicon glyphicon-asterisk"></i> <span>Phân loại(tt)</span>
                 </a>
             </li>
 

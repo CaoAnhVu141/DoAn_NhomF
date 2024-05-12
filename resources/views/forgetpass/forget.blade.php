@@ -61,29 +61,16 @@
 </head>
 <body>
     <div class="container">
-        <h2>Đăng nhập</h2>
-        <form method="POST" action="">
+        <h2>Quên mật khẩu </h2>
+        <form action="{{ route('getpass')}}" method="POST" >
             @csrf
-
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                <input id="email" type="email" class="form-control" name="email" required autofocus placeholder="Nhập Email nè">
                 @error('email')
                     <span class="error-message">{{ $message }}</span>
                 @enderror
             </div>
-
-            <div class="form-group">
-                <label for="password">Mật khẩu</label>
-                <input id="password" type="password" class="form-control" name="password" required>
-                @error('password')
-                    <span class="error-message">{{ $message }}</span>
-                @enderror
-            </div>
-            <div class="form-group">
-                <a href="{{ route('forgotpass') }}">Quên mật khẩu nè</a>
-            </div>
-
             <div class="form-group">
                 <button type="submit" class="btn btn-login">Đăng nhập</button>
             </div>

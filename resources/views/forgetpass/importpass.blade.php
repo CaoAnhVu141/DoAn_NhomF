@@ -61,32 +61,29 @@
 </head>
 <body>
     <div class="container">
-        <h2>Đăng nhập</h2>
-        <form method="POST" action="">
-            @csrf
+        <h2>Nhập lại mật khẩu </h2>
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+         </div>
+        @endif
 
+        <form action="{{ route('password.update') }}" method="POST">
+            @csrf
+            <input type="hidden" name="token" value="{{ $token }}">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                @error('email')
-                    <span class="error-message">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="password">Mật khẩu</label>
-                <input id="password" type="password" class="form-control" name="password" required>
-                @error('password')
-                    <span class="error-message">{{ $message }}</span>
-                @enderror
+                <input type="email" name="email" id="email" value="{{ $email }}" class="form-control" readonly>
             </div>
             <div class="form-group">
-                <a href="{{ route('forgotpass') }}">Quên mật khẩu nè</a>
+                <label for="password">New Password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
             </div>
-
             <div class="form-group">
-                <button type="submit" class="btn btn-login">Đăng nhập</button>
+                <label for="password_confirmation">Confirm New Password</label>
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
             </div>
+            <button type="submit" class="btn btn-primary">Cập nhật mật khẩu</button>
         </form>
     </div>
 </body>
