@@ -90,7 +90,7 @@ class AdminAttributeController extends Controller
 
     public function updateAttribute(Request $request,$id)
     {
-       // Kiểm tra xem thuộc tính có tồn tại không
+        // Kiểm tra xem thuộc tính có tồn tại không
             $attribute = Attribute::find($id);
             if (!$attribute) {
                 return redirect()->route('indexattribute')->withErrors(['status' => 'Thuộc tính không tồn tại']);
