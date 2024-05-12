@@ -17,6 +17,7 @@ class Attribute extends Model
         'name',
         'discription',
         'checkactive',
+        'id',
     ];
 
     //thiết lập quan hệ attribute và products (quan hệ 1 n)

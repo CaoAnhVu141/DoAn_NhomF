@@ -210,7 +210,7 @@
             </li>
             <li class="{{ Request::is('admin-datn/attribute*') ? 'active' : '' }}">
                 <a href="{{ route('indexattribute') }}">
-                    <i class="glyphicon glyphicon-asterisk"></i> <span>Thuộc tính</span>
+                    <i class="glyphicon glyphicon-asterisk"></i> <span>Phân loại(tt)</span>
                 </a>
             </li>
 

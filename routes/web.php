@@ -115,9 +115,22 @@ Route::get('attribute',[AdminAttributeController::class,'showIndexAattribute'])-
 //thêm thuộc tính 
 
 Route::get('add-attribute',[AdminAttributeController::class,'showCreateAttribute'])->name('addattribute');
+Route::post('add-attribute',[AdminAttributeController::class,'addDataAttribute'])->name('adddataattribute');
 
 //sửa thuộc tính
-Route::get('edit-attribute',[AdminAttributeController::class,'showEditAttribute'])->name('editattribute');
+Route::get('edit-attribute/{id}',[AdminAttributeController::class,'showEditAttribute'])->name('editattribute');
+Route::post('edit-attribute/{id}',[AdminAttributeController::class,'updateAttribute'])->name('updateattribute');
+
+
+
+
+// hiện và ẩn checkactive của thuộc tính
+
+Route::get('toggle-attribute/{id}',[AdminAttributeController::class, 'ShowOrHideCheck'])->name('toggleattribute');
+
+// xoá thuộc tính
+
+Route::get('delete-attribute/{id}',[AdminAttributeController::class, 'deleteAttribute'])->name('deleteattribute');
 
 // @@ Thực thi với sản phẩm (4)
 
