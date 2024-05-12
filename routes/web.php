@@ -170,6 +170,19 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 
 // thêm bài viết
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
+Route::post('add-posts',[AdminPostsController::class,'addDataPost'])->name('adddatapost');
+
+//xoá bài viết
+
+Route::get('delete-post/{id}',[AdminPostsController::class,'deleteListPost'])->name('deletepost');
+
+//sửa bài viêys
+
+Route::get('update-post/{id}',[AdminPostsController::class, 'showIndexUpdatePost'])->name('updatepost');
+Route::post('update-post/{id}',[AdminPostsController::class, 'updateIndexDataPost'])->name('updatedatapost');
+
+
+
 
 // @Thực thi với danh sách bài viết (8)
 

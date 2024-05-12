@@ -14,6 +14,11 @@
   </section>
   <!-- Main content -->
   <section class="content">
+    @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+     @endif
     <!-- Small boxes (Stat box) -->
     <div class="row">
         <div class="col-xs-12">
@@ -22,12 +27,14 @@
                 <h3 class="box-title"><a href="{{ route('addpost') }}" class="btn btn-primary">Thêm mới </a></h3>
                 {{-- <h3 class="box-title"><a href="{{ route('addpost') }}" class="btn btn-primary">Danh mục bài viết </a></h3> --}}
                 <div class="box-tools">
+                  <form action="#">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                    <input type="text" name="key" value="{{ request()->input('key') }}" class="form-control pull-right" placeholder="Search">
                     <div class="input-group-btn">
                       <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                     </div>
                   </div>
+                </form>
                 </div>
               </div>
               <!-- /.box-header -->
@@ -35,47 +42,40 @@
                 <table class="table table-hover">
                   <tbody>
                     <tr>
-                      <th>STT -- ID</th>
+                      <th>STT</th>
                       <th>name</th>
                       <th>Menu</th>
                       <th>Avatar</th>
-                      <th>Hot</th>
-                      <th>Status</th>
                       <th>Times</th>
                       <th>Action</th>
                     </tr>
                     @php
-                       $i = 0;
+                       $count = 0;
                     @endphp
-                    @if(isset($articles))
-                        @foreach ($articles as $item)
-                            <tr>
-                                <td>{{ ++$i . ' -- ' .  $item->id}}</td>
-                                <td>{{ $item->a_name }}</td>
-                                <td><span class="label label-success">{{ $item->menu->mn_name ?? "[N\A]" }}</span></td>
-                                <td><img src="" alt="" width="150px" height="100px"> </td>
-                                <td>
-                                    @if ($item->a_hot==1)
-                                        <a href="{{ route('admin.article.hot',$item->id) }}" class="label label-info">Hot</a>
-                                    @else
-                                         <a href="{{ route('admin.article.hot',$item->id) }}" class="label label-default">None</a>
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($item->a_active==1)
-                                        <a href="" class="label label-info">Active</a>
-                                    @else
-                                         <a href="" class="label label-default">Hide</a>
-                                    @endif
-                                </td>
-                                <td>{{ $item->created_at }}</td>
-                                <td>
-                                    <a href="" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                    <a href="" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
-                                </td>
-                            </tr>
-                        @endforeach
+
+                    @if ($posts->total() > 0)
+                    @if(isset($posts))
+                    @foreach ($posts as $item)
+                    @php
+                    $count ++;
+                 @endphp
+                        <tr>
+                            <td>{{ $count }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->description }}</td>
+                            <td><img src="{{ url($item->avatar) }}" alt="" height="80px" width="100px"></td>
+                            <td>{{ $item->created_at }}</td>
+                            <td>
+                                <a href="{{ route('updatepost',['id'=>$item->id_post]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc sửa không nè')"><i class="fa fa-pencil"></i> Edit</a>
+                                <a href="{{ route('deletepost',['id'=>$item->id_post]) }}" class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn chắc xoá không nè')"><i class="fa fa-trash"></i> Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
                     @endif
+                    @else
+                       <h3>Rất tiếc, không tìm thấy dữ liệu</h3> 
+                    @endif
+                   
                   </tbody>
                 </table>
               </div>
