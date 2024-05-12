@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminRelatedcategoryController;
 use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
+use App\Http\Controllers\AdminSupplierController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ForgotPasswordController;
@@ -215,7 +216,22 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 
 
 
+/// thực thi cho nhà cung cấp (9)
 
+Route::get('supplier',[AdminSupplierController::class, 'showIndexSupplier'])->name('indexsupplier');
+
+//them nhà cung cấp
+
+Route::get('add-supplier',[AdminSupplierController::class, 'showAddIndexSupplier'])->name('addsupplier');
+Route::post('add-supplier',[AdminSupplierController::class, 'addDataSupplier'])->name('adddatasupplier');
+
+//xoá nhà cung cấp
+
+Route::get('delete-suplier/{id}',[AdminSupplierController::class, 'deleteSupplier'])->name('deletesupllers');
+//sửa nhà cung cấp
+
+Route::get('update-supplier/{id}',[AdminSupplierController::class,'updateSupplier'])->name('updatesupplier');
+Route::post('update-supplier/{id}',[AdminSupplierController::class,'updateDataSupplier'])->name('updatedatasupplier');
 
 
 //__@Chi tiết users

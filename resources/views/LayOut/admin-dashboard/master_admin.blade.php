@@ -244,6 +244,12 @@
               </a>
             </li>
 
+            <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
+              <a href="{{ route('indexsupplier') }}">
+                  <i class="fa fa-circle-o-notch"></i> <span>Nhà cung cấp</span>
+              </a>
+            </li>
+
             <li class="{{ Request::is('admin-datn/rating*') ? 'active' : '' }}">
                 <a href="">
                     <i class="fa fa-commenting"></i> <span>Đánh giá</span>
