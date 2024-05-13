@@ -40,9 +40,9 @@ class LoginAdminController extends Controller
             {
                 Auth::guard('admin')->logout();
                 return redirect()->route('showadminlogin');
-            } 
+            }
             else{
                 return redirect('https://www.youtube.com/watch?v=TGSW8jtHkcM');
-            }  
+            }
         }
     }

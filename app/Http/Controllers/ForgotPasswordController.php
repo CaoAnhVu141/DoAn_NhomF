@@ -23,7 +23,7 @@ class ForgotPasswordController extends Controller
             $status = Password::sendResetLink(
                 $request->only('email')
             );
-            return $status == Password::RESET_LINK_SENT 
+            return $status == Password::RESET_LINK_SENT
                 ? redirect()->route('checkmail')->with(['status' => __($status)])
                 : back()->withErrors(['email' => __($status)]);
         }
