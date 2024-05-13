@@ -16,18 +16,19 @@ class AdminManagerUsersController extends Controller
 
     public function showManagerUsers(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('admin.manageruser.indexuser');
+        $users = DB::table('users')->paginate(5);
+        return view('admin.manageruser.indexuser',compact('users'));
     }
 
     //show toàn bộ tài khoản
 
-    public function showAllUser(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
-    {
-//        $users = User::paginate(5); // Sử dụng paginate trên mô hình User
-//        return view('admin.manageruser.indexuser', ['users' => $users]);
-        $users = DB::table('users')->paginate(5); // Lấy danh sách người dùng với mỗi trang có tối đa 5 người dùng
-        return view('admin.manageruser.indexuser', compact('users'));
-    }
+//    public function showAllUser(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+//    {
+////        $users = User::paginate(5); // Sử dụng paginate trên mô hình User
+////        return view('admin.manageruser.indexuser', ['users' => $users]);
+//         // Lấy danh sách người dùng với mỗi trang có tối đa 5 người dùng
+//        return view('admin.manageruser.indexuser', compact('users'));
+//    }
 
     //Xoa User
     public function deleteUser($id): RedirectResponse

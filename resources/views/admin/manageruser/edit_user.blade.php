@@ -109,15 +109,20 @@
                 element.innerHTML = pagerHtml;
             }
         }
+            // Function to redirect to user list page
+            function redirectToUserList() {
+            // Replace the URL below with the actual URL of your user list page
+            window.location.href = "{{ route('indexUser') }}";
+        }
     </script>
 </head>
 
 <body onload="time()">
 
 
-        <form action="{{ route('updateUser', ['id' => $user->user_id]) }}" method="POST">
+        <form action="{{ route('updateUser', $user->user_id) }}" method="POST">
             @csrf
-            @method('PUT')
+            @method('POST')
 
             <div class="form-group">
                 <label for="name">Tên Người Dùng:</label>

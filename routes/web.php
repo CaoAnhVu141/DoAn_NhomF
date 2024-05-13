@@ -240,8 +240,8 @@ Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->n
 //Xoa User
 Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
 //Sua User
-Route::get('/users/{id}/edit', [AdminManagerUsersController::class, 'edit'])->name('editUser');
-Route::put('/users/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
+Route::get('/users/edit/{id}', [AdminManagerUsersController::class, 'edit'])->name('editUser');
+Route::post('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
 
 
 

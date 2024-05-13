@@ -1,22 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Bin-It">
-    <meta property="og:url" />
-    <meta property="og:type" content="truongbinit" />
-    <meta property="og:title" content="Website TruongBin" />
-    <meta property="og:description" content="Wellcome to my Website" />
+    <meta property="og:url"/>
+    <meta property="og:type" content="truongbinit"/>
+    <meta property="og:title" content="Website TruongBin"/>
+    <meta property="og:description" content="Wellcome to my Website"/>
 
     <title>Người Dùng | Quản Lý Bán Hàng</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="admin/manager/css/style.css">
     <!-- Latest compiled and minified CSS -->
@@ -109,165 +108,170 @@
                 element.innerHTML = pagerHtml;
             }
         }
-            function confirmDelete(userId) {
+
+        function confirmDelete(userId) {
             if (confirm('Bạn có chắc chắn muốn xóa người dùng này không?')) {
-            // Nếu người dùng chấp nhận, chuyển hướng đến tuyến đường xóa
-            window.location.href = '/users/' + userId;
+                // Nếu người dùng chấp nhận, chuyển hướng đến tuyến đường xóa
+                window.location.href = '/users/' + userId;
+            }
         }
-    }
     </script>
 </head>
 
 <body onload="time()">
-    <script>
-        // swal("Xin Chào Admin", "Chúc Bạn 1 Ngày Tốt Lành Nhé", "");
-    </script>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
-                    LÝ Người Dùng</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{{ route('manageruser') }}" data-toggle="tooltip" data-placement="bottom"
-                            title="Người Dùng">Người Dùng</a></li>
-                    <li><a href="{{ route('showalluser') }}" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li><a href="" data-toggle="tooltip" data-placement="bottom" title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
-                    <li><a href="" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a>
-                    </li>
-                    <li><a href="#contact" data-toggle="tooltip" data-placement="bottom" title="BÁO CÁO">BÁO CÁO</a>
-                    </li>
-                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
-                    <li>
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="TÀI KHOẢN"><b>Tài Khoản</b>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown">
-                            <li><a href="{{ route('admin.logout') }}" data-toggle="tooltip" data-placement="bottom"
-                                    title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
+<script>
+    // swal("Xin Chào Admin", "Chúc Bạn 1 Ngày Tốt Lành Nhé", "");
+</script>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
+                LÝ Người Dùng</a>
         </div>
-    </nav>
-    <div class="container-fluid al">
-        <div id="clock"></div>
-        <Br>
-        <p class="timkiemnhanvien"><b>TÌM KIẾM Người Dùng:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên Người dùng cần tìm...">
-        <i class="fa fa-search" aria-hidden="true"></i>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="{{ route('manageruser') }}" data-toggle="tooltip" data-placement="bottom"
+                                      title="Người Dùng">Người Dùng</a></li>
+                <li><a href="{{ route('showalluser') }}" data-toggle="tooltip" data-placement="bottom"
+                       title="ĐIỂM DANH">ĐIỂM DANH</a></li>
+                <li><a href="" data-toggle="tooltip" data-placement="bottom" title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
+                <li><a href="" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a>
+                </li>
+                <li><a href="#contact" data-toggle="tooltip" data-placement="bottom" title="BÁO CÁO">BÁO CÁO</a>
+                </li>
+                <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
+                <li>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="TÀI KHOẢN"><b>Tài Khoản</b>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="{{ route('admin.logout') }}" data-toggle="tooltip" data-placement="bottom"
+                               title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
+                    </ul>
+                </li>
 
-        <form action="">
-
-        </form>
-        <b>CHỨC NĂNG CHÍNH:</b><Br>
-        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Người dùng"><i class="fas fa-user-plus"></i></button>
-        <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
-            title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
-        <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
-                class="fas fa-file-import"></i></button>
-        <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
-                class="fas fa-cogs"></i></button>
-        <div class="table-title">
-            <div class="row">
-
-            </div>
-
-        </div>
-
-        <table class="table table-bordered" id="myTable">
-            <div class="container">
-                @if(session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if(session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
-            </div>
-            <thead>
-            <tr class="ex">
-                <th width="50px">ID</th>
-                <th width="100px">Tên Người Dùng</th>
-                <th width="250px">Email</th>
-                <th>PassWord</th>
-                <th>Số Điện Thoại</th>
-                <th>Ảnh</th>
-                <th>Địa chỉ</th>
-                <th>Ngày Tạo</th>
-                <th>Cập Nhật</th>
-                <th width="5px; !important">Tính Năng</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($users as $user)
-                <tr>
-                    <td>{{ $user->user_id }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>Che</td>
-                    <td>{{ $user->phone }}</td>
-                    <td><img src="{{ $user->avatar    }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
-                    <td>{{ $user->address }}</td>
-                    <td>{{ $user->created_at }}</td>
-                    <td>{{ $user->updated_at }}</td>
-                    <td>
-                        <a href="#" class="add" title="Lưu Lại" data-toggle="tooltip">
-                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                        </a>
-                        <!-- Nút Sửa -->
-                        <a href="{{ route('editUser', ['id' => $user->user_id]) }}" >
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </a>
-                        <form action="{{ route('deleteUser', ['id' => $user->user_id]) }}" method="POST">
-                            @csrf <!-- Blade directive để tạo CSRF token -->
-                            @method('DELETE') <!-- Blade directive để thiết lập phương thức HTTP là DELETE -->
-                            <button type="submit" class="btn btn-danger" title="Xóa" data-toggle="tooltip" onclick="confirmDelete({{ $user->user_id }})">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-        <!-- Phân trang  bắt đầu-->
-        <div id="pageNavPosition" class="text-right">
-            <ul class="pagination">
-                <!-- Hiển thị link đến trang trước (Previous Page) -->
-                @if ($users->onFirstPage())
-                    <li class="disabled"><span>&laquo;</span></li>
-                @else
-                    <li><a href="{{ $users->previousPageUrl() }}" rel="prev">&laquo;</a></li>
-                @endif
-
-                <!-- Hiển thị các số trang đã có -->
-                @for ($i = 1; $i <= $users->lastPage(); $i++)
-                    <li class="{{ $i == $users->currentPage() ? 'active' : '' }}">
-                        <a href="{{ $users->url($i) }}">{{ $i }}</a>
-                    </li>
-                @endfor
-
-                <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
-                @if ($users->hasMorePages())
-                    <li><a href="{{ $users->nextPageUrl() }}" rel="next">&raquo;</a></li>
-                @else
-                    <li class="disabled"><span>&raquo;</span></li>
-                @endif
             </ul>
         </div>
-        <!-- Phân trang kết thúc-->
+    </div>
+</nav>
+<div class="container-fluid al">
+    <div id="clock"></div>
+    <Br>
+    <p class="timkiemnhanvien"><b>TÌM KIẾM Người Dùng:</b></p><Br><Br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên Người dùng cần tìm...">
+    <i class="fa fa-search" aria-hidden="true"></i>
+
+    <form action="">
+
+    </form>
+    <b>CHỨC NĂNG CHÍNH:</b><Br>
+    <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
+            title="Thêm Người dùng"><i class="fas fa-user-plus"></i></button>
+    <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
+            title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
+    <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
+            class="fas fa-file-import"></i></button>
+    <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
+            class="fas fa-cogs"></i></button>
+    <div class="table-title">
+        <div class="row">
+
+        </div>
+
+    </div>
+
+    <table class="table table-bordered" id="myTable">
+        <div class="container">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+        </div>
+        <thead>
+        <tr class="ex">
+            <th width="50px">ID</th>
+            <th width="100px">Tên Người Dùng</th>
+            <th width="250px">Email</th>
+            <th>PassWord</th>
+            <th>Số Điện Thoại</th>
+            <th>Ảnh</th>
+            <th>Địa chỉ</th>
+            <th>Ngày Tạo</th>
+            <th>Cập Nhật</th>
+            <th width="5px; !important">Tính Năng</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($users as $user)
+            <tr>
+                <td>{{ $user->user_id }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>Che</td>
+                <td>{{ $user->phone }}</td>
+                <td><img src="{{ $user->avatar    }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
+                <td>{{ $user->address }}</td>
+                <td>{{ $user->created_at }}</td>
+                <td>{{ $user->updated_at }}</td>
+                <td>
+                    <a href="#" class="add" title="Lưu Lại" data-toggle="tooltip">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    </a>
+                    <!-- Nút Sửa -->
+                    <a href="{{ route('editUser', ['id' => $user->user_id]) }}">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    <form action="{{ route('deleteUser', ['id' => $user->user_id]) }}" method="POST">
+                        @csrf <!-- Blade directive để tạo CSRF token -->
+                        @method('DELETE') <!-- Blade directive để thiết lập phương thức HTTP là DELETE -->
+                        <button type="submit" class="btn btn-danger" title="Xóa" data-toggle="tooltip"
+                                onclick="confirmDelete({{ $user->user_id }})">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+
+    <!-- Phân trang  bắt đầu-->
+    <div id="pageNavPosition" class="text-right">
+        <ul class="pagination">
+            <!-- Hiển thị link đến trang trước (Previous Page) -->
+            @if ($users->onFirstPage())
+                <li class="disabled"><span>&laquo;</span></li>
+            @else
+                <li><a href="{{ $users->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+            @endif
+
+            <!-- Hiển thị các số trang đã có -->
+            @for ($i = 1; $i <= $users->lastPage(); $i++)
+                <li class="{{ $i == $users->currentPage() ? 'active' : '' }}">
+                    <a href="{{ $users->url($i) }}">{{ $i }}</a>
+                </li>
+            @endfor
+
+            <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
+            @if ($users->hasMorePages())
+                <li><a href="{{ $users->nextPageUrl() }}" rel="next">&raquo;</a></li>
+            @else
+                <li class="disabled"><span>&raquo;</span></li>
+            @endif
+        </ul>
+    </div>
+    <!-- Phân trang kết thúc-->
+
     <hr class="hr1">
     <div class="container-fluid end">
         <div class="row text-center">
@@ -298,7 +302,12 @@
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     } else {
-                        tr[i].style.display = "none";  }}}}
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
         //Lọc bảng
         function sortTable() {
             var table, rows, switching, i, x, y, shouldSwitch;
@@ -323,6 +332,7 @@
                 }
             }
         }
+
         //Thời Gian
         function time() {
             var today = new Date();
