@@ -42,9 +42,7 @@ use App\Http\Controllers\ResetPasswordController;
 ///thực thi với trang chủ index
 Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha')->middleware('auth');
 
-//--hiển thị chi tiết sản phẩm
 
-Route::get('detail',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
 
 ///show thanh toán
 
@@ -149,6 +147,8 @@ Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts
 
 //sửa sản phẩm
 Route::get('edit-product/{id}',[AdminProductsController::class,'showIndexUpdateProduct'])->name('editproduct');
+
+
 
 // @@ Thực thi với đơn hàng (5)
 
@@ -266,3 +266,11 @@ Route::get('checkmail',[ForgotPasswordController::class, 'showNotificationEmail'
 //
 Route::get('password/reset/{token}',[ResetPasswordController::class,'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
+
+
+
+///THỰC THI VỚI TRANG INDEX MUA HÀNG(@@@inherits
+
+//--hiển thị chi tiết sản phẩm
+
+Route::get('detail/{id}',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');

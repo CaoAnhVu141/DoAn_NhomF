@@ -18,9 +18,13 @@ class AdminShoppingController extends Controller
 
     //hiển thị chi tiết sản phẩm
 
-    public function showDetailShopping()
+    public function showDetailShopping($id)
     {
-        return view('shopping.detail');
+        $productdetail = Product::find($id);
+        $sizesArray = explode(',', $productdetail->sizes);
+        $listImages = json_decode($productdetail->list_images, true);
+       
+        return view('shopping.detail',compact('productdetail','sizesArray','listImages'));
     }
 
     //hiển thị giỏ hàng

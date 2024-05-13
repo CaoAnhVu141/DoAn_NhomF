@@ -43,59 +43,6 @@ class AdminProductsController extends Controller
 
     // public function addDataProduct(Request $request)
     // {
-    //     if ($request->hasFile('image')) {
-    //         $image = $request->file('image');
-    //         $imageName = time() . '.' . $image->getClientOriginalExtension();
-    //         $image->move(public_path('images'), $imageName);
-
-    //         // Lưu đường dẫn của ảnh đại diện vào cơ sở dữ liệu
-    //         $product->image = 'images/' . $imageName;
-    //         $product->save();
-    //     }
-    //     // Thêm nhiều ảnh cho sản phẩm
-    //     if ($request->hasFile('file')) {
-    //         $images = $request->file('file');
-    //         foreach ($images as $image) {
-    //             $imageName = time() . '_' . $image->getClientOriginalName();
-    //             $image->move(public_path('images'), $imageName);
-
-    //              // Lưu đường dẫn của ảnh đại diện vào cơ sở dữ liệu
-    //         $product->image = 'images/' . $imageName;
-    //         $product->save();
-    //         }
-
-    //     if (Auth::guard('admin')->check()) {
-    //         $userId = Auth::guard('admin')->user()->id;
-
-    //         $products = Product::create([
-    //             'name' => $request->input('name'),
-    //             'price' => $request->input('price'),
-    //             // 'description' => $request->input('description'),
-    //             'discount' => $request->input('discount'),
-    //             'image' => $imagePath, // Lưu đường dẫn của ảnh trong thư mục uploads
-    //             'id_category' => $request->input('category_id'),
-    //             'id_producttype' => $request->input('typeproduct_id'),
-    //             'id_supplier' => $request->input('supplier_id'),
-    //             'amount' => $request->input('amount'),
-    //             'id'=>$userId,
-    //         ]);
-
-
-    //         $selectedAttributes = $request->input('attribute');
-    //         foreach ($selectedAttributes as $attributeId) {
-    //             // Tạo một liên kết mới giữa sản phẩm và thuộc tính
-    //             AttributeProduct::create([
-    //                 'product_id' => $products->id,
-    //                 'attribute_id' => $attributeId,
-    //             ]);
-    //         }
-
-    //         return redirect()->route('indexproduct')->with('status',"Bạn đã thêm thành công");
-    //     }
-    // }
-
-    // public function addDataProduct(Request $request)
-    // {
     //     if (Auth::guard('admin')->check()) {
     //         $userId = Auth::guard('admin')->user()->id;
 
@@ -143,60 +90,6 @@ class AdminProductsController extends Controller
     //         return redirect()->route('indexproduct')->with('status', "Bạn đã thêm thành công");
     //     }
     // }
-    // public function addDataProduct(Request $request)
-    // {
-    //     if (Auth::guard('admin')->check()) {
-    //         $userId = Auth::guard('admin')->user()->id;
-
-    //         $product = new Product();
-    //         $product->name = $request->input('name');
-    //         $product->price = $request->input('price');
-    //         $product->discount = $request->input('discount');
-    //         $product->id_category = $request->input('category_id');
-    //         $product->id_producttype = $request->input('typeproduct_id');
-    //         $product->id_supplier = $request->input('supplier_id');
-    //         $product->amount = $request->input('amount');
-    //         $product->id = $userId; // Might not be necessary depending on your database schema
-
-    //         // Save product image (if uploaded)
-    //         if ($request->hasFile('image')) {
-    //             $image = $request->file('image');
-    //             $imageName = time() . '.' . $image->getClientOriginalExtension();
-    //             $image->move(public_path('images'), $imageName);
-    //             $product->image = 'images/' . $imageName;
-    //         }
-
-    //         // Save product list_images (multiple images)
-    //         $listImages = [];
-    //         if ($request->hasFile('file')) {
-    //             $images = $request->file('file');
-    //             foreach ($images as $image) {
-    //                 $imageName = time() . '_' . $image->getClientOriginalName();
-    //                 $image->move(public_path('images'), $imageName);
-    //                 $listImages[] = 'images/' . $imageName;
-    //             }
-    //         }
-    //         $product->list_images = json_encode($listImages); // Convert array to JSON string
-
-    //         $product->save();
-
-    //         // Save product attributes (optional)
-    //         $selectedAttributes = $request->input('attribute');
-    //         if (isset($selectedAttributes)) { // Check if attribute data is provided
-    //             foreach ($selectedAttributes as $attributeId) {
-    //                 AttributeProduct::create([
-    //                     'product_id' => $product->id,
-    //                     'attribute_id' => $attributeId,
-    //                 ]);
-    //             }
-    //         }
-    //         return redirect()->route('indexproduct')->with('status', "Bạn đã thêm thành công");
-    //     }
-    // }
-
-
-
-
     //thực thi nè
 
     public function addDataProduct(Request $request)
@@ -212,6 +105,9 @@ class AdminProductsController extends Controller
             $product->id_producttype = $request->input('typeproduct_id');
             $product->id_supplier = $request->input('supplier_id');
             $product->amount = $request->input('amount');
+            $product->description = $request->input('description');
+            $product->content = $request->input('content');
+            $product->sizes = json_encode($request->input('sizes'));
             $product->id = $userId; // Might not be necessary depending on your database schema
 
             // Save product image (if uploaded)
