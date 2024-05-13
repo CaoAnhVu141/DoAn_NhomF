@@ -35,6 +35,17 @@ class UserTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Long Khanh',
+            'email' => 'le.hamthang21@gmail.com',
+            'password' => Hash::make('123456'),
+            'phone' => '07778552202',
+            'avatar' => 'phanlongkhanh.jpg',
+            'address' => 'TPHCM',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
@@ -45,18 +56,18 @@ class UserTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        for ($i = 1; $i <= 50; $i++) {
-            $user_name = 'nguoidung' . $i;
-            DB::table('users')->insert([
-                'name' => $user_name,
-                'email' => $user_name . '@nguoidung.com',
-                'password' => Hash::make('123456'),
-                'phone' => '0123456789',
-                'avatar' => 'nguoidung.jpg',
-                'address' => 'TPHCM',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        }
+        // for ($i = 1; $i <= 50; $i++) {
+        //     $user_name = 'nguoidung' . $i;
+        //     DB::table('users')->insert([
+        //         'name' => $user_name,
+        //         'email' => $user_name . '@nguoidung.com',
+        //         'password' => Hash::make('123456'),
+        //         'phone' => '0123456789',
+        //         'avatar' => 'nguoidung.jpg',
+        //         'address' => 'TPHCM',
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ]);
+        // }
     }
 }

@@ -141,9 +141,14 @@ Route::get('product',[AdminProductsController::class,'showIndexProduct'])->name(
 // thêm sản phẩm
 
 Route::get('add-product',[AdminProductsController::class,'showCreateProduct'])->name('addproduct');
+Route::post('add-product',[AdminProductsController::class,'addDataProduct'])->name('adddataproduct');
+
+///xoá sản phẩm
+
+Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts'])->name('deleteproducts');
 
 //sửa sản phẩm
-Route::get('edit-product',[AdminProductsController::class,'showEditCaterogtProduct'])->name('editproduct');
+Route::get('edit-product/{id}',[AdminProductsController::class,'showIndexUpdateProduct'])->name('editproduct');
 
 // @@ Thực thi với đơn hàng (5)
 
