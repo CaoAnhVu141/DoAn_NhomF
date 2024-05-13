@@ -232,10 +232,21 @@
               </a>
           </li> 
 
+          <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
+            <a href="{{ route('indexcategorypost') }}">
+                <i class="fa fa-circle-o-notch"></i> <span>Danh sách bài viết</span>
+            </a>
+          </li>
            
             <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
               <a href="{{ route('indexpost') }}">
                   <i class="fa fa-circle-o-notch"></i> <span>Bài viết</span>
+              </a>
+            </li>
+
+            <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
+              <a href="{{ route('indexsupplier') }}">
+                  <i class="fa fa-circle-o-notch"></i> <span>Nhà cung cấp</span>
               </a>
             </li>
 

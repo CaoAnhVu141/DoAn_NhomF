@@ -2,7 +2,7 @@
 @section('content')
 <section class="content-header">
     <h1>
-      Attribute
+      Suppliers
       <small>index</small>
     </h1>
     <ol class="breadcrumb">
@@ -24,7 +24,7 @@
         <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title"><a href="{{ route('addattribute') }}" class="btn btn-primary">Thêm mới </a></h3>
+                <h3 class="box-title"><a href="{{ route('addsupplier') }}" class="btn btn-primary">Thêm mới </a></h3>
                 <div class="box-tools">
                   <form action="#">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -44,37 +44,34 @@
                       <th>STT</th>
                       <th>Name</th>
                       <th>Description</th>
-                      <th>CheckActive</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Address</th>
                       <th>Time</th>
                       <th>Action</th>
                     </tr>
 
-                    @if($attribute->total() > 0)
+                    @if($suppliers->total() > 0)
                     @php
                     $count = 0;
                   @endphp
-                  @if(isset($attribute))
-                      @foreach ($attribute as $item)
+                  @if(isset($suppliers))
+                      @foreach ($suppliers as $item)
                       @php
                       $count ++;
                     @endphp
                           <tr>
                               <td>{{ $count }}</td>
-                             
                               <td>{{ $item->name }}</td>
-                              {{-- <td><span class="{{ $item->getType($item->atb_type)['class'] }}"></span></td> --}}
-                              <td>{{ $item->discription }}</td>
-                              <td>
-                                @if ($item->checkactive == 1)
-                                <a href="{{ route('toggleattribute',['id'=>$item->id_attribute]) }}" class="label label-info status-active">Show</a>
-                                @else
-                                 <a href="{{ route('toggleattribute',['id'=>$item->id_attribute]) }}" class="label label-default status-active">Hide</a>
-                                 @endif
-                                </td>
+                              <td>{{ $item->description }}</td>
+                              <td>{{ $item->email }}</td>
+                              <td>{{ $item->phone }}</td>
+                              <td>{{ $item->address }}</td>
+                              
                               <td>{{ $item->created_at }}</td>
                               <td>
-                                  <a href="{{ route('editattribute',['id'=>$item->id_attribute]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i class="fa fa-pencil"></i> Edit</a>
-                                  <a  href="{{ route('deleteattribute',['id'=>$item->id_attribute]) }}"  class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn chắc chắn là xoá chứ')"><i class="fa fa-trash"></i> Delete</a>
+                                  <a href="{{ route('updatesupplier',['id'=>$item->id_supplier]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i class="fa fa-pencil"></i> Edit</a>
+                                  <a  href="{{ route('deletesupllers',['id'=>$item->id_supplier]) }}"  class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn chắc chắn là xoá chứ')"><i class="fa fa-trash"></i> Delete</a>
                               </td>
                           </tr>
                       @endforeach
@@ -82,7 +79,6 @@
                     @else
                      <h3>Rất tiêc, dữ liệu không tìm thấy</h3>
                     @endif
-                   
                   </tbody>
                 </table>
               </div>

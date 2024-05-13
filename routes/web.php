@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAttributeController;
 use App\Http\Controllers\AdminCartController;
+use App\Http\Controllers\AdminCategoryPost;
 use App\Http\Controllers\AdminCategoryProductController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,7 @@ use App\Http\Controllers\AdminRelatedcategoryController;
 use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
+use App\Http\Controllers\AdminSupplierController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ForgotPasswordController;
@@ -91,7 +93,7 @@ Route::get('category',[AdminCategoryProductController::class,'showCategory'])->n
 ///thêm danh mục
 
 Route::get('add-category',[AdminCategoryProductController::class,'showAddCategory'])->name('addcategory');
-
+Route::post('add-category',[AdminCategoryProductController::class,'addCategoryProduct'])->name('adddatacategory');
 //sửa danh mục
 
 Route::get('edit-category',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
@@ -169,6 +171,41 @@ Route::get('posts',[AdminPostsController::class,'showIndexPost'])->name('indexpo
 
 // thêm bài viết
 Route::get('add-posts',[AdminPostsController::class,'showCreatePost'])->name('addpost');
+Route::post('add-posts',[AdminPostsController::class,'addDataPost'])->name('adddatapost');
+
+//xoá bài viết
+
+Route::get('delete-post/{id}',[AdminPostsController::class,'deleteListPost'])->name('deletepost');
+
+//sửa bài viêys
+
+Route::get('update-post/{id}',[AdminPostsController::class, 'showIndexUpdatePost'])->name('updatepost');
+Route::post('update-post/{id}',[AdminPostsController::class, 'updateIndexDataPost'])->name('updatedatapost');
+
+
+
+
+// @Thực thi với danh sách bài viết (8)
+
+Route::get('categorypost',[AdminCategoryPost::class,'showIndexCategoryPost'])->name('indexcategorypost');
+
+Route::get('add-categorypost',[AdminCategoryPost::class, 'showAddIndexCategoryPost'])->name('addcategorypost');
+Route::post('add-categorypost',[AdminCategoryPost::class, 'addDataCategoryPost'])->name('adddatacategorypost');
+
+//
+//hiện và ẩn check status
+
+Route::get('hideorshowpost/{id}',[AdminCategoryPost::class, 'ShowOrHideCategoryPost'])->name('showorhidecategorypost');
+
+// xoá danh mục bài viết
+
+Route::get('delete-categorypost/{id}',[AdminCategoryPost::class, 'deteleCategoryPost'])->name('deletecategorypost');
+
+//sửa danh mục bài viêts
+
+Route::get('update-categorypost/{id}',[AdminCategoryPost::class, 'showIndexUpdate'])->name('updatecategorypost');
+Route::post('update-categorypost/{id}',[AdminCategoryPost::class, 'updateDataCategoryPost'])->name('updatedatacategorypost');
+
 
 
 //
@@ -179,7 +216,22 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 
 
 
+/// thực thi cho nhà cung cấp (9)
 
+Route::get('supplier',[AdminSupplierController::class, 'showIndexSupplier'])->name('indexsupplier');
+
+//them nhà cung cấp
+
+Route::get('add-supplier',[AdminSupplierController::class, 'showAddIndexSupplier'])->name('addsupplier');
+Route::post('add-supplier',[AdminSupplierController::class, 'addDataSupplier'])->name('adddatasupplier');
+
+//xoá nhà cung cấp
+
+Route::get('delete-suplier/{id}',[AdminSupplierController::class, 'deleteSupplier'])->name('deletesupllers');
+//sửa nhà cung cấp
+
+Route::get('update-supplier/{id}',[AdminSupplierController::class,'updateSupplier'])->name('updatesupplier');
+Route::post('update-supplier/{id}',[AdminSupplierController::class,'updateDataSupplier'])->name('updatedatasupplier');
 
 
 //__@Chi tiết users

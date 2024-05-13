@@ -12,9 +12,14 @@ class AdminAttributeController extends Controller
     //
     //show giao diện thuộc tính
 
-    public function showIndexAattribute()
+    public function showIndexAattribute(Request $request)
     {
-        $attribute = Attribute::paginate(5);
+        $key = "";
+       if($request->input('key'))
+       {
+         $key = $request->input('key');
+       }
+        $attribute = Attribute::where('name','LIKE',"%$key%")->paginate(5);
         return view('admin.attribute.index',compact('attribute'));
     }
 
@@ -85,7 +90,7 @@ class AdminAttributeController extends Controller
 
     public function updateAttribute(Request $request,$id)
     {
-       // Kiểm tra xem thuộc tính có tồn tại không
+        // Kiểm tra xem thuộc tính có tồn tại không
             $attribute = Attribute::find($id);
             if (!$attribute) {
                 return redirect()->route('indexattribute')->withErrors(['status' => 'Thuộc tính không tồn tại']);
