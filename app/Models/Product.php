@@ -23,6 +23,9 @@ class Product extends Model
         'checkactive',
         'amount',
         'id',
+        'description',
+        'content',
+        'sizes',
     ];
 
     protected $casts = [

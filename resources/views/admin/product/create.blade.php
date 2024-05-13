@@ -102,9 +102,15 @@
                             </div>
 
                             {{-- <div class="form-group">
-                                <label for="pro_name">Trademark</label>
-                                <input type="text" name="trademark" class="form-control" placeholder="Trademark ....">
+                                <label for="pro_name">Size</label>
+                                <input type="text" name="sizes" class="form-control" placeholder="Trademark ....">
                             </div> --}}
+                            <div class="form-group">
+                                <label for="pro_name">Size</label>
+                                <input type="text" name="sizes" class="form-control" placeholder="Enter sizes separated by commas">
+                                <small class="form-text text-muted">Enter sizes separated by commas (e.g., Small, Medium, Large).</small>
+                            </div>
+                            
 
                         </div>
                     </div>
@@ -146,9 +152,7 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-
-
-                    {{-- <div class="box box-success">
+                    <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">Content</h3>
                         </div>
@@ -159,7 +163,7 @@
 
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <div class="box box-info">
                         <div class="box-header with-border">
@@ -200,7 +204,6 @@
                             <h3 class="box-title">Thuộc Tính</h3>
                         </div>
                         <div class="box-body">
-
                             {{-- <div class="form-group col-sm-6">
                                 <label>Xuất sứ</label>
                                 <select name="origin" class="form-control">
