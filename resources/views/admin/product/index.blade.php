@@ -51,7 +51,7 @@
                             <option value="4" {{ Request::get('sort') == 4 ? "selected='selected'" : "" }}>Giá Cao -> Thấp</option>
                         </select>
                         <select name="hot" class="form-control">
-                            <option value="">_ Hót _</option>
+                            <option value="">_ Hot _</option>
                             <option value="1" {{ Request::get('hot') == 1 ? "selected='selected'" : "" }}>Sản Phẩm Hót</option>
                             <option value="2" {{ Request::get('hot') == 2 ? "selected='selected'" : "" }}>Sản Phẩm Không Hót</option>
                         </select>

@@ -32,4 +32,5 @@ class Attribute extends Model
     {
         return $this->belongsTo(AdminandUser::class,'id');
     }
+    
 }
