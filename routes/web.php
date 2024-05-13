@@ -16,10 +16,12 @@ use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
 use App\Http\Controllers\AdminSupplierController;
+use App\Http\Controllers\CartShopping;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use Faker\Guesser\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -269,8 +271,21 @@ Route::post('password/reset', [ResetPasswordController::class, 'resetPassword'])
 
 
 
-///THỰC THI VỚI TRANG INDEX MUA HÀNG(@@@inherits
+///THỰC THI VỚI TRANG INDEX MUA HÀNG@@@
 
 //--hiển thị chi tiết sản phẩm
 
 Route::get('detail/{id}',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
+
+///thực thi giỏ hàng
+
+Route::get('add-cart/{id}',[CartShopping::class,'addCartShopping'])->name('cart.add');
+
+//xoá
+
+Route::get('delete-cart/{rowId}',[CartShopping::class,'deleteCartShopping'])->name('cart.remove');
+
+//update
+
+Route::post('update-cart',[CartShopping::class,'updateCartShopping'])->name('cart.update');
+
