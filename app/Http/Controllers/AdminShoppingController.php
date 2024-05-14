@@ -2,38 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminShoppingController extends Controller
 {
 
-    //thực thi code cho mua hàng nha anh em
-    ///
-
-    // public function showIndexShopping()
-    // {
-    //     return view('shopping.index');
-    // }
-
-    // public function showDetailIndexShopping()
-    // {
-
-    // }
-
-    //
-    ///
     //hiện thị trang chủ index shopping
 
     public function showIndexShopping()
     {
-        return view('shopping.dashboard');
+        $products = Product::paginate(5);
+        return view('shopping.dashboard',compact('products'));
     }
 
     //hiển thị chi tiết sản phẩm
 
-    public function showDetailShopping()
+    public function showDetailShopping($id)
     {
-        return view('shopping.detail');
+        $productdetail = Product::find($id);
+        $sizesArray = explode(',', $productdetail->sizes);
+        $listImages = json_decode($productdetail->list_images, true);
+       
+        return view('shopping.detail',compact('productdetail','sizesArray','listImages'));
     }
 
     //hiển thị giỏ hàng

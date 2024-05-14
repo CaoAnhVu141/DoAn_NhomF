@@ -13,18 +13,20 @@ class ProductTypesTableSeeder extends Seeder
 
         DB::table('producttypes')->insert([
             [
-                'id_producttype' => 1,
-                'name' => 'Loại A',
-                'description' => 'Mô tả cho loại A',
-                'checkactive' => true,
+                
+                'name' => 'Cho người già',
+                'discription' => 'Mô tả cho loại A',
+                'checkactive' => 1,
+                'id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'id_producttype' => 2,
-                'name' => 'Loại B',
-                'description' => 'Mô tả cho loại B',
-                'checkactive' => true,
+               
+                'name' => 'Cho trẻ em',
+                'discription' => 'Mô tả cho loại B',
+                'checkactive' => 1,
+                'id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

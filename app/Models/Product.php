@@ -15,7 +15,6 @@ class Product extends Model
     protected $fillable = [
         'name',
         'price',
-        'discription',
         'discount',
         'image',
         'id_category',
@@ -24,8 +23,17 @@ class Product extends Model
         'checkactive',
         'amount',
         'id',
-
+        'description',
+        'content',
+        'sizes',
     ];
+
+    protected $casts = [
+        'list_images' => 'array',
+    ];
+    
+
+    
 
 
     //thiết lập mối quan hệ với users qua yêu thích sản phẩm

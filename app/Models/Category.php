@@ -23,7 +23,7 @@ class Category extends Model
 
   //thiết lập mối quan hệ sản phẩm và danh mục
 
-  public function category()
+  public function product()
   {
     return $this->hasMany(Product::class,'id_category');
   }

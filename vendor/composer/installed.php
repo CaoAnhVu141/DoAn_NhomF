@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '311a7f247907db4b54508517d0af534f219c1088',
+        'reference' => '0f3b76aca4b8140cd0bca0143418795b7964b4de',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -183,6 +183,15 @@
             'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'hardevine/shoppingcart' => array(
+            'pretty_version' => '3.3',
+            'version' => '3.3.0.0',
+            'reference' => '0785c08a0771957070ae1ade48cf70449771ec83',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hardevine/shoppingcart',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
@@ -400,7 +409,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '311a7f247907db4b54508517d0af534f219c1088',
+            'reference' => '0f3b76aca4b8140cd0bca0143418795b7964b4de',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

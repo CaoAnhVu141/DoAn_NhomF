@@ -16,10 +16,12 @@ use App\Http\Controllers\AdminShoppingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminLoginAndRegisterController;
 use App\Http\Controllers\AdminSupplierController;
+use App\Http\Controllers\CartShopping;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use Faker\Guesser\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +44,7 @@ use App\Http\Controllers\ResetPasswordController;
 ///thực thi với trang chủ index
 Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha')->middleware('auth');
 
-//--hiển thị chi tiết sản phẩm
 
-Route::get('detail',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
 
 ///show thanh toán
 
@@ -141,9 +141,16 @@ Route::get('product',[AdminProductsController::class,'showIndexProduct'])->name(
 // thêm sản phẩm
 
 Route::get('add-product',[AdminProductsController::class,'showCreateProduct'])->name('addproduct');
+Route::post('add-product',[AdminProductsController::class,'addDataProduct'])->name('adddataproduct');
+
+///xoá sản phẩm
+
+Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts'])->name('deleteproducts');
 
 //sửa sản phẩm
-Route::get('edit-product',[AdminProductsController::class,'showEditCaterogtProduct'])->name('editproduct');
+Route::get('edit-product/{id}',[AdminProductsController::class,'showIndexUpdateProduct'])->name('editproduct');
+
+
 
 // @@ Thực thi với đơn hàng (5)
 
@@ -262,3 +269,26 @@ Route::get('checkmail',[ForgotPasswordController::class, 'showNotificationEmail'
 //
 Route::get('password/reset/{token}',[ResetPasswordController::class,'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
+
+
+
+///THỰC THI VỚI TRANG INDEX MUA HÀNG@@@
+
+//--hiển thị chi tiết sản phẩm
+
+Route::get('detail/{id}',[AdminShoppingController::class,'showDetailShopping'])->name('detailpro');
+
+///thực thi giỏ hàng
+
+Route::get('add-cart/{id}',[CartShopping::class,'addCartShopping'])->name('cart.add');
+
+//xoá
+
+// Route::get('delete-cart/{rowId}',[CartShopping::class,'deleteCartShopping'])->name('cart.remove');
+Route::get('remove-cart/{rowId}', [CartShopping::class, 'deleteCartShopping'])->name('cart.remove');
+
+
+//update
+
+Route::post('update-cart',[CartShopping::class,'updateCartShopping'])->name('cart.update');
+
