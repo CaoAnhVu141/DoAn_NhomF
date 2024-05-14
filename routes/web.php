@@ -101,6 +101,8 @@ Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEdit
 
 //checkactive category boi le hoang thinh
 Route::get('checkactive-category/{id}',[AdminCategoryProductController::class, 'checkactivecategory'])->name('activecategory');
+//xoa danh muc boi le hoang thinh
+Route::get('delete-category/{id}',[AdminCategoryProductController::class, 'deleteCategory'])->name('deletecategory');
 
 
 // @@Thực thi với danh mục liên quan (2)
