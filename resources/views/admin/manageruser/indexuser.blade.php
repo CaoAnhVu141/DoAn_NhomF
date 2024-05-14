@@ -219,7 +219,7 @@
                 <td>{{ $user->email }}</td>
                 <td>Che</td>
                 <td>{{ $user->phone }}</td>
-                <td><img src="{{ $user->avatar    }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
+                <td><img src="{{ asset('storage/' . $user->avatar) }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
                 <td>{{ $user->address }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>

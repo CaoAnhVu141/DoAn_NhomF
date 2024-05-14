@@ -159,7 +159,7 @@
 <body onload="time()">
 
 
-<form action="{{ route('updateUser', $user->user_id) }}" method="POST">
+<form action="{{ route('updateUser', $user->user_id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -176,12 +176,10 @@
         <input type="text" class="form-control" id="phone" name="phone" value="{{ $user->phone }}">
     </div>
     <div class="form-group">
-        <div class="form-group">
-            <label for="avatar">Ảnh:</label>
-            <div class="avatar-container">
-                <img src="{{ $user->avatar }}" alt="Ảnh người dùng" class="avatar-preview" id="currentAvatar">
-                <input type="file" class="form-control-file" id="newAvatar" name="newAvatar" accept="image/*" onchange="previewNewAvatar()">
-            </div>
+        <label for="avatar">Ảnh:</label>
+        <div class="avatar-container">
+            <img src="{{ asset('storage/' . $user->avatar) }}" alt="Ảnh người dùng" class="avatar-preview" id="currentAvatar">
+            <input type="file" class="form-control-file" id="newAvatar" name="newAvatar" accept="image/*" onchange="previewNewAvatar()">
         </div>
     </div>
     <div class="form-group">
