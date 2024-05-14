@@ -69,7 +69,7 @@ Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
 Route::post('logout',[AdminLoginAndRegisterController::class,'logoutUser'])->name('logout');
 // Thực thi đăng ký
-Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'adminRegister']);
+Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'UserRegister']);
 
 
 Route::get('admin-login',[LoginAdminController::class,'showAminLogin'])->name('showadminlogin');

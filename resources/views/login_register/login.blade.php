@@ -83,8 +83,9 @@
             <div class="form-group">
                 <a href="{{ route('forgotpass') }}">Quên mật khẩu nè</a>
             </div>
-
-
+            <div class="form-group">
+                <div>Bạn Đã Có tài khoản chưa? <a href="register">Đăng Ký</a></div>
+            </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-login">Đăng nhập</button>
             </div>
