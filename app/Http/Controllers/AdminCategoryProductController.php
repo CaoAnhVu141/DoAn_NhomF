@@ -95,4 +95,17 @@ class AdminCategoryProductController extends Controller
         }
         return redirect()->back()->withErrors(['status' => 'Bạn phải đăng nhập để thêm thuộc tính']);
     }
+    //viết hàm xoá danh muc
+    public function deleteCategory($id)
+    {
+        $category = Category::find($id);
+        if(!empty($category))
+        {
+            $category->delete();
+            return redirect()->route('indexcategory')->with('status',"Bạn xoá thành công");
+        }
+        else{
+            return redirect()->route('indexcategory')->with('status',"Danh mục không tồn tại");
+        }
+    }
 }
