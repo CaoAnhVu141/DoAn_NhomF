@@ -90,13 +90,19 @@ Route::get('showuser',[AdminManagerUsersController::class,'showAllUser'])->name(
 //@@Thực thi với danh mục (1)
 Route::get('category',[AdminCategoryProductController::class,'showCategory'])->name('indexcategory');
 
-///thêm danh mục
+
+///thêm danh mục boi le hoang thinh
 
 Route::get('add-category',[AdminCategoryProductController::class,'showAddCategory'])->name('addcategory');
 Route::post('add-category',[AdminCategoryProductController::class,'addCategoryProduct'])->name('adddatacategory');
-//sửa danh mục
+//sửa danh mục boi le hoang thinh
 
-Route::get('edit-category',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
+Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
+
+//checkactive category boi le hoang thinh
+Route::get('checkactive-category/{id}',[AdminCategoryProductController::class, 'checkactivecategory'])->name('activecategory');
+//xoa danh muc boi le hoang thinh
+Route::get('delete-category/{id}',[AdminCategoryProductController::class, 'deleteCategory'])->name('deletecategory');
 
 
 // @@Thực thi với danh mục liên quan (2)
