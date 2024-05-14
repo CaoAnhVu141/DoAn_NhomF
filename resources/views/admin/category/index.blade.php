@@ -56,7 +56,7 @@
                                                 <a href="" class="label label-default status-active">hide</a>
                                             @endif
                                         </td>
-                                        
+
                                         <td>{{ $item->created_at }}</td>
                                         <td>
                                             <a href="" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
@@ -69,7 +69,7 @@
                     </table>
                     {{-- {!! $categorys->appends($query ?? [])->links('pagination::bootstrap-4') !!} --}}
                 </div>
-                
+
             </div>
         </div>
         <!-- /.row -->
