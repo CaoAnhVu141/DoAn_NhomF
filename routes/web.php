@@ -244,11 +244,12 @@ Route::post('update-supplier/{id}',[AdminSupplierController::class,'updateDataSu
 //__@Chi tiết users
 
 Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->name('manageruser');
+Route::post('manager',[AdminManagerUsersController::class,'showAllUser'])->name('manageruse');
 //Xoa User
 Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
 //Sua User
 Route::get('/users/edit/{id}', [AdminManagerUsersController::class, 'edit'])->name('editUser');
-Route::post('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
+Route::put('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
 
 
 
