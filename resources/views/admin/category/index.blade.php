@@ -46,6 +46,9 @@
                             @php
                                 $count = 0;
                             @endphp
+                            @if(isset($status))
+                                <tr><td>{{$status}}</td></tr>
+                            @endif
                             @if(isset($category))
                                 @foreach ($category as $item)
                                     @php
@@ -79,7 +82,7 @@
                                                class="btn btn-xs btn-primary"
                                                onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i
                                                     class="fa fa-pencil"></i> Edit</a>
-                                            <a href="{{ route('editcategory',['id'=>$item->id_category]) }}"
+                                            <a href="{{ route('deletecategory',['id'=>$item->id_category]) }}"
                                                class="btn btn-xs btn-danger js-delete-confirm"
                                                onclick="return confirm('Bạn chắc chắn là xoá chứ')"><i
                                                     class="fa fa-trash"></i> Delete</a>
