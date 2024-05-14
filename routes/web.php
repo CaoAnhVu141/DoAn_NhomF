@@ -283,7 +283,9 @@ Route::get('add-cart/{id}',[CartShopping::class,'addCartShopping'])->name('cart.
 
 //xoá
 
-Route::get('delete-cart/{rowId}',[CartShopping::class,'deleteCartShopping'])->name('cart.remove');
+// Route::get('delete-cart/{rowId}',[CartShopping::class,'deleteCartShopping'])->name('cart.remove');
+Route::get('remove-cart/{rowId}', [CartShopping::class, 'deleteCartShopping'])->name('cart.remove');
+
 
 //update
 
