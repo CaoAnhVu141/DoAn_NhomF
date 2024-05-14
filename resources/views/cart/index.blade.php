@@ -66,8 +66,14 @@
                                     </div>
                                 </td>
                                 <td class="align-middle">{{ $item->total }}</td>
-                                <td class="align-middle"><a href="{{ route('cart.remove',$item->rowId) }}"><button class="btn btn-sm btn-danger"><i
-                                class="fa fa-times"></i></button></a></td>
+                                <td class="align-middle">
+                                    <a href="{{ route('cart.remove', $item->rowId) }}">
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                                
                             </tr>
                         @endforeach
                     </tbody>
