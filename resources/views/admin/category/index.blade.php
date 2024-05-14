@@ -33,34 +33,56 @@
                     <table class="table table-hover ">
                         <tbody>
                             <tr>
+                                <th>STT</th>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Avatar</th>
-                                <th>Status</th>
-                                <th>Hot</th>
-                                <th>Time</th>
-                                <th>Action</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên</th>
+                                <th>Mô tả</th>
+                                <th>Trạng thái</th>
+                                <th>Ngày thêm</th>
+                                <th>Người thêm</th>
+                                <th>Chỉnh sửa</th>
                             </tr>
-                            @if(isset($categorys))
-                                @foreach ($categorys as $item)
+                            @php
+                                $count = 0;
+                            @endphp
+                            @if(isset($category))
+                                @foreach ($category as $item)
+                                    @php
+                                        $count ++;
+                                    @endphp
                                     <tr>
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->c_name }}</td>
-                                        <td>{{ ($item->parent['c_name'] ?? '[N\A]') }}</td>
-                                        <td><img src="{{ pare_url_file($item->c_avatar) }}" alt="" width="150px" height="100px"> </td>
+                                        <td>{{ $count }}</td>
+                                        <td>{{ $item->id_category }}</td>
+                                        {{--                                        hinh anh--}}
+                                        <td><img src="{{ parse_url($item->image)['path'] }}" alt="" width="150px"
+                                                 height="100px"></td>
+                                        <td>{{ $item->name}}</td>
+                                        <td>{{ $item->discription }}</td>
+                                        {{--                                        check ative--}}
                                         <td>
-                                            @if ($item->c_status==1)
-                                                <a href="" class="label label-info status-active">show</a>
+                                            @if ($item->checkactive==1)
+                                                <a href="{{ route('activecategory',['id'=>$item->id_category]) }}"
+                                                   class="label label-info status-active">Show</a>
                                             @else
-                                                <a href="" class="label label-default status-active">hide</a>
+                                                <a href="{{ route('activecategory',['id'=>$item->id_category]) }}"
+                                                   class="label label-default status-active">Hide</a>
                                             @endif
                                         </td>
-
+                                        {{--                                        ngay them--}}
                                         <td>{{ $item->created_at }}</td>
+                                        {{--                                        nguoi them--}}
+                                        <td></td>
+                                        {{--                                        hanh dong--}}
                                         <td>
-                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                            <a href="" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                            <a href="{{ route('editcategory',['id'=>$item->id_category]) }}"
+                                               class="btn btn-xs btn-primary"
+                                               onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i
+                                                    class="fa fa-pencil"></i> Edit</a>
+                                            <a href="{{ route('editcategory',['id'=>$item->id_category]) }}"
+                                               class="btn btn-xs btn-danger js-delete-confirm"
+                                               onclick="return confirm('Bạn chắc chắn là xoá chứ')"><i
+                                                    class="fa fa-trash"></i> Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

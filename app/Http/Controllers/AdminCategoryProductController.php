@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\CategoryPost;
 use App\Models\Product;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -14,9 +15,20 @@ use Psy\TabCompletion\Matcher\FunctionDefaultParametersMatcher;
 class AdminCategoryProductController extends Controller
 {
     // show giao diện danh mục
-    public function showCategory()
+    public function showCategory(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('admin.category.index');
+        $categories = Category::all();
+        return view('admin.category.index', ['category' => $categories]);
+    }
+
+    //check active danh mục
+    public function checkactivecategory($id)
+    {
+        $category = Category::find($id);
+        $category->checkactive = !$category->checkactive;
+        $category->save();
+
+        return redirect()->route('indexcategory')->with('status', "");
     }
 
     public function showAddCategory()
@@ -47,7 +59,8 @@ class AdminCategoryProductController extends Controller
         return view('User.product.addproduct',compact('Product'));
     }
     //Them danh muc
-    public function addCategoryProduct(Request $request){
+    public function addCategoryProduct(Request $request)
+    {
         $file = $request->file('category_image'); // Lấy file từ request
 
         if ($file) {
@@ -78,7 +91,7 @@ class AdminCategoryProductController extends Controller
                 'image' => $thumbnail,
             ]);
 
-            return redirect()->route('indexcategory')->with('status','Thêm thành công rồi nè');
+            return redirect()->route('indexcategory')->with('status', 'Thêm thành công rồi nè');
         }
         return redirect()->back()->withErrors(['status' => 'Bạn phải đăng nhập để thêm thuộc tính']);
     }
