@@ -36,9 +36,12 @@
                                 @endif
                             </div>
 
-                            <div class="form-group">
-                                <label for="fileInput">Image:</label>
-                                <input type="file" class="form-control-file" id="fileInput" name="category_image">
+                            <div class="form-group {{ $errors->first('category_image') ? 'has-error' : '' }}">
+                                <label for="fileInput">Image<span class="text-danger">(*)</span></label>
+                                <input type="file" class="form-control-file" id="fileInput" name="category_image" required>
+                                @if ($errors->first('category_image'))
+                                    <span class="text-danger">{{ $errors->first('category_image') }}</span>
+                                @endif
                             </div>
                         </div>
                     </div>
