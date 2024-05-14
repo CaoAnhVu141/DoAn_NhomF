@@ -61,6 +61,13 @@ class AdminCategoryProductController extends Controller
     //Them danh muc
     public function addCategoryProduct(Request $request)
     {
+
+        $request->validate([
+            'category_name' => 'required|string|max:255',
+            'category_description' => 'required|string',
+            'category_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // Kiểm tra file ảnh
+        ]);
+
         $file = $request->file('category_image'); // Lấy file từ request
 
         if ($file) {

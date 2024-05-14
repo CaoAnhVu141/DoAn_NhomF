@@ -20,12 +20,11 @@
                     @csrf
                     <div class="box-body">
                         <div class="col-sm-8">
-                            <div class="form-group {{ $errors->first('c_name') ? 'has-error' : '' }}">
+                            <div class="form-group {{ $errors->first('category_name') ? 'has-error' : '' }}">
                                 <label for="name">Name<span class="text-danger">(*)</span></label>
-                                <input type="text" class="form-control" name="category_name" placeholder="Name ......"
-                                       required>
-                                @if ($errors->first('c_name'))
-                                    <span class="text-danger">{{ $errors->first('c_name') }}</span>
+                                <input type="text" class="form-control" name="category_name" placeholder="Name ......" required>
+                                @if ($errors->first('category_name'))
+                                    <span class="text-danger">{{ $errors->first('category_name') }}</span>
                                 @endif
                             </div>
                             <div class="form-group {{ $errors->first('category_description') ? 'has-error' : '' }}">
@@ -35,7 +34,6 @@
                                     <span class="text-danger">{{ $errors->first('category_description') }}</span>
                                 @endif
                             </div>
-
                             <div class="form-group {{ $errors->first('category_image') ? 'has-error' : '' }}">
                                 <label for="fileInput">Image<span class="text-danger">(*)</span></label>
                                 <input type="file" class="form-control-file" id="fileInput" name="category_image" required>
