@@ -93,6 +93,31 @@
                         </tbody>
                     </table>
                     {{-- {!! $categorys->appends($query ?? [])->links('pagination::bootstrap-4') !!} --}}
+                    <!-- Phân trang  bắt đầu-->
+                    <div id="pageNavPosition" class="text-right">
+                        <ul class="pagination">
+                            <!-- Hiển thị link đến trang trước (Previous Page) -->
+                            @if ($category->onFirstPage())
+                                <li class="disabled"><span>&laquo;</span></li>
+                            @else
+                                <li><a href="{{ $category->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                            @endif
+
+                            <!-- Hiển thị các số trang đã có -->
+                            @for ($i = 1; $i <= $category->lastPage(); $i++)
+                                <li class="{{ $i == $category->currentPage() ? 'active' : '' }}">
+                                    <a href="{{ $category->url($i) }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+
+                            <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
+                            @if ($category->hasMorePages())
+                                <li><a href="{{ $category->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                            @else
+                                <li class="disabled"><span>&raquo;</span></li>
+                            @endif
+                        </ul>
+                    </div>
                 </div>
 
             </div>
