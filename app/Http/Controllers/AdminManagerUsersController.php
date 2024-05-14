@@ -22,13 +22,11 @@ class AdminManagerUsersController extends Controller
 
     //show toàn bộ tài khoản
 
-//    public function showAllUser(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
-//    {
-////        $users = User::paginate(5); // Sử dụng paginate trên mô hình User
-////        return view('admin.manageruser.indexuser', ['users' => $users]);
-//         // Lấy danh sách người dùng với mỗi trang có tối đa 5 người dùng
-//        return view('admin.manageruser.indexuser', compact('users'));
-//    }
+    public function showAllUser(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+    {
+        $users = DB::table('users')->paginate(5);
+        return view('admin.manageruser.indexuser',compact('users'));
+    }
 
     //Xoa User
     public function deleteUser($id): RedirectResponse
@@ -65,7 +63,7 @@ class AdminManagerUsersController extends Controller
         // Lấy thông tin người dùng từ database
         $user = User::find($id);
         if (!$user) {
-            return redirect()->back()->with('error', 'Không tìm thấy người dùng để cập nhật.');
+            return redirect()->route('manageruser')->with('error', 'Không tìm thấy người dùng để cập nhật.');
         }
 
         // Cập nhật thông tin người dùng
@@ -86,7 +84,7 @@ class AdminManagerUsersController extends Controller
         // Lưu lại thông tin người dùng
         $user->save();
 
-        return redirect()->back()->with('success', 'Thông tin người dùng đã được cập nhật thành công.');
+        return redirect()->route('manageruser')->with('success', 'Thông tin người dùng đã được cập nhật thành công.');
     }
 
 }
