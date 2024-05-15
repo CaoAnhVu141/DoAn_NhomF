@@ -57,7 +57,7 @@
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <a href="{{ route('editproduct', ['id' => $item->id_product]) }}"
-                                class="btn btn-xs btn-primary" onclick="return confirm('Bạn có chắc xoá không nè')"><i
+                                class="btn btn-xs btn-primary" onclick="return confirm('Bạn có Sửa không nè')"><i
                                     class="fa fa-pencil"></i> Edit</a>
                             <a href="{{ route('deleteproducts', ['id' => $item->id_product]) }}"
                                 class="btn btn-xs btn-danger js-delete-confirm"
@@ -69,5 +69,5 @@
             @endif
         </tbody>
     </table>
-    {{-- <div>{!! $products->appends($query ?? [])->links() !!}</div> --}}
+
 </div>
