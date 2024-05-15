@@ -24,15 +24,25 @@
                 <div class="col-sm-8">
                     <div class="form-group">
                         <label for="name">Names <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="name" placeholder="Name ......" required value="{{$producttypes->name}}">
+                        <input type="text" class="form-control" name="name" placeholder="Name ......" required>
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    
+                    <div class="form-group ">
+                        <label>Danh Mục (*)</label>
+                        <select name="category_id" class="form-control">
+                            
+                            @error('category_id')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </select>
+                    </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">(*)</span></label>
-                            <textarea class="form-control" name="description" placeholder="Description ....." required>{{$producttypes->discription}}</textarea>
+                            <textarea class="form-control" name="description" placeholder="Description ....." required></textarea>
                             @error('description')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror

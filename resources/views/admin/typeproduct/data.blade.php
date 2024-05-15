@@ -15,7 +15,8 @@
                 <tr>
                     <td>{{ $item->id_producttype }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->description  }}</td>
+                    <td>{{ $item->cateroty }}</td>
+                    <td>{{ $item->discription  }}</td>
 
                     <td>
                         @if ($item->checktype==1)
