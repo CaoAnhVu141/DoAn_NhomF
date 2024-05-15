@@ -20,7 +20,22 @@ class AdminProductsController extends Controller
         $products = Product::all();
         return view('admin.product.index',compact('products'));
     }
-
+    public function showUpdateProduct()
+    {
+        $products = Product::all();
+        return view('admin.product.update',compact('products'));
+    }
+    public function EditProduct($id)
+    {
+        $products = Product::find($id);
+        $category = Category::find($products->id_category);
+        $typeproducts = ProductType::find($products->id_producttype);
+        $supplier = Supplier::find($products->id_supplier);
+        if (is_null($products)) {
+            return $this->sendError('Không tim Thấy Sản Phẩm.');
+        }
+        return view('admin.product.update',compact('products','category','typeproducts','supplier'));
+    }
     //show giao diện thêm sản phẩm
 
     public function showCreateProduct()
@@ -40,58 +55,6 @@ class AdminProductsController extends Controller
      }
 
     //thực hiệm thêm sản phẩm 
-
-    // public function addDataProduct(Request $request)
-    // {
-    //     if (Auth::guard('admin')->check()) {
-    //         $userId = Auth::guard('admin')->user()->id;
-
-    //         $product = new Product();
-    //         $product->name = $request->input('name');
-    //         $product->price = $request->input('price');
-    //         $product->discount = $request->input('discount');
-    //         $product->id_category = $request->input('category_id');
-    //         $product->id_producttype = $request->input('typeproduct_id');
-    //         $product->id_supplier = $request->input('supplier_id');
-    //         $product->amount = $request->input('amount');
-    //         $product->id = $userId; // Might not be necessary depending on your database schema
-
-    //         // Save product image (if uploaded)
-    //         if ($request->hasFile('image')) {
-    //             $image = $request->file('image');
-    //             $imageName = time() . '.' . $image->getClientOriginalExtension();
-    //             $image->move(public_path('images'), $imageName);
-    //             $product->image = 'images/' . $imageName;
-    //         }
-
-    //         // Save product list_images (multiple images)
-    //         $product->list_images = [];
-    //         if ($request->hasFile('file')) {
-    //             $images = $request->file('file');
-    //             foreach ($images as $image) {
-    //                 $imageName = time() . '_' . $image->getClientOriginalName();
-    //                 $image->move(public_path('images'), $imageName);
-    //                 $product->list_images[] = 'images/' . $imageName;
-    //             }
-    //         }
-
-    //         $product->save();
-
-    //         // Save product attributes (optional)
-    //         $selectedAttributes = $request->input('attribute');
-    //         if (isset($selectedAttributes)) { // Check if attribute data is provided
-    //             foreach ($selectedAttributes as $attributeId) {
-    //                 AttributeProduct::create([
-    //                     'product_id' => $product->id,
-    //                     'attribute_id' => $attributeId,
-    //                 ]);
-    //             }
-    //         }
-    //         return redirect()->route('indexproduct')->with('status', "Bạn đã thêm thành công");
-    //     }
-    // }
-    //thực thi nè
-
     public function addDataProduct(Request $request)
     {
         if (Auth::guard('admin')->check()) {
@@ -145,10 +108,7 @@ class AdminProductsController extends Controller
             return redirect()->route('indexproduct')->with('status', "Bạn đã thêm thành công");
         }
     }
-
-
     //viết hàm xoá sản phẩm
-
     public function deleteProducts($id)
     {
         $product = Product::find($id);
@@ -161,6 +121,66 @@ class AdminProductsController extends Controller
         return redirect()->route('indexproduct')->with('status', "Bạn xoá chưa thành công");
     }
 
-
-   
+    // Viết hàm cập nhật sản phẩm
+    public function updateDataProduct(Request $request, $productId)
+    {
+        if (Auth::guard('admin')->check()) {
+            $userId = Auth::guard('admin')->user()->id;
+            // Tìm Đến ID của sản phẩm
+            $product = Product::findOrFail($productId);
+            // cập nhật lại sản phẩm
+            $product->name = $request->input('name');
+            $product->price = $request->input('price');
+            $product->discount = $request->input('discount');
+            $product->id_category = $request->input('category_id');
+            $product->id_producttype = $request->input('typeproduct_id');
+              // Kiểm tra xem 'supplier_id' đã được gửi trong request chưa
+            if ($request->has('id_supplier')) {
+            $product->id_supplier = $request->input('id_supplier');
+            }
+            $product->amount = $request->input('amount');
+            $product->description = $request->input('description');
+            $product->content = $request->input('content');
+            $product->sizes = json_encode($request->input('sizes'));
+    
+            // cập nhật lại hình ảnh load hinh ảnh
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('images'), $imageName);
+                $product->image = 'images/' . $imageName;
+            }
+    
+            // Update product list_images
+            $listImages = [];
+            if ($request->hasFile('file')) {
+                $images = $request->file('file');
+                foreach ($images as $image) {
+                    $imageName = time() . '_' . $image->getClientOriginalName();
+                    $image->move(public_path('images'), $imageName);
+                    $listImages[] = 'images/' . $imageName;
+                }
+            }
+            $product->list_images = json_encode($listImages);
+            // Convert array to JSON string
+    
+            $product->save();
+    
+            // Update product attributes (optional)
+            $selectedAttributes = $request->input('attribute');
+            if (isset($selectedAttributes)) { // Check if attribute data is provided
+                // Delete existing product attributes
+                $product->attributes()->delete();
+    
+                // Create new product attributes
+                foreach ($selectedAttributes as $attributeId) {
+                    AttributeProduct::create([
+                        'product_id' => $product->id,
+                        'attribute_id' => $attributeId,
+                    ]);
+                }
+            }
+            return redirect()->route('indexproduct')->with('status', "Bạn đã cập nhật sản phẩm thành công");
+        }
+    }
 }
