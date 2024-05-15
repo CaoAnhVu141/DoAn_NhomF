@@ -64,15 +64,18 @@
         <h2>Đăng nhập</h2>
         <form method="GET" action="{{url('login/loginrun')}}">
             @csrf
-
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                <input id="email" type="email" class="form-control" name="email" required autofocus>
                 @error('email')
                     <span class="error-message">{{ $message }}</span>
                 @enderror
             </div>
-
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
                 <input id="password" type="password" class="form-control" name="password" required>
