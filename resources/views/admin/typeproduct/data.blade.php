@@ -10,12 +10,11 @@
           <th>Time</th>
           <th>Action</th>
         </tr>
-        @if(isset($productstype))
-            @foreach ($productstype as $item)
+        @if(isset($producttypes))
+            @foreach ($producttypes as $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->id_producttype }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->category->name  }}</td>
                     <td>{{ $item->description  }}</td>
 
                     <td>
@@ -28,8 +27,8 @@
                    
                     <td>{{ $item->created_at }}</td>
                     <td>
-                        <a href="" class="btn btn-xs btn-primary" onclick="return confirm('Bạn có chắc muốn sửa không')"><i class="fa fa-pencil"></i> Edit</a>
-                        <a href="" class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn có chắc muốn xoá không')"><i class="fa fa-trash"></i> Delete</a>
+                        <a href="{{ url('editproducttype', ['id' => $item->id_producttype]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn có chắc muốn sửa không')"><i class="fa fa-pencil"></i> Edit</a>
+                        <a href="{{ url('deleteproducttype', ['id' => $item->id_producttype]) }}" class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn có chắc muốn xoá không')"><i class="fa fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             @endforeach
