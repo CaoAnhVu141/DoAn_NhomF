@@ -55,9 +55,19 @@
                         <a href="{{ route('deleteproducts',['id'=>$item->id_product]) }}" class="btn btn-xs btn-danger js-delete-confirm" onclick="return confirm('Bạn có chắc xoá không nè')"><i class="fa fa-trash"></i> Delete</a>
                     </td>
                 </tr>
+               
             @endforeach
         @endif
       </tbody>
-    </table>
+    </table>      
   {{-- <div>{!! $products->appends($query ?? [])->links() !!}</div> --}}
   </div>
+<script>
+    $(document).on('click', '.pagination a', function (e) {
+    e.preventDefault();
+
+    var page = $(this).attr('href').split('page=')[1];
+
+    fetch_data('products?page=' + page);
+});
+</script>

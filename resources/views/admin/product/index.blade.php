@@ -22,8 +22,8 @@
                     <h3 class="box-title"><a href="{{ route('addproduct') }}" class="btn btn-primary">Thêm mới </a></h3>
                 </div>
                 <div class="box-title">
-                    <form action="" method="GET" class="form-inline">
-                        <input type="text" value="{{ Request::get('id') }}" class="form-control" name="id" placeholder="ID">
+                    <form action="{{ url('SearchProduct') }}" method="GET" class="form-inline">
+                        <input type="text" value="{{ Request::get('id_product') }}" class="form-control" name="id" placeholder="ID">
                         <input type="text" value="{{ Request::get('name') }}" class="form-control" name="name" placeholder="name ...">
                         <select name="category" class="form-control">
                             <option value="0">__Danh Mục__</option>
@@ -64,7 +64,6 @@
   </section>
   <!-- /.content -->
 @endsection
-
 @section('script')
 <script>
     $(document).ready(function(){
@@ -96,3 +95,4 @@
     {{ session('status') }}
 </div>
 @endif
+
