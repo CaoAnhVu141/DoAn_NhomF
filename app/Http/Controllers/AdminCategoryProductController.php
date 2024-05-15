@@ -39,12 +39,11 @@ class AdminCategoryProductController extends Controller
 
     //show giao diện cập nhật danh mục
 
-    public function showEditCategory()
+    public function showEditCategory($id)
     {
-        return view ('admin.category.update');
+        $category = Category::find($id);
+        return view('admin.category.update',compact('category'));
     }
-
-
 
     //Show Giao Dien Danh Sach San Pham
     public function ShowCategoryUser()
