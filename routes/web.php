@@ -80,7 +80,7 @@ Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
 Route::post('logout',[AdminLoginAndRegisterController::class,'logoutUser'])->name('logout');
 // Thực thi đăng ký
-Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'adminRegister']);
+Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'UserRegister']);
 
 
 Route::get('admin-login',[LoginAdminController::class,'showAminLogin'])->name('showadminlogin');
@@ -101,13 +101,22 @@ Route::get('showuser',[AdminManagerUsersController::class,'showAllUser'])->name(
 //@@Thực thi với danh mục (1)
 Route::get('category',[AdminCategoryProductController::class,'showCategory'])->name('indexcategory');
 
-///thêm danh mục
+
+///thêm danh mục boi le hoang thinh
 
 Route::get('add-category',[AdminCategoryProductController::class,'showAddCategory'])->name('addcategory');
 Route::post('add-category',[AdminCategoryProductController::class,'addCategoryProduct'])->name('adddatacategory');
-//sửa danh mục
+//sửa danh mục boi le hoang thinh
 
-Route::get('edit-category',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
+Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
+
+//checkactive category boi le hoang thinh
+Route::get('checkactive-category/{id}',[AdminCategoryProductController::class, 'checkactivecategory'])->name('activecategory');
+//xoa danh muc boi le hoang thinh
+Route::get('delete-category/{id}',[AdminCategoryProductController::class, 'deleteCategory'])->name('deletecategory');
+//sua danh muc
+Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
+Route::post('update-category/{id}',[AdminCategoryProductController::class, 'updateCategory'])->name('updatecategory');
 
 
 // @@Thực thi với danh mục liên quan (2)
@@ -255,11 +264,12 @@ Route::post('update-supplier/{id}',[AdminSupplierController::class,'updateDataSu
 //__@Chi tiết users
 
 Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->name('manageruser');
+Route::post('manager',[AdminManagerUsersController::class,'showAllUser'])->name('manageruse');
 //Xoa User
 Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
 //Sua User
 Route::get('/users/edit/{id}', [AdminManagerUsersController::class, 'edit'])->name('editUser');
-Route::post('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
+Route::put('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
 
 
 

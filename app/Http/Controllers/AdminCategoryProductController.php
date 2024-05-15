@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Attribute;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\User;
+use App\Models\CategoryPost;
 use App\Models\Product;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -14,9 +16,21 @@ use Psy\TabCompletion\Matcher\FunctionDefaultParametersMatcher;
 class AdminCategoryProductController extends Controller
 {
     // show giao diện danh mục
-    public function showCategory()
+    public function showCategory(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('admin.category.index');
+
+        $categories = Category::paginate(10);
+        return view('admin.category.index', ['category' => $categories]);
+    }
+
+    //check active danh mục
+    public function checkactivecategory($id)
+    {
+        $category = Category::find($id);
+        $category->checkactive = !$category->checkactive;
+        $category->save();
+
+        return redirect()->route('indexcategory')->with('status', "");
     }
 
     public function showAddCategory()
@@ -26,19 +40,17 @@ class AdminCategoryProductController extends Controller
 
     //show giao diện cập nhật danh mục
 
-    public function showEditCategory()
+    public function showEditCategory($id)
     {
-        return view ('admin.category.update');
+        $category = Category::find($id);
+        return view('admin.category.update',compact('category'));
     }
-
-
 
     //Show Giao Dien Danh Sach San Pham
     public function ShowCategoryUser()
     {
         $Product = Product::all();
         return view('User.product.category',compact('Product'));
-
     }
     //Show Giao Dien add San Pham
     public function ShowAddProduct()
@@ -47,7 +59,15 @@ class AdminCategoryProductController extends Controller
         return view('User.product.addproduct',compact('Product'));
     }
     //Them danh muc
-    public function addCategoryProduct(Request $request){
+    public function addCategoryProduct(Request $request)
+    {
+
+        $request->validate([
+            'category_name' => 'required|string|max:255',
+            'category_description' => 'required|string',
+            'category_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // Kiểm tra file ảnh
+        ]);
+
         $file = $request->file('category_image'); // Lấy file từ request
 
         if ($file) {
@@ -78,8 +98,81 @@ class AdminCategoryProductController extends Controller
                 'image' => $thumbnail,
             ]);
 
-            return redirect()->route('indexcategory')->with('status','Thêm thành công rồi nè');
+            return redirect()->route('indexcategory')->with('status', 'Thêm thành công rồi nè');
         }
         return redirect()->back()->withErrors(['status' => 'Bạn phải đăng nhập để thêm thuộc tính']);
+    }
+    //viết hàm xoá danh muc
+    public function deleteCategory($id)
+    {
+        $category = Category::find($id);
+        if(!empty($category))
+        {
+            $category->delete();
+            return redirect()->route('indexcategory')->with('status',"Bạn xoá thành công");
+        }
+        else{
+            return redirect()->route('indexcategory')->with('status',"Danh mục không tồn tại");
+        }
+    }
+    public function updateCategory(Request $request,$id)
+    {
+        $request->validate([
+            'category_name' => 'required|string|max:255',
+            'category_description' => 'required|string',
+            'category_image' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+        $file = $request->file('category_image'); // Lấy file từ request
+
+        if ($file) {
+            $file_name = $file->getClientOriginalName();
+
+            // Kiểm tra xem thư mục public/uploads đã tồn tại chưa
+            $directory = 'uploads';
+            if (!File::exists($directory)) {
+                // Nếu thư mục không tồn tại, hãy tạo nó
+                File::makeDirectory($directory);
+            }
+
+            // Di chuyển tệp tải lên vào thư mục public/uploads
+            $path = $file->move($directory, $file_name);
+
+            // Tạo đường dẫn của ảnh từ thư mục uploads
+            $thumbnail = $directory . '/' . $file_name;
+        } else {
+            $thumbnail = null; // Nếu không có tệp tải lên, sử dụng giá trị null cho thumbnail
+        }
+
+        if (Auth::guard('admin')->check())
+        {
+            // $userId = Auth::guard('admin')->user()->id;
+
+            // Post::where('id',$id)->update([
+            //     'name' => $request->input('name'),
+            //     'description' => $request->input('description'),
+            //     'content' => $request->input('content'),
+            //     'id_categorypost' => $request->input('category_id'),
+            //     'avatar' => $thumbnail,
+            // ]);
+            // return redirect()->route('indexpost')->with('status', 'Sửa dữ liệu thành công');
+            $category = Category::find($id);
+            if (!$category) {
+                return redirect()->route('indexcategory')->withErrors(['status' => 'Thuộc tính không tồn tại']);
+            }
+            if ($thumbnail !== null) {
+                $category->update([
+                    'name' => $request->input('category_name'),
+                    'description' => $request->input('category_description'),
+                    'image' => $thumbnail,
+                ]);
+            }
+            else{
+                $category->update([
+                    'name' => $request->input('category_name'),
+                    'discription' => $request->input('category_description'),
+                ]);
+            }
+            return redirect()->route('indexcategory')->with('status', 'Sửa thành công rồi nè');
+        }
     }
 }

@@ -63,7 +63,7 @@
                             <td>{{ $count }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->description }}</td>
-                            <td><img src="{{ url($item->avatar) }}" alt="" height="80px" width="100px"></td>
+                            <td><img src="{{ url($item->avatar) }}" alt="" height="80px"></td>
                             <td>{{ $item->created_at }}</td>
                             <td>
                                 <a href="{{ route('updatepost',['id'=>$item->id_post]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc sửa không nè')"><i class="fa fa-pencil"></i> Edit</a>
@@ -73,9 +73,9 @@
                     @endforeach
                     @endif
                     @else
-                       <h3>Rất tiếc, không tìm thấy dữ liệu</h3> 
+                       <h3>Rất tiếc, không tìm thấy dữ liệu</h3>
                     @endif
-                   
+
                   </tbody>
                 </table>
               </div>
