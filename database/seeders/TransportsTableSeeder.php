@@ -21,18 +21,18 @@ class TransportsTableSeeder extends Seeder
         DB::table('transports')->insert([
             [
                 'id_transport' => 1,
-                'name' => 'Express Shipping',
+                'name' => 'Viettel Post',
                 'id_carrier' => 1,
-                'transportfee' => 10.00,
+                'transportfee' => 20000,
                 'deliverytime' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'id_transport' => 2,
-                'name' => 'Standard Shipping',
+                'name' => 'Giao hàng nhanh',
                 'id_carrier' => 2,
-                'transportfee' => 5.00,
+                'transportfee' => 30000,
                 'deliverytime' => 4,
                 'created_at' => now(),
                 'updated_at' => now(),

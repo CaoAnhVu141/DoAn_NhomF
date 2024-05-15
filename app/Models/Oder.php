@@ -21,8 +21,8 @@ class Oder extends Model
         'intomoney',
         'address',
         'id_pay',
-        
-
+        'id',
+        'email',
     ];
 
     /// thiết lập mối quan hệ giữa đặt hàng và người mua 1-n
@@ -44,6 +44,13 @@ class Oder extends Model
     public function payoftype()
     {
         return $this->belongsTo(PayofType::class,'id_pay');
+    }
+
+    //quan hệ giữa người bán và đơn hàng 1-n
+
+    public function idsell()
+    {
+        return $this->belongsTo(AdminandUser::class,'id');
     }
 
 }
