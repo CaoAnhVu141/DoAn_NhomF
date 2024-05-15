@@ -242,8 +242,10 @@ Route::post('manager',[AdminManagerUsersController::class,'showAllUser'])->name(
 Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
 //Sua User
 Route::get('/users/edit/{id}', [AdminManagerUsersController::class, 'edit'])->name('editUser');
-Route::put('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
-
+Route::post('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
+// Dang Ky User
+Route::get('/register', [AdminManagerUsersController::class, 'showRegistrationForm'])->name('showRegisterForm');
+Route::post('/register', [AdminManagerUsersController::class, 'register'])->name('registerUser');
 
 
 ////demo senmail

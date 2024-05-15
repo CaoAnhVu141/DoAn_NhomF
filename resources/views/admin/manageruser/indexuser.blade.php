@@ -165,11 +165,12 @@
     <i class="fa fa-search" aria-hidden="true"></i>
 
     <form action="">
-
     </form>
     <b>CHỨC NĂNG CHÍNH:</b><Br>
-    <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Người dùng"><i class="fas fa-user-plus"></i></button>
+    <a href="{{ route('showRegisterForm') }}" class="nv btn add-new" data-toggle="tooltip"
+       data-placement="top" title="Thêm Người dùng">
+        <i class="fas fa-user-plus"></i>
+    </a>
     <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
             title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
     <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
@@ -219,7 +220,7 @@
                 <td>{{ $user->email }}</td>
                 <td>Che</td>
                 <td>{{ $user->phone }}</td>
-                <td><img src="{{ asset('storage/' . $user->avatar) }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
+                <td><img src="{{ asset('storage/app/public/avatars/' . $user->avatar) }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
                 <td>{{ $user->address }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>

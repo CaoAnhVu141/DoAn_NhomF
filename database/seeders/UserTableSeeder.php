@@ -52,7 +52,7 @@ class UserTableSeeder extends Seeder
                 'email' => $user_name . '@nguoidung.com',
                 'password' => Hash::make('123456'),
                 'phone' => '0123456789',
-                'avatar' => 'nguoidung.jpg',
+                'avatar' => '1715672980.jpg',
                 'address' => 'TPHCM',
                 'created_at' => now(),
                 'updated_at' => now(),

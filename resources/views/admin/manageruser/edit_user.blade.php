@@ -161,7 +161,7 @@
 
 <form action="{{ route('updateUser', $user->user_id) }}" method="POST" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
+    @method('POST')
 
     <div class="form-group">
         <label for="name">Tên Người Dùng:</label>
@@ -178,7 +178,7 @@
     <div class="form-group">
         <label for="avatar">Ảnh:</label>
         <div class="avatar-container">
-            <img src="{{ asset('storage/' . $user->avatar) }}" alt="Ảnh người dùng" class="avatar-preview" id="currentAvatar">
+            <img src="{{ asset('storage/app/public/avatars/'. $user->avatar) }}" alt="Ảnh người dùng" class="avatar-preview" id="currentAvatar">
             <input type="file" class="form-control-file" id="newAvatar" name="newAvatar" accept="image/*" onchange="previewNewAvatar()">
         </div>
     </div>
