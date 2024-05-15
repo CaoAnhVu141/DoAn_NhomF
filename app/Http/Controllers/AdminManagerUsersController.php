@@ -9,6 +9,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AdminManagerUsersController extends Controller
 {
@@ -74,11 +75,19 @@ class AdminManagerUsersController extends Controller
 
 
         // Xử lý ảnh đại diện nếu có
-        if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar');
-            $avatarName = time().'.'.$avatar->getClientOriginalExtension();
-            $avatar->move(public_path('avatars'), $avatarName);
-            $user->avatar = $avatarName;
+        if ($request->hasFile('newAvatar')) {
+            // Xóa ảnh cũ nếu có
+            if ($user->avatar && Storage::exists($user->avatar)) {
+                Storage::delete($user->avatar);
+            }
+
+            // Lưu ảnh mới
+            $image = $request->file('newAvatar');
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $path = $image->storeAs('public/avatars', $imageName);
+
+            // Cập nhật tên ảnh trong database
+            $user->avatar = 'avatars/'.$imageName;
         }
 
         // Lưu lại thông tin người dùng

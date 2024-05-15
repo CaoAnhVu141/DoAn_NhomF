@@ -19,13 +19,13 @@ class CategoriesSeeder extends Seeder
                 'name' => 'tu lanh',
                 'discription' => 'path/to/image1.jpg',
                 'checkactive' => 1,
-                'id' => 1, // ID của thông tin chương trình (nếu có)
+                'id' => 3, // ID của thông tin chương trình (nếu có)
             ],
             [
                 'name' => 'tivi',
                 'discription' => 'path/to/image1.jpg',
                 'checkactive' => 1,
-                'id' => 2,
+                'id' => 3,
             ],
             // Thêm dữ liệu mẫu khác ở đây
         ];
