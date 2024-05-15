@@ -22,5 +22,5 @@ php artisan db:seed --class=InvoicesSeeder
 php artisan db:seed --class=FavoriteProductSeeder
 php artisan db:seed --class=EventsSeeder
 php artisan db:seed --class=DiscountsSeeder
-php artisan db:seed --class=ProductSeeder
+@REM php artisan db:seed --class=ProductSeeder
 php artisan db:seed --class=ProductTypeSeeder
