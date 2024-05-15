@@ -8,7 +8,7 @@
         <ol class="breadcrumb">
             <li><a href=""><i class="fa fa-dashboard"></i>Home</a></li>
             <li><a href="">Category</a></li>
-            <li class="active">Create</li>
+            <li class="active">Update</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -16,7 +16,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="box box-primary">
-                <form role="form" action="{{route('adddatacategory')}}" method="POST" enctype="multipart/form-data">
+                <form role="form" action="{{ route('updatecategory',$category->id_category) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="box-body">
                         <div class="col-sm-8">
@@ -37,17 +37,12 @@
                                     <span class="text-danger">{{ $errors->first('category_description') }}</span>
                                 @endif
                             </div>
-                            <div class="form-group {{ $errors->first('category_image') ? 'has-error' : '' }}">
-                                <label for="fileInput">Image<span class="text-danger">(*)</span></label>
-                                <input type="file" class="form-control-file" id="fileInput" name="category_image"
-                                       required>
-                                @if ($errors->first('category_image'))
-                                    <span class="text-danger">{{ $errors->first('category_image') }}</span>
-                                @endif
-                                <div>
-                                    <img src="{{ asset($category->image) }}" alt="Ảnh hiện tại" height="300px">
-                                </div>
-
+                            <div class="form-group">
+                                <label for="fileInput">Image</label>
+                                <input type="file" class="form-control-file" id="fileInput" name="category_image">
+                            </div>
+                            <div>
+                                <img src="{{ asset($category->image) }}" alt="Ảnh hiện tại" height="300px">
                             </div>
                         </div>
                     </div>
