@@ -103,6 +103,9 @@ Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEdit
 Route::get('checkactive-category/{id}',[AdminCategoryProductController::class, 'checkactivecategory'])->name('activecategory');
 //xoa danh muc boi le hoang thinh
 Route::get('delete-category/{id}',[AdminCategoryProductController::class, 'deleteCategory'])->name('deletecategory');
+//sua danh muc
+Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
+Route::post('update-category/{id}',[AdminCategoryProductController::class, 'updateCategory'])->name('updatecategory');
 
 
 // @@Thực thi với danh mục liên quan (2)
