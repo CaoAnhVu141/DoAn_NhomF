@@ -178,13 +178,25 @@
     <div class="form-group">
         <label for="avatar">Ảnh:</label>
         <div class="avatar-container">
-            <img src="{{ asset('storage/app/public/avatars/'. $user->avatar) }}" alt="Ảnh người dùng" class="avatar-preview" id="currentAvatar">
-            <input type="file" class="form-control-file" id="newAvatar" name="newAvatar" accept="image/*" onchange="previewNewAvatar()">
+            <img src="{{ asset($user->avatar) }}" alt="Ảnh người dùng" class="avatar-preview" id="currentAvatar">
+            <input type="file" class="form-control-file" id="newAvatar" name="avatar" accept="image/*" onchange="previewNewAvatar()">
         </div>
     </div>
     <div class="form-group">
         <label for="address">Địa chỉ:</label>
-        <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}">
+        <select class="form-control" id="address" name="address" required>
+            <option value="">Chọn Thành Phố</option>
+            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+            <option value="Trà Vinh">Trà Vinh</option>
+            <option value="Bình Thuận">Bình Thuận</option>
+            <option value="Vĩnh Long">Vĩnh Long</option>
+            <option value="Long An">Long An</option>
+            <option value="Cần Thơ">Cần Thơ</option>
+            <option value="Ninh Bình">Ninh Bình</option>
+            <option value="Ninh Thuận">Ninh Thuận</option>
+            <option value="Vũng Tàu">Vũng Tàu</option>
+            <option value="Sóc Trăng">Sóc Trăng</option>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary" >Lưu Thay Đổi</button>
 </form>

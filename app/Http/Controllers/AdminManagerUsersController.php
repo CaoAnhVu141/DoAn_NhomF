@@ -50,7 +50,11 @@ class AdminManagerUsersController extends Controller
         // Trả về view để hiển thị form chỉnh sửa thông tin
         return view('admin.manageruser.edit_user', compact('user'));
     }
-
+    // Hiển thị form đăng ký
+    public function showRegistrationForm(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('admin.manageruser.register');
+    }
     public function update(Request $request, $id): RedirectResponse
     {
 
@@ -76,46 +80,6 @@ class AdminManagerUsersController extends Controller
         $user->address = $request->input('address');
 
 
-        // Xử lý ảnh đại diện nếu có
-        if ($request->hasFile('newAvatar')) {
-            // Xóa ảnh cũ nếu có
-            if ($user->avatar && Storage::exists($user->avatar)) {
-                Storage::delete($user->avatar);
-            }
-
-            // Lưu ảnh mới
-            $image = $request->file('newAvatar');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            $path = $image->storeAs('storage/app/public/avatars/', $imageName);
-
-            // Cập nhật tên ảnh trong database
-            $user->avatar = 'avatars/'.$imageName;
-        }
-
-        // Lưu lại thông tin người dùng
-        $user->save();
-
-        return redirect()->route('manageruser')->with('success', 'Thông tin người dùng đã được cập nhật thành công.');
-    }
-    // Hiển thị form đăng ký
-    public function showRegistrationForm(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
-    {
-        return view('admin.manageruser.register');
-    }
-
-    // Xử lý yêu cầu đăng ký
-    public function register(Request $request): RedirectResponse
-    {
-        // Validate dữ liệu đầu vào
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email',
-            'phone' => 'required|string',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'address' => 'required|string',
-            'password' => 'required|string|min:8', // Thêm quy định về mật khẩu
-        ]);
-
         $file = $request->file('avatar'); // Lấy file từ request
 
         if ($file) {
@@ -134,6 +98,45 @@ class AdminManagerUsersController extends Controller
             // Tạo đường dẫn của ảnh từ thư mục uploads
             $thumbnail = $directory . '/' . $file_name;
         } else {
+            $thumbnail = $user->avatar; // Nếu không có tệp tải lên, sử dụng giá trị null cho thumbnail
+        }
+        $user->avatar = $thumbnail;
+        // Lưu lại thông tin người dùng
+        $user->save();
+
+        return redirect()->route('manageruser')->with('success', 'Thông tin người dùng đã được cập nhật thành công.');
+    }
+    // Xử lý yêu cầu đăng ký
+    public function register(Request $request): RedirectResponse
+    {
+        // Validate dữ liệu đầu vào
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users,email',
+            'phone' => 'required|string',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'address' => 'required|string',
+            'password' => 'required|string|min:8',
+        ]);
+
+        $file = $request->file('avatar'); // Lấy file từ request
+
+        if ($file) {
+            $file_name = time() . '_' . $file->getClientOriginalName();
+
+            // Kiểm tra xem thư mục public/uploads đã tồn tại chưa
+            $directory = 'uploads';
+            if (!File::exists(public_path($directory))) {
+                // Nếu thư mục không tồn tại, hãy tạo nó
+                File::makeDirectory(public_path($directory), 0755, true);
+            }
+
+            // Di chuyển tệp tải lên vào thư mục public/uploads
+            $path = $file->move(public_path($directory), $file_name);
+
+            // Tạo đường dẫn của ảnh từ thư mục uploads
+            $thumbnail = $directory . '/' . $file_name;
+        } else {
             $thumbnail = null; // Nếu không có tệp tải lên, sử dụng giá trị null cho thumbnail
         }
 
@@ -144,9 +147,14 @@ class AdminManagerUsersController extends Controller
             'phone' => $request->input('phone'),
             'address' => $request->input('address'),
             'password' => Hash::make($request->input('password')),
-            'avatar' => $avatarPath, // Đường dẫn tới ảnh đại diện
+            'avatar' => $thumbnail, // Đường dẫn tới ảnh đại diện
         ]);
 
         return redirect()->route('manageruser')->with('success', 'Người dùng đã được thêm thành công.');
+    }
+    public function orderBy(Request $request): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+    {
+        $users = User::orderBy('name', 'asc')->get(); // Thay đổi điều kiện sắp xếp tùy nhu cầu
+        return view('users', compact('users'));
     }
 }

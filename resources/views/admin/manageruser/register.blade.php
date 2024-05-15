@@ -1,29 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký Người Dùng | Quản Lý Bán Hàng</title>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="admin/manager/css/style.css">
-    <!-- SweetAlert CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <!-- SweetAlert JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
     <style>
         .avatar-container {
             position: relative;
@@ -50,7 +32,6 @@
         }
     </style>
 </head>
-
 <body>
 
 <div class="container">
@@ -73,14 +54,25 @@
         <div class="form-group">
             <label for="avatar">Ảnh:</label>
             <div class="avatar-container">
-                <img src="#" alt="Avatar Preview" class="avatar-preview" id="avatarPreview" style="display: none;">
-                <label for="newAvatar" class="btn btn-primary">Chọn ảnh</label>
-                <input type="file" class="form-control-file" id="newAvatar" name="avatar" accept="image/*" style="display: none;" onchange="previewNewAvatar()">
+                <img src="#" alt="Ảnh người dùng" class="avatar-preview" id="currentAvatar" style="width: 150px; height: 150px;">
+                <input type="file" class="form-control-file" id="newAvatar" name="avatar" accept="image/*" onchange="previewNewAvatar()">
             </div>
         </div>
         <div class="form-group">
             <label for="address">Địa chỉ:</label>
-            <input type="text" class="form-control" id="address" name="address" required>
+            <select class="form-control" id="address" name="address" required>
+                <option value="">Chọn Thành Phố</option>
+                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                <option value="Trà Vinh">Trà Vinh</option>
+                <option value="Bình Thuận">Bình Thuận</option>
+                <option value="Vĩnh Long">Vĩnh Long</option>
+                <option value="Long An">Long An</option>
+                <option value="Cần Thơ">Cần Thơ</option>
+                <option value="Ninh Bình">Ninh Bình</option>
+                <option value="Ninh Thuận">Ninh Thuận</option>
+                <option value="Vũng Tàu">Vũng Tàu</option>
+                <option value="Sóc Trăng">Sóc Trăng</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="password">Mật khẩu:</label>
@@ -90,10 +82,14 @@
     </form>
 </div>
 
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     function previewNewAvatar() {
         var newAvatarInput = document.getElementById('newAvatar');
-        var avatarPreview = document.getElementById('avatarPreview');
+        var avatarPreview = document.getElementById('currentAvatar');
 
         if (newAvatarInput.files && newAvatarInput.files[0]) {
             var reader = new FileReader();
@@ -106,7 +102,5 @@
         }
     }
 </script>
-
 </body>
-
 </html>
