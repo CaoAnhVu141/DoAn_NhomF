@@ -48,7 +48,9 @@ Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha
 
 ///show thanh toán
 
-Route::get('checkout',[AdminShoppingController::class,'showCart'])->name('cartpro');
+Route::get('checkout',[CheckOutProduct::class,'showCheckOut'])->name('checkout');
+
+
 
 //_____@Giỏ hàng ________
 
@@ -129,16 +131,9 @@ Route::post('add-attribute',[AdminAttributeController::class,'addDataAttribute']
 Route::get('edit-attribute/{id}',[AdminAttributeController::class,'showEditAttribute'])->name('editattribute');
 Route::post('edit-attribute/{id}',[AdminAttributeController::class,'updateAttribute'])->name('updateattribute');
 
-//show form update Product
-
-Route::GET('productupdate',[AdminProductsController::class,'showUpdateProduct']);
 
 
-//tìm id sản phẩm Cần sửa
-Route::get('edit-product/{id}',[AdminProductsController::class,'EditProduct'])->name('editproduct');
 
-// Thực thi cập nhật sản phẩm
-Route::post('updateproduct/{id}',[AdminProductsController::class,'updateDataProduct']);
 // hiện và ẩn checkactive của thuộc tính
 
 Route::get('toggle-attribute/{id}',[AdminAttributeController::class, 'ShowOrHideCheck'])->name('toggleattribute');
@@ -159,7 +154,12 @@ Route::post('add-product',[AdminProductsController::class,'addDataProduct'])->na
 ///xoá sản phẩm
 
 Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts'])->name('deleteproducts');
-
+//tìm id sản phẩm và show 
+Route::get('edit-product/{id}',[AdminProductsController::class,'EditProduct'])->name('editproduct');
+//Thực Thi Cập Nhật sản phẩm
+Route::post('updateproduct/{id}',[AdminProductsController::class,'updateDataProduct']);
+//hàm thực thi tìm kiếm theo tên và theo id
+Route::GET('SearchProduct',[AdminProductsController::class,'search']);
 
 
 
