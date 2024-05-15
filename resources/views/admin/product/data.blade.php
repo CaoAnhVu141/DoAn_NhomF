@@ -28,7 +28,7 @@
                         <td>{{ $item->amount }}</td>
                         <td>{{ $item->category->name }}</td>
                         {{-- <td><span class="label label-warning">{{ $item->category->c_name ?? "[N\A]" }}</span></td> --}}
-                        <td><img src="{{ asset($item->image) }}" alt="" width="150px" height="100px"> </td>
+                        <td><img src="{{asset($item->image) }}" alt="" width="150px" height="100px"> </td>
                         <td>{{ $item->price }}</td>
                         <td>
                             @if ($item->discount)
