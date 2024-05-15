@@ -17,6 +17,7 @@ class AdminProductsController extends Controller
     //
     public function showIndexProduct()
     {
+        $products = Product::paginate(10);
         $products = Product::all();
         return view('admin.product.index',compact('products'));
     }
@@ -183,4 +184,26 @@ class AdminProductsController extends Controller
             return redirect()->route('indexproduct')->with('status', "Bạn đã cập nhật sản phẩm thành công");
         }
     }
+
+    //Viết hàm tìm kiếm theo id và theo tên
+    public function search(Request $request)
+{
+    // Retrieve search criteria from the request
+    $id = $request->input('id_product');
+    $name = $request->input('name');
+    
+    // Perform the search based on criteria (e.g., using Eloquent)
+    $products = Product::query()
+        ->when($id, function ($query) use ($id) {
+            $query->where('id_product', $id);
+        })
+        ->when($name, function ($query) use ($name) {
+            $query->where('name', 'like', "%$name%");
+        })
+        // Add conditions for other criteria (category, sorting, hot status, active status) if needed
+        ->get();
+    
+    // Return the view with the search results
+    return view('admin.product.index', compact('products'));
+}
 }
