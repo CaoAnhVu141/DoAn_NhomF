@@ -21,8 +21,8 @@ class TypeofpayTableSeeder extends Seeder
         DB::table('typeofpay')->insert([
             [
                 'id_pay' => 1,
-                'name' => 'Credit Card',
-                'discription' => 'Payment via credit card',
+                'name' => 'Cash',
+                'discription' => 'This is the cash',
                 'checkstatus' => true,
                 'image' => 'credit_card.jpg',
                 'icon' => 'credit_card_icon.png',

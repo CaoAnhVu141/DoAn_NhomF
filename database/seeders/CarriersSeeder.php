@@ -16,18 +16,22 @@ class CarriersSeeder extends Seeder
     {
         $advertisements = [
             [
-                'name' => 'nha cung cap 1',
+                'name' => 'Nhanh',
                 'email' => 'nhacungcap1@gmail.com',
-                'average time' => 35,
-                'average money' => 434243,
-                'id' => 1,
+                'average time' => 3,
+                'average money' => 20,
+                'checkactive' => 1,
+                'image'=> 'uploads/images',
+                'id' => 3,
             ],
             [
                 'name' => 'nha cung cap 2',
                 'email' => 'nhacungcap2@gmail.com',
                 'average time' => 35,
                 'average money' => 434243,
-                'id' => 2,
+                'checkactive' => 1,
+                'image'=> 'uploads/images',
+                'id' => 3,
             ],
             // Thêm dữ liệu mẫu khác ở đây
         ];
