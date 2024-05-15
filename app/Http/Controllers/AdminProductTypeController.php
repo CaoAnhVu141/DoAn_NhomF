@@ -21,7 +21,7 @@ class AdminProductTypeController extends Controller
     public function editProductType($id)
     {
         $producttypes = ProductType::find($id);
-        return view('admin.typeproduct.create', compact('producttypes'));
+        return view('admin.typeproduct.update', compact('producttypes'));
     }
     //show giao diện thêm loại sản phẩm
     public function showAddProductType()
