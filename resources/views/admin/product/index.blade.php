@@ -21,9 +21,6 @@
               <div class="box-header">
                     <h3 class="box-title"><a href="{{ route('addproduct') }}" class="btn btn-primary">Thêm mới </a></h3>
                 </div>
-                <div class="box-header">
-                    <h3 class="box-title"><a href="productupdate" class="btn btn-primary">Sửa Sản Phẩm </a></h3>
-                </div>
                 <div class="box-title">
                     <form action="" method="GET" class="form-inline">
                         <input type="text" value="{{ Request::get('id') }}" class="form-control" name="id" placeholder="ID">
@@ -94,4 +91,8 @@
   });
   </script> 
 @endsection
-
+@if (session('status'))
+<div class="alert alert-success">
+    {{ session('status') }}
+</div>
+@endif

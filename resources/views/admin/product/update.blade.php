@@ -16,7 +16,7 @@
     <section class="content">
         
         <div class="row">
-           
+        
             <form action="{{ url('updateproduct',['productId' => $products->id_product]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-7">
@@ -25,7 +25,11 @@
                             <h3 class="box-title">Thông tin cơ bản</h3>
                         </div>
                         <div class="box-body">
-
+                            @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                             <div class="form-group">
                                 <label for="pro_name">Name</label>
                                 <input type="text" name="name" class="form-control" placeholder="Name ...." value="{{$products->name}}">
