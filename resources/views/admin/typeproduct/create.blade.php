@@ -18,33 +18,21 @@
     <div class="row">
 
     <div class="box box-primary">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{url('add-producttype/run')}}" method="get" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="col-sm-8">
                     <div class="form-group">
                         <label for="name">Names <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="name" placeholder="Name ......" required>
+                        <input type="text" class="form-control" name="name" placeholder="Name ......" required value="{{$producttypes->name}}">
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group ">
-                        <label>Danh Mục (*)</label>
-                        <select name="category_id" class="form-control">
-                            {{-- @todo --}}
-                            {{-- @foreach ($categorypro as $item)
-                                <option value="{{ $item->id }}" >{{ $item->name }}</option>
-                            @endforeach --}}
-                            @error('category_id')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </select>
-                    </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">(*)</span></label>
-                            <textarea class="form-control" name="description" placeholder="Description ....." required></textarea>
+                            <textarea class="form-control" name="description" placeholder="Description ....." required>{{$producttypes->discription}}</textarea>
                             @error('description')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
