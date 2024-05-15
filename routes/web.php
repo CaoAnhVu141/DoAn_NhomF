@@ -42,8 +42,8 @@ use Faker\Guesser\Name;
 // Route::get('detail',[AdminShoppingController::class,'showDetailIndexShopping'])->name('indexdetailpro');
 
 ///thực thi với trang chủ index
-Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha')->middleware('auth');
-
+Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
+//->middleware('auth')
 
 
 ///show thanh toán
@@ -129,9 +129,16 @@ Route::post('add-attribute',[AdminAttributeController::class,'addDataAttribute']
 Route::get('edit-attribute/{id}',[AdminAttributeController::class,'showEditAttribute'])->name('editattribute');
 Route::post('edit-attribute/{id}',[AdminAttributeController::class,'updateAttribute'])->name('updateattribute');
 
+//show form update Product
+
+Route::GET('productupdate',[AdminProductsController::class,'showUpdateProduct']);
 
 
+//tìm id sản phẩm Cần sửa
+Route::get('edit-product/{id}',[AdminProductsController::class,'EditProduct'])->name('editproduct');
 
+// Thực thi cập nhật sản phẩm
+Route::post('updateproduct/{id}',[AdminProductsController::class,'updateDataProduct']);
 // hiện và ẩn checkactive của thuộc tính
 
 Route::get('toggle-attribute/{id}',[AdminAttributeController::class, 'ShowOrHideCheck'])->name('toggleattribute');
@@ -153,8 +160,7 @@ Route::post('add-product',[AdminProductsController::class,'addDataProduct'])->na
 
 Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts'])->name('deleteproducts');
 
-//sửa sản phẩm
-Route::get('edit-product/{id}',[AdminProductsController::class,'showIndexUpdateProduct'])->name('editproduct');
+
 
 
 
