@@ -8,6 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class PayofType extends Model
 {
     use HasFactory;
+    
+    protected $table = 'typeofpay';
+    protected $primaryKey = 'id_pay';
+
+    protected $fillable = [
+        'name',
+        'discription',
+        'checkactive',
+        'image',
+        'icon',
+
+    ];
+
 
     //thiết lập mối quan hệ giữa hình thức thanh toán và đơn hàng 1-n
 

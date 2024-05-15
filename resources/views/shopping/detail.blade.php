@@ -4,7 +4,7 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#">Home</a>
+                    <a class="breadcrumb-item text-dark" href="{{ route('haha') }}">Home</a>
                     <a class="breadcrumb-item text-dark" href="#">Shop</a>
                     <span class="breadcrumb-item active">Shop Detail</span>
                 </nav>
@@ -19,7 +19,7 @@
                         <div class="carousel-item active">
                             <img class="w-100 h-100" src="{{ asset($productdetail->image) }}" alt="Image">
                         </div>
-                        
+
                         @foreach ($listImages as $image)
                             <div class="carousel-item">
                                 <img class="w-100 h-100" src="{{ asset($image) }}" alt="Image">
@@ -55,65 +55,33 @@
                         Nonumy</p>
                     <div class="d-flex mb-3">
                         <strong class="text-dark mr-3">Sizes:</strong>
-                        <form>
-                            @if(isset($sizesArray) && !empty($sizesArray))
-                            <form> 
-                                @foreach ($sizesArray as $item)
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="size-{{ $loop->index }}" name="size">
-                                    <label class="custom-control-label" for="size-{{ $loop->index }}">{{ trim($item) }}</label>
-                                </div>
-                                @endforeach
-                            </form>
-                        @else
-                            <p>No sizes available</p>
-                        @endif
-                        
+                        @if (isset($sizesArray) && !empty($sizesArray))
+                        @foreach ($sizesArray as $item)
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-{{ $loop->index }}"
+                                    name="sizes" value="{{ $item }}">
+                                <label class="custom-control-label"
+                                    for="size-{{ $loop->index }}">{{ trim($item) }}</label>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>No sizes available</p>
+                    @endif
+                    
+                    </div>
+                    <form action="{{ route('cart.add', $productdetail->id_product) }}" method="GET">
+                        <div class="d-flex align-items-center mb-4 pt-2">
 
-                        </form>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Colors:</strong>
-                        <form>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-1" name="color">
-                                <label class="custom-control-label" for="color-1">Black</label>
+                            @csrf
+                            <div class="input-group quantity mr-3" style="width: 130px;">
+
+                                <input type="number" class="form-control bg-secondary border-0 text-center" name="amount"
+                                    value="1">
                             </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-2" name="color">
-                                <label class="custom-control-label" for="color-2">White</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-3" name="color">
-                                <label class="custom-control-label" for="color-3">Red</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-4" name="color">
-                                <label class="custom-control-label" for="color-4">Blue</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-5" name="color">
-                                <label class="custom-control-label" for="color-5">Green</label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 pt-2">
-                        <div class="input-group quantity mr-3" style="width: 130px;">
-                            <div class="input-group-btn">
-                                <button class="btn btn-primary btn-minus">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
-                            <div class="input-group-btn">
-                                <button class="btn btn-primary btn-plus">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
+                            <button type="submit" class="btn btn-primary">Add To Cart</button>
+
                         </div>
-                        <a href="{{ route('cart.add',$productdetail->id_product) }}"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
-                            Cart</button></a>
-                    </div>
+                    </form>
                     <div class="d-flex pt-2">
                         <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
@@ -138,8 +106,7 @@
             <div class="col">
                 <div class="bg-light p-30">
                     <div class="nav nav-tabs mb-4">
-                        <a class="nav-item nav-link text-dark active" data-toggle="tab"
-                            href="#tab-pane-1">Description</a>
+                        <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Description</a>
                         <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Information</a>
                         <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
                     </div>
@@ -425,4 +392,5 @@
             </div>
         </div>
     </div>
+
 @endsection

@@ -21,6 +21,15 @@ use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\DetailProductController;
+use App\Http\Controllers\CheckOutProduct;
+use App\Http\Controllers\Paymentsucces;
+
+
+
+
+
+
 use Faker\Guesser\Name;
 
 /*
@@ -48,7 +57,9 @@ Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha
 
 ///show thanh toán
 
-Route::get('checkout',[AdminShoppingController::class,'showCart'])->name('cartpro');
+Route::get('checkout',[CheckOutProduct::class,'showCheckOut'])->name('checkout');
+
+
 
 //_____@Giỏ hàng ________
 
@@ -283,7 +294,7 @@ Route::get('add-cart/{id}',[CartShopping::class,'addCartShopping'])->name('cart.
 
 //xoá
 
-// Route::get('delete-cart/{rowId}',[CartShopping::class,'deleteCartShopping'])->name('cart.remove');
+
 Route::get('remove-cart/{rowId}', [CartShopping::class, 'deleteCartShopping'])->name('cart.remove');
 
 
@@ -291,3 +302,23 @@ Route::get('remove-cart/{rowId}', [CartShopping::class, 'deleteCartShopping'])->
 
 Route::post('update-cart',[CartShopping::class,'updateCartShopping'])->name('cart.update');
 
+//cập nhật số lượng sản phẩm chi tiết
+
+// Route::post('update-amount',[DetailProductController::class, 'updateDetailProduct'])->name('update.amount');
+// Route::post('/cart/update', [CartShopping::class, 'updateDetailProduct'])->name('update.amount');
+// Route::put('cart/update/{rowId}', [CartShopping::class, 'updateDetailProduct'])->name('cart.now');
+
+
+
+
+///Mua hàng
+
+// Route::post('odersproduct',[CheckOutProduct::class, 'enforcementCart'])->name('oderproduct');
+
+//thanh toán
+
+Route::post('checkout',[CheckOutProduct::class, 'enforcementCart'])->name('checkoutnow');
+
+//thanh thoán thành công
+
+Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
