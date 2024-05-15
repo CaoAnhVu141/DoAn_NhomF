@@ -24,7 +24,7 @@ class User extends Authenticatable
      */
 
     //  protected $table = 'transports';
-    protected $primaryKey = 'user_id';
+    
     protected $fillable = [
         'name',
         'email',
