@@ -42,13 +42,15 @@ use Faker\Guesser\Name;
 // Route::get('detail',[AdminShoppingController::class,'showDetailIndexShopping'])->name('indexdetailpro');
 
 ///thực thi với trang chủ index
-Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha')->middleware('auth');
-
+Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
+// ->middleware('auth')
 
 
 ///show thanh toán
 
-Route::get('checkout',[AdminShoppingController::class,'showCart'])->name('cartpro');
+Route::get('checkout',[CheckOutProduct::class,'showCheckOut'])->name('checkout');
+
+
 
 //_____@Giỏ hàng ________
 
