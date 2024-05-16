@@ -16,6 +16,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static paginate(int $int)
  * @method static create(array $array)
  * @method static orderBy(string $string, string $string1)
+ * @method static where(string $string, string $string1, string $string2)
  */
 class User extends Authenticatable
 {

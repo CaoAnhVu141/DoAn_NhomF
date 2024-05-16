@@ -6,16 +6,19 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static find($id)
+ */
 class AdminandUser extends Model implements Authenticatable
 {
-    
+
     use HasFactory;
     use \Illuminate\Auth\Authenticatable;
 
     protected $table = 'adminanduser';
     protected $primaryKey = 'id';
 
-   
+
     protected $fillable = [
         'name',
         'password',
