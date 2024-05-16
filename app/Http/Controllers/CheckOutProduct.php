@@ -26,6 +26,14 @@ class CheckOutProduct extends Controller
 
     public function enforcementCart(Request $request)
     {
+        //kiểm tra dữ liệu
+        $request->validate([
+            'name' => 'required',
+            'district' => 'required',
+            'phone' => 'required',
+            'id_transport' => 'required',
+        ]);
+
         $userId = Auth::guard('admin')->user()->id;
 
         // Lấy thông tin sản phẩm từ giỏ hàng
