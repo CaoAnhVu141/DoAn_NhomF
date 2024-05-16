@@ -6,8 +6,10 @@ use App\Mail\SendMaill;
 use App\Models\Oder;
 use App\Models\PayofType;
 use App\Models\Product;
+use Carbon\Carbon;
 use App\Models\Transport;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use GuzzleHttp\Handler\Proxy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -73,8 +75,8 @@ class CheckOutProduct extends Controller
     //     'intomoney'=> Cart::total(),
     //     // Thêm các trường thông tin khác của đơn hàng nếu cần
     // ]);
-    public function enforcementCart(Request $request)
-    {
+    // public function enforcementCart(Request $request)
+    // {
 
         // Lấy thông tin người dùng đăng nhập
         // $userId = Auth::guard('admin')->user()->id;
@@ -144,6 +146,9 @@ class CheckOutProduct extends Controller
 
         // Lấy thông tin người dùng đăng nhập
         // Lấy thông tin người dùng đăng nhập
+        // 11111111111111
+         public function enforcementCart(Request $request)
+        {
         $userId = Auth::guard('admin')->user()->id;
 
         // Lấy thông tin sản phẩm từ giỏ hàng
@@ -156,14 +161,12 @@ class CheckOutProduct extends Controller
         foreach ($products as $product) {
             // Lấy thuộc tính options từ sản phẩm
             $options = $product->options;
-
             // Kiểm tra xem options có tồn tại và có chứa id_product hay không
             if ($options && isset($options['id_product'])) {
                 $idProduct = $options['id_product'];
                 $idProducts[] = $idProduct;
             }
         }
-
         // Chuyển mảng id_product thành chuỗi để lưu vào session
         $idProductsString = implode(',', $idProducts);
 
@@ -187,7 +190,6 @@ class CheckOutProduct extends Controller
             'id_product' => $idProductsString,
             'intomoney' => floatval(str_replace(',', '', Cart::total())),
         ];
-
         // Tạo đơn hàng mới và gán thông tin thanh toán
         $order = Oder::create($orderData);
 
@@ -195,15 +197,15 @@ class CheckOutProduct extends Controller
         if (!$order) {
             return redirect()->back()->with('error', 'Failed to create order');
         }
-
+        $order = Oder::find($order->id); // Lấy thông tin đơn hàng mới nhất
+        Mail::to(Auth::user()->email)->send(new SendMaill($order));
         // Xử lý khi tạo đơn hàng thành công
         // Xóa giỏ hàng sau khi đặt hàng thành công
         Cart::destroy();
-
-        $order = Oder::find($order->id); // Lấy thông tin đơn hàng mới nhất
-        Mail::to(Auth::user()->email)->send(new SendMaill($order));
-
         // Chuyển hướng người dùng đến trang cảm ơn hoặc trang xác nhận đơn hàng
         return redirect()->route('payment', ['id_order' => $order->id])->with('success', 'Order placed successfully');
+
+
+        
     }
 }

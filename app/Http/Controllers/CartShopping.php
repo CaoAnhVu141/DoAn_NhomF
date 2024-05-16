@@ -12,12 +12,8 @@ class CartShopping extends Controller
 
     public function addCartShopping(Request $request, $id)
     {
-        
-        // return redirect()->route('indexcart');
         $cartproduct = Product::find($id);
         $qty = $request->input('amount');
-
-
         //tìm kiếm sản phẩm
         $dataProduct = Cart::search(function ($cartItem, $rowId) use ($id) {
             return $cartItem->id_product == $id;
