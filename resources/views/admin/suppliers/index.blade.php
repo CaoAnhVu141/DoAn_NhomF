@@ -67,7 +67,7 @@
                               <td>{{ $item->email }}</td>
                               <td>{{ $item->phone }}</td>
                               <td>{{ $item->address }}</td>
-                              
+
                               <td>{{ $item->created_at }}</td>
                               <td>
                                   <a href="{{ route('updatesupplier',['id'=>$item->id_supplier]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i class="fa fa-pencil"></i> Edit</a>
@@ -81,6 +81,29 @@
                     @endif
                   </tbody>
                 </table>
+                  <!-- Phân trang bắt đầu -->
+                  <div id="pageNavPosition" class="text-right">
+                      <ul class="pagination">
+                          @if ($item->onFirstPage())
+                              <li class="disabled"><span>&laquo;</span></li>
+                          @else
+                              <li><a href="{{ $item->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                          @endif
+
+                          @for ($i = 1; $i <= $item->lastPage(); $i++)
+                              <li class="{{ $i == $item->currentPage() ? 'active' : '' }}">
+                                  <a href="{{ $item->url($i) }}">{{ $i }}</a>
+                              </li>
+                          @endfor
+
+                          @if ($item->hasMorePages())
+                              <li><a href="{{ $item->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                          @else
+                              <li class="disabled"><span>&raquo;</span></li>
+                          @endif
+                      </ul>
+                  </div>
+                  <!-- Phân trang kết thúc -->
               </div>
               <!-- /.box-body -->
               {{--  {!! $attribute->links() !!}  --}}
