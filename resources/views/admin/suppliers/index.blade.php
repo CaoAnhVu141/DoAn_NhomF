@@ -67,7 +67,7 @@
                               <td>{{ $item->email }}</td>
                               <td>{{ $item->phone }}</td>
                               <td>{{ $item->address }}</td>
-
+                              
                               <td>{{ $item->created_at }}</td>
                               <td>
                                   <a href="{{ route('updatesupplier',['id'=>$item->id_supplier]) }}" class="btn btn-xs btn-primary" onclick="return confirm('Bạn chắc chắn là sửa chứ')"><i class="fa fa-pencil"></i> Edit</a>

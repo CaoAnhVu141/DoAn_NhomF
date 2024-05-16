@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/event/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/event/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/attribute/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/attribute/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2024_05_06_051445_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2024_05_06_051445_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/LayOut/admin-dashboard/master_admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/LayOut/admin-dashboard/master_admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +186,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "phan__trang__cho__attributes&&&&suppliers",
+    "git-widget-placeholder": "Quan__Ly__Events",
     "last_opened_file_path": "D:/ThanhPhong/BE2/DoAn_NhomF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

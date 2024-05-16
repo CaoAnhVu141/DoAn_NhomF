@@ -19,7 +19,7 @@ class EventsSeeder extends Seeder
             [
                 'name' => 'Event 1',
                 'content' => 'Content for Event 1',
-                'image' => 'image1.jpg',
+                'image' => 'uploads/1715874018_images.jpg',
                 'linkevent' => 'https://example.com/event1',
                 'checkactive' => true,
                 'start_date' => '2024-05-10',
