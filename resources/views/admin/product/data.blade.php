@@ -69,5 +69,4 @@
             @endif
         </tbody>
     </table>
-
 </div>
