@@ -63,8 +63,12 @@
     <div class="container">
         <h2>Đăng nhập</h2>
         <form method="GET" action="{{url('login/loginrun')}}">
-            @csrf
-
+            @csrf 
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
             <div class="form-group">
                 <label for="email">Email</label>
                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -84,7 +88,7 @@
                 <a href="{{ route('forgotpass') }}">Quên mật khẩu nè</a>
             </div>
             <div class="form-group">
-                <div>Bạn Đã Có tài khoản chưa? <a href="register">Đăng Ký</a></div>
+                <div>Bạn Đã Có tài khoản chưa? <a href="register1">Đăng Ký</a></div>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-login">Đăng nhập</button>
