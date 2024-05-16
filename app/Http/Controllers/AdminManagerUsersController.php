@@ -6,11 +6,11 @@ use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
 class AdminManagerUsersController extends Controller
@@ -49,11 +49,6 @@ class AdminManagerUsersController extends Controller
         $user = User::find($id);
         // Trả về view để hiển thị form chỉnh sửa thông tin
         return view('admin.manageruser.edit_user', compact('user'));
-    }
-    // Hiển thị form đăng ký
-    public function showRegistrationForm(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
-    {
-        return view('admin.manageruser.register');
     }
     public function update(Request $request, $id): RedirectResponse
     {
@@ -106,6 +101,11 @@ class AdminManagerUsersController extends Controller
 
         return redirect()->route('manageruser')->with('success', 'Thông tin người dùng đã được cập nhật thành công.');
     }
+    // Hiển thị form đăng ký
+    public function showRegistrationForm(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('admin.manageruser.register');
+    }
     // Xử lý yêu cầu đăng ký
     public function register(Request $request): RedirectResponse
     {
@@ -152,9 +152,17 @@ class AdminManagerUsersController extends Controller
 
         return redirect()->route('manageruser')->with('success', 'Người dùng đã được thêm thành công.');
     }
-    public function orderBy(Request $request): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+    public function orderByName()
     {
-        $users = User::orderBy('name', 'asc')->get(); // Thay đổi điều kiện sắp xếp tùy nhu cầu
-        return view('users', compact('users'));
+        $users = User::orderBy('name', 'asc')->paginate(5);
+        return view('admin.manageruser.indexuser', compact('users'));
+    }
+    // Tìm Kiếm User theo tên
+    public function searchUser(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+        $users = User::where('name', 'LIKE', '%' . $searchTerm . '%')->paginate(5);
+
+        return view('admin.manageruser.search_results', compact('users', 'searchTerm'));
     }
 }

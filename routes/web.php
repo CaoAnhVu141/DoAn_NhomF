@@ -268,7 +268,7 @@ Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->n
 Route::post('manager',[AdminManagerUsersController::class,'showAllUser'])->name('manageruse');
 
 //sap xep user
-Route::get('manager-users/sort', [AdminManagerUsersController::class, 'orderBy'])->name('managerusers.orderBy');
+Route::get('manager-users/sort', [AdminManagerUsersController::class, 'orderByName'])->name('orderByName');
 //Xoa User
 Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
 //Sua User
@@ -278,6 +278,7 @@ Route::post('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])-
 Route::get('/register', [AdminManagerUsersController::class, 'showRegistrationForm'])->name('showRegisterForm');
 Route::post('/register', [AdminManagerUsersController::class, 'register'])->name('registerUser');
 // Tim kiem user
+Route::get('/search-user', [AdminManagerUsersController::class, 'searchUser'])->name('searchUser');
 
 ////demo senmail
 
