@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminSupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminSupplierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Supplier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/image1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/image1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,7 +174,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "lht__show__supplier",
+    "git-widget-placeholder": "caoanhvu-index",
     "last_opened_file_path": "D:/ThanhPhong/BE2/DoAn_NhomF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
