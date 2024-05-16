@@ -64,9 +64,11 @@
                                 onclick="return confirm('Bạn có chắc xoá không nè')"><i class="fa fa-trash"></i>
                                 Delete</a>
                         </td>
-                    </tr>
-                @endforeach
+                    </tr>                                                          
+                @endforeach              
             @endif
         </tbody>
+        
     </table>
+
 </div>

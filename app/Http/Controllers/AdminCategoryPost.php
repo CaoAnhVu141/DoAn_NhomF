@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\CategoryPost;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,14 +14,16 @@ class AdminCategoryPost extends Controller
     ///
     //show giao diện thêm loại bài viết
     public function showIndexCategoryPost(Request $request)
-    { 
+    {
         $key = "";
-       if($request->input('key'))
-       {
-         $key = $request->input('key');
-       }
-        $categorypost = CategoryPost::where('name','LIKE',"%$key%")->paginate(5);
-        return view('admin.categorypost.index',compact('categorypost'));
+        if($request->input('key'))
+        {
+            $key = $request->input('key');
+        }
+        $categorypost = CategoryPost::where('name', 'LIKE', "%$key%")->paginate(3);
+
+        return view('admin.categorypost.index', ['categorypost' => $categorypost]);
+
     }
 
     //show giao diện them danh mục bài viết
@@ -30,7 +34,7 @@ class AdminCategoryPost extends Controller
     }
 
 
-    //thực hiện thêm 
+    //thực hiện thêm
 
     public function addDataCategoryPost(Request $request)
     {
@@ -42,7 +46,7 @@ class AdminCategoryPost extends Controller
         if (Auth::guard('admin')->check()) {
             // Lấy ID của người dùng đang đăng nhập
             $userId = Auth::guard('admin')->user()->id;
-    
+
             // Thêm thuộc tính vào bảng attributes và lưu trữ ID của người dùng
             CategoryPost::create([
                 'name' => $request->input('namecategory'),
@@ -50,7 +54,7 @@ class AdminCategoryPost extends Controller
                 'id' => $userId,
                 // Thêm các trường thông tin khác của thuộc tính nếu cần
             ]);
-    
+
             return redirect()->route('indexcategorypost')->with('status','Thêm thành công rồi nè');
         }
     }
@@ -59,7 +63,7 @@ class AdminCategoryPost extends Controller
 
     public function showIndexUpdate($id)
     {
-        $categorypost = CategoryPost::find($id);       
+        $categorypost = CategoryPost::find($id);
          return view('admin.categorypost.update',compact('categorypost'));
     }
 
@@ -75,7 +79,7 @@ class AdminCategoryPost extends Controller
     }
 
 
-    //viết hàm xoá 
+    //viết hàm xoá
 
     public function deteleCategoryPost($id)
     {
