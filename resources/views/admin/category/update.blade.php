@@ -16,7 +16,8 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="box box-primary">
-                <form role="form" action="{{ route('updatecategory',$category->id_category) }}" method="POST" enctype="multipart/form-data">
+                <form role="form" action="{{ route('updatecategory',$category->id_category) }}" method="POST"
+                      enctype="multipart/form-data">
                     @csrf
                     <div class="box-body">
                         <div class="col-sm-8">
@@ -50,9 +51,8 @@
                         <a href="{{ route('indexcategory') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Trở Lại</a>
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Submit</button>
                     </div>
+                </form>
             </div>
-            </form>
-        </div>
         </div>
         <!-- /.row -->
         <!-- Main row -->
