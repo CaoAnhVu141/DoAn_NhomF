@@ -45,15 +45,14 @@
                                     VND</span>
                             @endif
                         </td>
-
-
                         <td>
                             @if ($item->checkactive == 1)
-                                <a href="#" class="label label-info status-actives">Active</a>
+                            <a href="{{ route('toggleaproduct',['id'=>$item->id_product]) }}" class="label label-info status-active">Hot</a>
                             @else
-                                <a href="#" class="label label-default status-actives">Hide</a>
-                            @endif
+                             <a href="{{ route('toggleaproduct',['id'=>$item->id_product]) }}" class="label label-default status-active">No</a>
+                             @endif
                         </td>
+                        
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <a href="{{ route('editproduct', ['id' => $item->id_product]) }}"

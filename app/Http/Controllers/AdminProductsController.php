@@ -204,4 +204,15 @@ class AdminProductsController extends Controller
         // trả về trang product index
         return view('admin.product.index', compact('products'));
     }
+
+    ///viết hàm thực thi checkactive nè
+
+    public function checkActiveProduct($id)
+    {
+        $products = Product::find($id);
+        $products->checkactive = !$products->checkactive;
+        $products->save();
+
+        return redirect()->route('indexproduct')->with('status',"Thành công rồi nè");
+    }
 }

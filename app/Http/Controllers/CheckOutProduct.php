@@ -9,7 +9,7 @@ use App\Models\Transport;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class CheckOutProduct extends Controller
 {
