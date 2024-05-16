@@ -73,12 +73,6 @@
                                 <td class="align-middle">         
                                    <a href="{{ route('cart.remove', $item->rowId) }}">Xoá</a>
                                 </td>
-
-                                {{-- <a class="btn btn-sm btn-danger" href="{{ route('cart.remove', $item->rowId) }}"> --}}
-                                {{-- <a href="{{ route('cart.remove', $item->rowId) }}">Xoá á</a> --}}
-                                {{-- <button class="btn btn-sm btn-danger">
-                                    <i class="fa fa-times"></i>
-                                </button> --}}
                             </tr>
                         @endforeach
                     </tbody>
@@ -112,10 +106,7 @@
                             <h5>Total</h5>
                             <h5>{{ Cart::total() }}</h5>
                         </div>
-                        
-                        {{-- <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button> --}}
                         <a href="{{ route('checkout') }}" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</a>
-
                     </div>
                 </div>
             </div>

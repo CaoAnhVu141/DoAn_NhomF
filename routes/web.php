@@ -24,6 +24,8 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\CheckOutProduct;
+use App\Http\Controllers\CheckStatusOders;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Paymentsucces;
 
 
@@ -142,7 +144,6 @@ Route::post('add-attribute',[AdminAttributeController::class,'addDataAttribute']
 //sửa thuộc tính
 Route::get('edit-attribute/{id}',[AdminAttributeController::class,'showEditAttribute'])->name('editattribute');
 Route::post('edit-attribute/{id}',[AdminAttributeController::class,'updateAttribute'])->name('updateattribute');
-
 
 
 
@@ -344,6 +345,7 @@ Route::post('checkout',[CheckOutProduct::class, 'enforcementCart'])->name('check
 
 //thanh thoán thành công
 
+
 Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
 
 ///Event
@@ -352,3 +354,31 @@ Route::get('admin/event/index', [AdminEventController::class, 'indexEvent'])->na
 Route::get('admin/event/add', [AdminEventController::class, 'create'])->name('addEvent');
 Route::post('admin/event/store', [AdminEventController::class, 'store'])->name('storeEvent');
 Route::get('admin/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('deleteEvent');
+
+// Route::get('payment/{id_oder}',[Paymentsucces::class, 'showPayment'])->name('payment');
+Route::get('payment/{id_order}', [Paymentsucces::class, 'showPayment'])->name('paymentnow');
+
+//check trạng thái đơn hàng
+
+Route::get('checkoder',[CheckStatusOders::class,'showCheckOders'])->name('checkstatusoders');
+
+
+///(10)  Thực thi với dashboard
+
+Route::get('dashboard',[DashboardController::class,'showDashBoard'])->name('indexdashboard');
+
+///danh sách đặt hàng
+
+Route::get('list-oder',[DashboardController::class,'showListOders'])->name('indexlistoder');
+
+//thong tin người dùng chi tiết thông qua đặt hàng
+
+Route::get('detail-user/{id_oder}',[DashboardController::class,'viewDetailOders'])->name('viewdetailuser');
+
+///thực thi cập nhập cho trạng thái đơn hàng bên admin
+//cập nhật
+Route::get('update-status/{id_oder}/{status}',[DashboardController::class,'handleOdersProduct'])->name('updatelisroder');
+//Xoá đơn hàng
+
+Route::get('delete-listoder/{id_oder}',[DashboardController::class, 'deleteOdersProduct'])->name('deletelistoder');
+
