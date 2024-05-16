@@ -74,7 +74,7 @@ Route::get('contact',[ContactController::class,'showIndexContact'])->name('conta
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');
 //Show Register
-Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
+Route::get('register1',[AdminLoginAndRegisterController::class,'ShowRegister']);
 
 // Thực thi dăng nhập
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
@@ -249,7 +249,7 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 
 
 
-/// thực thi cho nhà cung cấp (9)
+/// thực thi cho nhà cung cấp boi le hoang thinh
 
 Route::get('supplier',[AdminSupplierController::class, 'showIndexSupplier'])->name('indexsupplier');
 

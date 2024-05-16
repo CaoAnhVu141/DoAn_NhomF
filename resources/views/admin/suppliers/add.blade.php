@@ -18,45 +18,55 @@
     <div class="row">
 
     <div class="box box-primary">
-        <form action="{{ route('adddatasupplier') }}" method="POST">
+        <form action="{{ route('adddatasupplier') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Name <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="name" placeholder="Name ......">
-                     
+                    <div class="form-group {{ $errors->first('name') ? 'has-error' : '' }}">
+                        <label>Name<span class="text-danger">(*)</span></label>
+                        <input class="form-control" name="name" rows="3" placeholder="Enter ..." required></input>
+                        @if ($errors->first('name'))
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description" rows="3" placeholder="Enter ..."></textarea>
-                        </div>
+                    <div class="form-group {{ $errors->first('description') ? 'has-error' : '' }}">
+                        <label>Description<span class="text-danger">(*)</span></label>
+                        <textarea class="form-control" name="description" rows="3" placeholder="Enter ..." required></textarea>
+                        @if ($errors->first('description'))
+                            <span class="text-danger">{{ $errors->first('description') }}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Email <span class="text-danger">(*)</span></label>
-                        <input type="email" class="form-control" name="email" placeholder="Email ......">
-                     
+                    <div class="form-group {{ $errors->first('email') ? 'has-error' : '' }}">
+                        <label>Email<span class="text-danger">(*)</span></label>
+                        <input class="form-control" name="email" rows="3" placeholder="Enter ..." required></input>
+                        @if ($errors->first('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Phone <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="phone" placeholder="Phone ......">
-                     
+                    <div class="form-group {{ $errors->first('phone') ? 'has-error' : '' }}">
+                        <label>Phone<span class="text-danger">(*)</span></label>
+                        <input class="form-control" name="phone" rows="3" placeholder="Enter ..." required></input>
+                        @if ($errors->first('phone'))
+                            <span class="text-danger">{{ $errors->first('phone') }}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Address <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="address" placeholder="Address ......">
-                     
+                    <div class="form-group {{ $errors->first('category_image') ? 'has-error' : '' }}">
+                        <label for="fileInput">Image<span class="text-danger">(*)</span></label>
+                        <input type="file" class="form-control-file" id="fileInput" name="image" required>
+                        @if ($errors->first('category_image'))
+                            <span class="text-danger">{{ $errors->first('category_image') }}</span>
+                        @endif
                     </div>
                 </div>
+
             </div>
             <div class="box-footer" >
                 <a href="{{ route('indexsupplier') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Trở Lại</a>
