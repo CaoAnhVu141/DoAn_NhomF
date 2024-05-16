@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Attribute;
 use App\Models\Category;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CategoriesSeeder extends Seeder
@@ -14,24 +12,25 @@ class CategoriesSeeder extends Seeder
      */
     public function run(): void
     {
-        $advertisements = [
+        $categories = [
             [
                 'name' => 'tu lanh',
-                'discription' => 'path/to/image1.jpg',
+                'discription' => '444444444444',
                 'checkactive' => 1,
                 'id' => 3, // ID của thông tin chương trình (nếu có)
             ],
             [
                 'name' => 'tivi',
-                'discription' => 'path/to/image1.jpg',
+                'discription' => '3453',
                 'checkactive' => 1,
                 'id' => 3,
             ],
             // Thêm dữ liệu mẫu khác ở đây
         ];
 
-        // Thêm dữ liệu vào bảng advertisements
-        foreach ($advertisements as $advertisement) {
-            Category::create($advertisement);
-        }    }
+        // Thêm dữ liệu vào bảng categories
+        foreach ($categories as $category) {
+            Category::create($category);
+        }
+    }
 }

@@ -30,14 +30,20 @@ class AdminAndUserSeeder extends Seeder
                 'avatar' => 'uploads/avatar.jpg',
             ],
             [
+                'name' => 'Le Hoang Thinh',
+                'password' => bcrypt('12345678'), // Băm mật khẩu trước khi lưu vào cơ sở dữ liệu
+                'email' => 'le.hamthang21@gmail.com',
+                'id_role' => 2, // ID của quyền (nếu có)
+                'phone' => '123456789',
+                'avatar' => 'uploads/avatar.jpg',
+            ],
+            [
                 'name' => 'Khoái',
                 'password' => bcrypt('12345678'),
                 'email' => 'ok1@gmail.com',
                 'id_role' => 2,
                 'phone' => '12345678',
-                'avatar' => '
-                
-                uploads/avatar.jpg',
+                'avatar' => 'uploads/avatar.jpg',
             ],
             [
                 'name' => 'Lỏ',
@@ -46,7 +52,7 @@ class AdminAndUserSeeder extends Seeder
                 'id_role' => 2,
                 'phone' => '12345678',
                 'avatar' => '
-                
+
                 uploads/avatar.jpg',
             ],
 
@@ -57,7 +63,7 @@ class AdminAndUserSeeder extends Seeder
                 'id_role' => 2,
                 'phone' => '12345678',
                 'avatar' => '
-                
+
                 uploads/avatar.jpg',
             ],
 
@@ -68,7 +74,7 @@ class AdminAndUserSeeder extends Seeder
                 'id_role' => 2,
                 'phone' => '12345678',
                 'avatar' => '
-                
+
                 uploads/avatar.jpg',
             ],
             // Thêm dữ liệu mẫu khác ở đây
