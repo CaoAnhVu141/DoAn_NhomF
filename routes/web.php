@@ -249,7 +249,7 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 
 
 
-/// thực thi cho nhà cung cấp (9)
+/// thực thi cho nhà cung cấp boi le hoang thinh
 
 Route::get('supplier',[AdminSupplierController::class, 'showIndexSupplier'])->name('indexsupplier');
 
