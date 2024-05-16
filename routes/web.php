@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryPost;
 use App\Http\Controllers\AdminCategoryProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminEventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminManagerUsersController;
 use App\Http\Controllers\AdminOdersController;
@@ -344,3 +345,10 @@ Route::post('checkout',[CheckOutProduct::class, 'enforcementCart'])->name('check
 //thanh thoán thành công
 
 Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
+
+///Event
+//Hien thi event
+Route::get('admin/event/index', [AdminEventController::class, 'indexEvent'])->name('indexEvent');
+Route::get('admin/event/add', [AdminEventController::class, 'create'])->name('addEvent');
+Route::post('admin/event/store', [AdminEventController::class, 'store'])->name('storeEvent');
+Route::get('admin/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('deleteEvent');

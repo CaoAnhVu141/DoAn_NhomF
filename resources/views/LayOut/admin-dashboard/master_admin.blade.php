@@ -109,7 +109,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{ asset('admin/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-               
+
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -121,7 +121,7 @@
                           <h5 class="m-0">{{ Auth::guard('admin')->user()->email }}</h5>
                       @endif
                   </div>
-                  
+
                   </li>
                   <!-- Menu Body -->
                   <li class="user-body">
@@ -144,7 +144,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                       <a href="{{ route('logout.admin') }}" class="btn btn-default btn-flat">Sign out</a> 
+                       <a href="{{ route('logout.admin') }}" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
@@ -196,7 +196,7 @@
           {{-- @todo lai --}}
 
 
-           
+
             <li class="{{ Request::is('admin-datn/menu*') ? 'active' : '' }}">
               <a href="{{ route('indexcategory') }}">
                   <i class="fa fa-list"></i> <span>Danh mục</span>
@@ -218,26 +218,26 @@
               <a href="{{ route('indexproduct') }}">
                     <i class="fa fa-fw fa-anchor"></i> <span>Sản phẩm</span>
                 </a>
-            </li> 
-              
+            </li>
+
             <li class="{{ Request::is('admin-datn/transaction*') ? 'active' : '' }}">
                 <a href="{{ route('indexoders') }}">
                     <i class="fa fa-cart-arrow-down"></i> <span>Đơn hàng</span>
                 </a>
-            </li> 
+            </li>
 
             <li class="{{ Request::is('admin-datn/transaction*') ? 'active' : '' }}">
               <a href="{{ route('indexproducttype') }}">
                   <i class="fa fa-cart-arrow-down"></i> <span>Loại sản phẩm</span>
               </a>
-          </li> 
+          </li>
 
           <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
             <a href="{{ route('indexcategorypost') }}">
                 <i class="fa fa-circle-o-notch"></i> <span>Danh sách bài viết</span>
             </a>
           </li>
-           
+
             <li class="{{ Request::is('admin-datn/article*') ? 'active' : '' }}">
               <a href="{{ route('indexpost') }}">
                   <i class="fa fa-circle-o-notch"></i> <span>Bài viết</span>
@@ -251,8 +251,8 @@
             </li>
 
             <li class="{{ Request::is('admin-datn/rating*') ? 'active' : '' }}">
-                <a href="">
-                    <i class="fa fa-commenting"></i> <span>Đánh giá</span>
+                <a href="{{ route('indexEvent') }}">
+                    <i class="fa fa-commenting"></i> <span>Envents</span>
                 </a>
             </li>
 
@@ -263,7 +263,7 @@
                   <i class="fa fa-circle-o text-red"></i> <span>Thống Kê</span>
               </a>
             </li>
-            
+
             <li class="{{ Request::is('admin-datn/slide*') ? 'active' : '' }}">
                 <a href="">
                     <i class="fa fa-circle-o text-red"></i> <span>Slide</span>
@@ -274,7 +274,7 @@
                   <i class="fa fa-users"></i> <span>Tài Khoản</span>
               </a>
           </li>
-           
+
 
           </ul>
         </section>
@@ -380,13 +380,13 @@
     //     $('.total-message').css("display", "none");
     //   }
     //   var channel = pusher.subscribe('NotificationEvent');
-          
+
     //   channel.bind('send-message', function(data) {
     //       console.log(data);
     //     var totals = parseInt($('.total-message').html());
     //       var newNotificationHtml = `
     //       <li >
-    //       
+    //
     //           <div class="pull-left">
     //             <img src="{{ asset('admin/dist/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
     //           </div>
@@ -467,7 +467,7 @@
         //     });
         // });
 
-       
+
 
     </script>
           {{-- @todo lai --}}
@@ -490,7 +490,7 @@
         //                     toastr.success(results.messages);
         //                   }
         //                 }
-                        
+
         //             }
         //         });
         //     });
