@@ -386,4 +386,8 @@ Route::get('delete-listoder/{id_oder}',[DashboardController::class, 'deleteOders
 Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
 
 
+///Trang chủ
+///thao tác với trang chủ
+// Route::get('listcategory',[AdminShoppingController::class, 'showIndexCategory'])->name('listcategory');
 
+Route::get('listcategory/{category}', [AdminShoppingController::class, 'showProductForCate'])->name('productsByCategory');

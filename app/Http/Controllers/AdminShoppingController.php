@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -14,7 +15,16 @@ class AdminShoppingController extends Controller
     public function showIndexShopping()
     {
         $products = Product::paginate(4);
-        return view('shopping.dashboard',compact('products'));
+        $categories = Category::all();
+        return view('shopping.dashboard', compact('products','categories'));
+    }
+
+    public function showProductForCate(Category $category)
+    {
+        
+        $categories = Category::all();
+        $products = $category->product()->paginate(4);
+        return view('shopping.dashboard', compact('products','categories'));
     }
 
     //hiển thị chi tiết sản phẩm
@@ -28,20 +38,8 @@ class AdminShoppingController extends Controller
         //tạo mảng lưu dưới dạng chuỗi
         $listImages = json_decode($productdetail->list_images, true);
         //trả về trang detail
-        return view('shopping.detail',compact('productdetail','sizesArray','listImages'));
+        return view('shopping.detail', compact('productdetail', 'sizesArray', 'listImages'));
     }
 
-
-    ///viết hàm thực thi checkactive nè
-
-    public function checkActiveProduct($id)
-    {
-        $products = Product::find($id);
-        $products->checkactive = !$products->checkactive;
-        $products->save();
-
-        return redirect()->route('indexproduct')->with('status',"Thành công rồi nè");
-    }
-
-    
+   
 }
