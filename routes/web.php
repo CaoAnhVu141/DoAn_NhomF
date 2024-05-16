@@ -332,6 +332,12 @@ Route::post('update-cart',[CartShopping::class,'updateCartShopping'])->name('car
 // Route::post('/cart/update', [CartShopping::class, 'updateDetailProduct'])->name('update.amount');
 // Route::put('cart/update/{rowId}', [CartShopping::class, 'updateDetailProduct'])->name('cart.now');
 
+///Event
+//Hien thi event
+Route::get('admin/event/index', [AdminEventController::class, 'indexEvent'])->name('indexEvent');
+Route::get('admin/event/add', [AdminEventController::class, 'create'])->name('addEvent');
+Route::post('admin/event/store', [AdminEventController::class, 'store'])->name('storeEvent');
+Route::get('admin/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('deleteEvent');
 
 
 
@@ -375,10 +381,5 @@ Route::get('delete-listoder/{id_oder}',[DashboardController::class, 'deleteOders
 
 Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
 
-///Event
-//Hien thi event
-Route::get('admin/event/index', [AdminEventController::class, 'indexEvent'])->name('indexEvent');
-Route::get('admin/event/add', [AdminEventController::class, 'create'])->name('addEvent');
-Route::post('admin/event/store', [AdminEventController::class, 'store'])->name('storeEvent');
-Route::get('admin/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('deleteEvent');
+
 
