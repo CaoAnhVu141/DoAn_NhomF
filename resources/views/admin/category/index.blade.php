@@ -40,6 +40,7 @@
                                 <th>Mô tả</th>
                                 <th>Trạng thái</th>
                                 <th>Ngày thêm</th>
+                                <th>Ngày cập nhật</th>
                                 <th>Người thêm</th>
                                 <th>Chỉnh sửa</th>
                             </tr>
@@ -74,6 +75,8 @@
                                         </td>
                                         {{--                                        ngay them--}}
                                         <td>{{ $item->created_at }}</td>
+                                        {{--                                        ngay cap nhat--}}
+                                        <td>{{ $item->updated_at }}</td>
                                         {{--                                        nguoi them--}}
                                         <td>{{ $item->admin->name }}</td>
                                         {{--                                        hanh dong--}}

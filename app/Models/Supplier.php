@@ -12,15 +12,15 @@ class Supplier extends Model
     protected $table = 'suppliers';
     protected $primaryKey = 'id_supplier';
 
-   
+
     protected $fillable = [
         'name',
         'description',
         'email',
         'phone',
-        'address',
+        'image',
         'id',
-        
+
     ];
 
     //thiết lập mối quan nhà cung câp và sản phẩm
