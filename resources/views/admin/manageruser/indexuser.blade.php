@@ -39,7 +39,26 @@
 
 
     <script type="text/javascript">
-        //Phân Trang Cho Table
+        function sortUsers() {
+            // Sử dụng AJAX để gửi yêu cầu POST đến route xử lý sắp xếp
+            $.ajax({
+                url: 'manager-users/sort', // Đường dẫn đến route xử lý sắp xếp
+                type: 'GET',
+                data: {
+                    // Dữ liệu có thể gửi cùng với yêu cầu, ví dụ: csrf token
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    // Xử lý dữ liệu trả về nếu cần
+                    console.log(response);
+                },
+                error: function(xhr) {
+                    // Xử lý lỗi nếu có
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+            //Phân Trang Cho Table
         function Pager(tableName, itemsPerPage) {
             this.tableName = tableName;
             this.itemsPerPage = itemsPerPage;
@@ -160,18 +179,21 @@
 <div class="container-fluid al">
     <div id="clock"></div>
     <Br>
-    <p class="timkiemnhanvien"><b>TÌM KIẾM Người Dùng:</b></p><Br><Br>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên Người dùng cần tìm...">
-    <i class="fa fa-search" aria-hidden="true"></i>
+{{--    <form action="{{ route('search') }}" method="GET">--}}
+{{--        <input type="text" name="search_term" placeholder="Nhập từ khóa tìm kiếm">--}}
+{{--        <button type="submit">Tìm kiếm</button>--}}
+{{--    </form>--}}
 
     <form action="">
-
     </form>
     <b>CHỨC NĂNG CHÍNH:</b><Br>
-    <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Người dùng"><i class="fas fa-user-plus"></i></button>
-    <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
-            title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
+    <a href="{{ route('showRegisterForm') }}" class="nv btn add-new" data-toggle="tooltip"
+       data-placement="top" title="Thêm Người dùng">
+        <i class="fas fa-user-plus"></i>
+    </a>
+    <a href="#" class="nv" data-toggle="tooltip" data-placement="top" title="Lọc Dữ Liệu">
+        <i class="fa fa-filter" aria-hidden="true"></i>
+    </a>
     <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
             class="fas fa-file-import"></i></button>
     <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
@@ -219,7 +241,7 @@
                 <td>{{ $user->email }}</td>
                 <td>Che</td>
                 <td>{{ $user->phone }}</td>
-                <td><img src="{{ asset('storage/' . $user->avatar) }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
+                <td> <img src="{{ asset($user->avatar) }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
                 <td>{{ $user->address }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>
@@ -308,30 +330,6 @@
             }
         }
 
-        //Lọc bảng
-        function sortTable() {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("myTable");
-            switching = true;
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[0];
-                    y = rows[i + 1].getElementsByTagName("TD")[0];
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
-                }
-            }
-        }
 
         //Thời Gian
         function time() {
@@ -375,24 +373,25 @@
         }
 
         //Thêm
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html();
-            $(".add-new").click(function () {
-                $(this).attr("disabled", "disabled");
-                var index = $("table tbody tr:last-child").index();
-                var row = '<tr>' +
-                    '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
-                    '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
-                    '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
-                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
-                    '<td>' + actions + '</td>' +
-                    '</tr>';
-                $("table").append(row);
-                $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-                $('[data-toggle="tooltip"]').tooltip();
-            });
+        // $(document).ready(function () {
+        //     $('[data-toggle="tooltip"]').tooltip();
+        //     var actions = $("table td:last-child").html();
+        //     $(".add-new").click(function () {
+        //         $(this).attr("disabled", "disabled");
+        //         var index = $("table tbody tr:last-child").index();
+        //         var row = '<tr>' +
+        //             '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
+        //             '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
+        //             '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
+        //             '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
+        //             '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
+        //             '<td>' + actions + '</td>' +
+        //             '</tr>';
+        //         $("table").append(row);
+        //         $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+        //         $('[data-toggle="tooltip"]').tooltip();
+        //     });
+        //
             //Kiểm tra rỗng
             $(document).on("click", ".add", function () {
                 var empty = false;

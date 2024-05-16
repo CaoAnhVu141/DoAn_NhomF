@@ -37,25 +37,27 @@ class UserTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Long Khanh',
-            'email' => 'le.hamthang21@gmail.com',
-            'password' => Hash::make('123456'),
-            'phone' => '07778552202',
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin'),
+            'phone' => '0777855202',
             'avatar' => 'phanlongkhanh.jpg',
-            'address' => 'TPHCM',
+            'address' => 'Thành Phố Hồ Chí Minh , Streest Long Trường Thủ Đức',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
-        DB::table('users')->insert([
-            'name' => 'Long Khanh',
-            'email' => 'banphong1101@gmail.com',
-            'password' => Hash::make('123456'),
-            'phone' => '07778552202',
-            'avatar' => 'phanlongkhanh.jpg',
-            'address' => 'TPHCM',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        for ($i = 1; $i <= 50; $i++) {
+            $user_name = 'nguoidung' . $i;
+            DB::table('users')->insert([
+                'name' => $user_name,
+                'email' => $user_name . '@nguoidung.com',
+                'password' => Hash::make('123456'),
+                'phone' => '0123456789',
+                'avatar' => '1715672980.jpg',
+                'address' => 'TPHCM',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }
