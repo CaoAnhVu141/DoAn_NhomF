@@ -92,12 +92,7 @@
                                         @endforeach
                                     @endif
                                 </select>
-                            </div>
-
-                            {{-- <div class="form-group">
-                                <label for="pro_name">Size</label>
-                                <input type="text" name="sizes" class="form-control" placeholder="Trademark ....">
-                            </div> --}}
+                            </div>                      
                             <div class="form-group">
                                 <label for="pro_name">Size</label>
                                 <input type="text" name="sizes" class="form-control" value="{{$products->sizes}}" placeholder="Enter sizes separated by commas">
