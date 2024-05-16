@@ -21,9 +21,13 @@ class AdminShoppingController extends Controller
 
     public function showDetailShopping($id)
     {
+        // lấy chi tiết từ id
         $productdetail = Product::find($id);
+        // chia chuỗi đươc luu trong sizes , hàm explode chia chuỗi dựa trên dấu phẩy
         $sizesArray = explode(',', $productdetail->sizes);
+        //tạo mảng lưu dưới dạng chuỗi
         $listImages = json_decode($productdetail->list_images, true);
+        //trả về trang detail
         return view('shopping.detail',compact('productdetail','sizesArray','listImages'));
     }
 
