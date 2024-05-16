@@ -12,26 +12,7 @@ class CartShopping extends Controller
 
     public function addCartShopping(Request $request, $id)
     {
-        // Cart::destroy();
-        // $cartproduct  = Product::find($id);
-        // $qty = $request->input('amount');
-        // $sizes = explode(',', $cartproduct->sizes);
-
-        // Cart::add([
-        //     [
-        //         'id' => $cartproduct->id_product,
-        //         'name' => $cartproduct->name,
-        //         'qty' => $qty,
-        //         'price' => $cartproduct->price,
-        //         'total' => $cartproduct->price,
-        //         'options' => [
-        //             'sizes' => $sizes,
-        //             'image' => $cartproduct->image
-        //         ]
-        //     ]
-        // ]);
-
-
+        
         // return redirect()->route('indexcart');
         $cartproduct = Product::find($id);
         $qty = $request->input('amount');
@@ -52,25 +33,6 @@ class CartShopping extends Controller
             // Cập nhật số lượng của sản phẩm bằng tổng của số lượng hiện tại và số lượng mới
             Cart::update($rowId, $currentQty + $qty);
         } else {
-            // Thêm sản phẩm mới vào giỏ hàng
-            // $sizes = $request->input('size');
-            // $sizes = explode(',', $cartproduct->sizes);
-            // dd($sizes);
-
-            // Cart::add([
-            //     [
-            //         'id' => $cartproduct->id_product,
-            //         'name' => $cartproduct->name,
-            //         'qty' => $qty,
-            //         'price' => $cartproduct->price,
-            //         'total' => $cartproduct->price,
-            //         'options' => [
-            //             'sizes' => $sizes,
-            //             'image' => $cartproduct->image
-            //         ]
-            //     ]
-            // ]);
-
             $sizes = $request->get('sizes'); // Lấy giá trị của size từ request
 
             // Tạo một mảng options với size và các thông tin khác

@@ -28,7 +28,6 @@ class SendMaill extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.sendby')->from('caoanhvu.tdc2223@gmail.com','Shop của em')->subject('[Shopcuaem.vn] Cảm ơn bạn đã mua hàng ha')
-        ->with($this->text);
+        return $this->view('mails.sendby')->from('caoanhvu.tdc2223@gmail.com','Shop của em')->subject('[Shopcuaem.vn] Cảm ơn bạn đã mua hàng ha');
     }
 }

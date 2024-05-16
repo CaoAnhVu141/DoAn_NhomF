@@ -99,4 +99,11 @@ class Product extends Model
     {
          return $this->belongsToMany(Invoice::class, 'productinvoice', 'id_product', 'id_invoice');
     }
+
+     //viết quan hệ giữa đặt hàng và sản phẩm 1-n
+
+     public function order()
+     {
+        return $this->hasMany(Oder::class,'id_product');
+     }
 }

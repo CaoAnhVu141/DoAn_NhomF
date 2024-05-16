@@ -303,7 +303,7 @@
                                                                     <div
                                                                         style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:24px;font-weight:600;line-height:1.2;text-align:left;color:black">
                                                                         Cảm ơn bạn đã đặt hàng tại <span
-                                                                            class="il">Tiki</span>!</div>
+                                                                            class="il">Shop của em</span>!</div>
 
                                                                 </td>
                                                             </tr>
@@ -314,10 +314,10 @@
 
                                                                     <div
                                                                         style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;text-align:left;color:#27272a">
-                                                                        <span class="il">Tiki</span> rất vui thông
+                                                                        <span class="il">Shop của em</span> rất vui thông
                                                                         báo đơn hàng của bạn đã được tiếp nhận và đang
                                                                         trong quá trình xử lý. <span
-                                                                            class="il">Tiki</span> sẽ thông báo đến
+                                                                            class="il">Shop của em</span> sẽ thông báo đến
                                                                         bạn ngay khi hàng chuẩn bị được giao.
                                                                     </div>
 
@@ -549,7 +549,7 @@
 
                                                                                         <div
                                                                                             style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;text-align:left;color:#27272a">
-                                                                                            <span>Cao Vũ</span>
+                                                                                            <span>{{ $order->name }}</span>
                                                                                         </div>
 
                                                                                     </td>
@@ -562,7 +562,7 @@
                                                                                         <div
                                                                                             style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;text-align:left;color:#27272a">
                                                                                             <div><a href="mailto:caovu5541@gmail.com"
-                                                                                                    target="_blank">caovu5541@gmail.com</a>
+                                                                                                    target="_blank">{{ $order->email }}</a>
                                                                                             </div>
                                                                                         </div>
 
@@ -575,11 +575,7 @@
 
                                                                                         <div
                                                                                             style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;text-align:left;color:#27272a">
-                                                                                            <span>Tổ 68B, Đông Chiêu,
-                                                                                                Vũng Việt, Phường Tân
-                                                                                                Đông Hiệp, Thị xã Dĩ An,
-                                                                                                Bình Dương, Việt
-                                                                                                Nam</span>
+                                                                                            <span>{{ $order->district }}</span>
                                                                                         </div>
 
                                                                                     </td>
@@ -591,7 +587,7 @@
 
                                                                                         <div
                                                                                             style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;text-align:left;color:#27272a">
-                                                                                            <span>SĐT: 0866927650
+                                                                                            <span>{{ $order->phone }}
                                                                                             </span>
                                                                                         </div>
 
@@ -613,34 +609,20 @@
                                             </tr>
                                         </tbody>
                                     </table>
-
                                 </div>
-
-
-
                             </td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
-
-
-
-
-
             <div style="margin:0px auto;max-width:632px">
-
                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
                     style="width:100%">
                     <tbody>
                         <tr>
                             <td style="direction:ltr;font-size:0px;padding:0 16px;text-align:center">
-
-
                                 <div class="m_-6643906155351583590mj-column-per-100"
                                     style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%">
-
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation"
                                         width="100%">
                                         <tbody>
@@ -658,35 +640,20 @@
                                                                     <p
                                                                         style="border-top:solid 1px #ebebf0;font-size:1px;margin:0px auto;width:100%">
                                                                     </p>
-
-
-
-
                                                                 </td>
                                                             </tr>
-
                                                         </tbody>
                                                     </table>
-
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-
                                 </div>
-
-
                             </td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
-
-
-
-
-
             <div style="margin:0px auto;max-width:632px">
 
                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
@@ -739,18 +706,14 @@
                                                                                         src="https://ci3.googleusercontent.com/meips/ADKq_NZ68nWst0prn0xfhO85mfG2QFD2FEnaoiPuhYw6p7PsJAG-tVTaJXR6--ZUMHBK2NI7f_Rv5_WzhfSbbnp4Vr2uRt-wDbnKnxHTV_PhvcPAhzDsocSyfMfionq5HiBvSggQB1t0ZHEeMkMOOcZtWckwYlVP9w=s0-d-e1-ft#https://salt.tikicdn.com/cache/200x280/ts/product/62/63/f8/38a81c10ee236cf758b1ebb800560586.png"
                                                                                         width="80px" class="CToWUd"
                                                                                         data-bit="iit">
-                                                                                    <span>USB FIRO Jump Drive Dual Drive
-                                                                                        F29 Type-C / Type-A - USB 3.1
-                                                                                        32GB / 64GB, Tốc Độ Đọc 130Mb/s,
-                                                                                        Tương Thích MAC / PC - Hàng
-                                                                                        Chính Hãng - Đen - 64GB</span>
+                                                                                    <span>{{ $order->product->name}}</span>
                                                                                 </td>
                                                                                 <td align="center"
                                                                                     style="border-bottom:1px solid #ebebf0;padding:16px 0px">
                                                                                     1</td>
                                                                                 <td align="right"
                                                                                     style="border-bottom:1px solid #ebebf0;padding:16px 0px">
-                                                                                    179.008đ</td>
+                                                                                    {{ $order->intomoney }}</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><u></u> <u></u><u></u> <u></u>
@@ -794,7 +757,7 @@
                                                                                                     Tạm tính</td>
                                                                                                 <td align="left"
                                                                                                     style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
-                                                                                                    199.000đ</td>
+                                                                                                    {{ $order->intomoney }}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><u></u> <u></u></td>
@@ -805,7 +768,7 @@
                                                                                                     Phí vận chuyển</td>
                                                                                                 <td align="left"
                                                                                                     style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
-                                                                                                    22.000đ</td>
+                                                                                                    0</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><u></u> <u></u></td>
@@ -817,7 +780,7 @@
                                                                                                     chuyển</td>
                                                                                                 <td align="left"
                                                                                                     style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
-                                                                                                    -10.006đ</td>
+                                                                                                    0</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><u></u> <u></u></td>
@@ -828,7 +791,7 @@
                                                                                                     Giảm giá</td>
                                                                                                 <td align="left"
                                                                                                     style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
-                                                                                                    -19.992đ</td>
+                                                                                                    0</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><u></u> <u></u></td>
@@ -840,7 +803,7 @@
                                                                                                     hàng</td>
                                                                                                 <td align="left"
                                                                                                     style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
-                                                                                                    191.002đ</td>
+                                                                                                    {{ $order->intomoney }}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><u></u> <u></u></td>

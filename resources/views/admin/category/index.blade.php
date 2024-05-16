@@ -75,7 +75,7 @@
                                         {{--                                        ngay them--}}
                                         <td>{{ $item->created_at }}</td>
                                         {{--                                        nguoi them--}}
-                                        <td>{{ $item->admin->name }}</td>
+                                        {{-- <td>{{ $item->admin->name }}</td> --}}
                                         {{--                                        hanh dong--}}
                                         <td>
                                             <a href="{{ route('editcategory',['id'=>$item->id_category]) }}"

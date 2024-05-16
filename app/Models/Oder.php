@@ -19,10 +19,13 @@ class Oder extends Model
         'status',
         'amount',
         'intomoney',
-        'address',
+        'email',
+        'name',
+        'phone',
+        'district',
         'id_pay',
         'id',
-        'email',
+        'id_product',
     ];
 
     /// thiết lập mối quan hệ giữa đặt hàng và người mua 1-n
@@ -51,6 +54,13 @@ class Oder extends Model
     public function idsell()
     {
         return $this->belongsTo(AdminandUser::class,'id');
+    }
+
+    //viết quan hệ giữa đặt hàng và sản phẩm 1-n
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class,'id_product');
     }
 
 }
