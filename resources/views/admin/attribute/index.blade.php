@@ -88,20 +88,20 @@
                   <!-- Phân trang bắt đầu -->
                   <div id="pageNavPosition" class="text-right">
                       <ul class="pagination">
-                          @if ($item->onFirstPage())
+                          @if ($attribute->onFirstPage())
                               <li class="disabled"><span>&laquo;</span></li>
                           @else
-                              <li><a href="{{ $item->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                              <li><a href="{{ $attribute->previousPageUrl() }}" rel="prev">&laquo;</a></li>
                           @endif
 
-                          @for ($i = 1; $i <= $item->lastPage(); $i++)
-                              <li class="{{ $i == $item->currentPage() ? 'active' : '' }}">
-                                  <a href="{{ $item->url($i) }}">{{ $i }}</a>
+                          @for ($i = 1; $i <= $attribute->lastPage(); $i++)
+                              <li class="{{ $i == $attribute->currentPage() ? 'active' : '' }}">
+                                  <a href="{{ $attribute->url($i) }}">{{ $i }}</a>
                               </li>
                           @endfor
 
-                          @if ($item->hasMorePages())
-                              <li><a href="{{ $item->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                          @if ($attribute->hasMorePages())
+                              <li><a href="{{ $attribute->nextPageUrl() }}" rel="next">&raquo;</a></li>
                           @else
                               <li class="disabled"><span>&raquo;</span></li>
                           @endif
