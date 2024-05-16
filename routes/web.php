@@ -21,6 +21,15 @@ use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\DetailProductController;
+use App\Http\Controllers\CheckOutProduct;
+use App\Http\Controllers\Paymentsucces;
+
+
+
+
+
+
 use Faker\Guesser\Name;
 
 /*
@@ -156,6 +165,8 @@ Route::get('delete-attribute/{id}',[AdminAttributeController::class, 'deleteAttr
 
 Route::get('product',[AdminProductsController::class,'showIndexProduct'])->name('indexproduct');
 
+
+
 // thêm sản phẩm
 
 Route::get('add-product',[AdminProductsController::class,'showCreateProduct'])->name('addproduct');
@@ -166,8 +177,17 @@ Route::post('add-product',[AdminProductsController::class,'addDataProduct'])->na
 Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts'])->name('deleteproducts');
 
 //sửa sản phẩm
-Route::get('edit-product/{id}',[AdminProductsController::class,'showIndexUpdateProduct'])->name('editproduct');
+Route::get('edit-product/{id}',[AdminProductsController::class,'EditProduct'])->name('editproduct');
 
+//Hiển Thị form update
+Route::get('productupdate',[AdminProductsController::class,'showCreateProduct']);
+
+// hàm thực thi cập nhật sản phẩm mới (mới nhất)
+Route::post('updateproduct/{id}',[AdminProductsController::class,'updateDataProduct']);
+
+
+// hàm tìm kiếm theo id và theo tên
+Route::GET('SearchProduct',[AdminProductsController::class,'Search']);
 
 
 // @@ Thực thi với đơn hàng (5)

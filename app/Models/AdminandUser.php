@@ -90,4 +90,11 @@ class AdminandUser extends Model implements Authenticatable
     {
         return $this->belongsToMany(Role::class,'user_roles','id','id_role');
     }
+
+    //quan hệ giữa người bán và đơn hàng 1-n
+
+    public function oders()
+    {
+        return $this->hasMany(Oder::class,'id');
+    }
 }
