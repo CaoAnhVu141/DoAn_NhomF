@@ -42,8 +42,8 @@ use Faker\Guesser\Name;
 // Route::get('detail',[AdminShoppingController::class,'showDetailIndexShopping'])->name('indexdetailpro');
 
 ///thực thi với trang chủ index
-Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha');
-//->middleware('auth')
+Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha')->middleware('auth');
+
 
 
 ///show thanh toán
@@ -69,7 +69,7 @@ Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
 Route::post('logout',[AdminLoginAndRegisterController::class,'logoutUser'])->name('logout');
 // Thực thi đăng ký
-Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'UserRegister']);
+Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'adminRegister']);
 
 
 Route::get('admin-login',[LoginAdminController::class,'showAminLogin'])->name('showadminlogin');
@@ -145,22 +145,28 @@ Route::post('updateproduct/{id}',[AdminProductsController::class,'updateDataProd
 Route::GET('SearchProduct',[AdminProductsController::class,'Search']);
 
 // hiện và ẩn checkactive của thuộc tính
+
 Route::get('toggle-attribute/{id}',[AdminAttributeController::class, 'ShowOrHideCheck'])->name('toggleattribute');
 
 // xoá thuộc tính
+
 Route::get('delete-attribute/{id}',[AdminAttributeController::class, 'deleteAttribute'])->name('deleteattribute');
 
 // @@ Thực thi với sản phẩm (4)
+
 Route::get('product',[AdminProductsController::class,'showIndexProduct'])->name('indexproduct');
 
 // thêm sản phẩm
+
 Route::get('add-product',[AdminProductsController::class,'showCreateProduct'])->name('addproduct');
 Route::post('add-product',[AdminProductsController::class,'addDataProduct'])->name('adddataproduct');
 
 ///xoá sản phẩm
+
 Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts'])->name('deleteproducts');
 
-
+//sửa sản phẩm
+Route::get('edit-product/{id}',[AdminProductsController::class,'showIndexUpdateProduct'])->name('editproduct');
 
 
 

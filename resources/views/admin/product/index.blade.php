@@ -20,6 +20,15 @@
             <div class="box">
               <div class="box-header">
                     <h3 class="box-title"><a href="{{ route('addproduct') }}" class="btn btn-primary">Thêm mới </a></h3>
+                    {{--  <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                            <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>  --}}
+
                 </div>
                 <div class="box-title">
                     <form action="{{ url('SearchProduct') }}" method="GET" class="form-inline">
@@ -27,6 +36,12 @@
                         <input type="text" value="{{ Request::get('name') }}" class="form-control" name="name" placeholder="name ...">
                         <select name="category" class="form-control">
                             <option value="0">__Danh Mục__</option>
+                            {{-- @todo --}}
+                            {{-- @if (isset($categorys))
+                                @php
+                                    get_category_parent($categorys,0,'',Request::get('category'))
+                                @endphp
+                            @endif --}}
                         </select>
                         <select name="sort" class="form-control">
                             <option value="0" >Xắp Xếp</option>
@@ -61,12 +76,25 @@
             <!-- /.box -->
           </div>
     </div>
+    <!-- /.row -->
+    <!-- Main row -->
+    <!-- /.row (main row) -->
   </section>
   <!-- /.content -->
 @endsection
+
 @section('script')
 <script>
     $(document).ready(function(){
+  
+        // $(document).on('click', '.page-link', function(event){
+        //     event.preventDefault(); 
+        //     var page = $(this).attr('href').split('page=')[1];
+        //     let URL = $(this).attr('href');
+
+        //     console.log(URL);
+        //     // fetch_data(URL);
+        // });
         $(document).on('click','.status-actives',function(e){
             e.preventDefault();
             var URL = $(this).attr('href');
