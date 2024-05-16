@@ -34,7 +34,7 @@ class AdminAndUserSeeder extends Seeder
                 'password' => bcrypt('12345678'),
                 'email' => 'ok1@gmail.com',
                 'id_role' => 2,
-                'phone' => '987654321',
+                'phone' => '12345678',
                 'avatar' => 'uploads/avatar.jpg',
             ],
             // Thêm dữ liệu mẫu khác ở đây

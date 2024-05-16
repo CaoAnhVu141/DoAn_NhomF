@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static find($id)
+ * @method static create(array $array)
+ */
 class Supplier extends Model
 {
     use HasFactory;
@@ -12,15 +16,15 @@ class Supplier extends Model
     protected $table = 'suppliers';
     protected $primaryKey = 'id_supplier';
 
-   
+
     protected $fillable = [
         'name',
         'description',
         'email',
         'phone',
-        'address',
+        'image',
         'id',
-        
+
     ];
 
     //thiết lập mối quan nhà cung câp và sản phẩm

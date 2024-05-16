@@ -37,8 +37,29 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script type="text/javascript">
+        function sortUsers() {
+            // Sử dụng AJAX để gửi yêu cầu POST đến route xử lý sắp xếp
+            $.ajax({
+                url: 'manager-users/sort', // Đường dẫn đến route xử lý sắp xếp
+                type: 'GET',
+                data: {
+                    // Dữ liệu có thể gửi cùng với yêu cầu, ví dụ: csrf token
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function (response) {
+                    // Xử lý dữ liệu trả về nếu cần
+                    console.log(response);
+                },
+                error: function (xhr) {
+                    // Xử lý lỗi nếu có
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+
         //Phân Trang Cho Table
         function Pager(tableName, itemsPerPage) {
             this.tableName = tableName;
@@ -160,18 +181,23 @@
 <div class="container-fluid al">
     <div id="clock"></div>
     <Br>
-    <p class="timkiemnhanvien"><b>TÌM KIẾM Người Dùng:</b></p><Br><Br>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên Người dùng cần tìm...">
-    <i class="fa fa-search" aria-hidden="true"></i>
-
     <form action="">
-
     </form>
     <b>CHỨC NĂNG CHÍNH:</b><Br>
-    <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Người dùng"><i class="fas fa-user-plus"></i></button>
-    <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
-            title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
+    <div class="container mt-5">
+        <form id="searchForm" action="{{ route('searchUser') }}" method="GET">
+            <input type="text" id="searchInput" name="searchTerm" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
+            <button type="submit" class="btn btn-primary mt-2">Tìm kiếm</button>
+        </form>
+    </div>
+    <a href="{{ route('showRegisterForm') }}" class="nv btn add-new" data-toggle="tooltip"
+       data-placement="top" title="Thêm Người dùng">
+        <i class="fas fa-user-plus"></i>
+    </a>
+    <a href="{{ route('orderByName') }}" class="nv" data-toggle="tooltip" data-placement="top"
+       title="Lọc Dữ Liệu">
+        <i class="fa fa-filter" aria-hidden="true"></i>
+    </a>
     <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
             class="fas fa-file-import"></i></button>
     <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
@@ -182,7 +208,6 @@
         </div>
 
     </div>
-
     <table class="table table-bordered" id="myTable">
         <div class="container">
             @if(session('success'))
@@ -219,7 +244,8 @@
                 <td>{{ $user->email }}</td>
                 <td>Che</td>
                 <td>{{ $user->phone }}</td>
-                <td><img src="{{ asset('storage/' . $user->avatar) }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;"></td>
+                <td><img src="{{ asset($user->avatar) }}" alt="{{ $user->name }}" style="width: 50px; height: 50px;">
+                </td>
                 <td>{{ $user->address }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>
@@ -245,24 +271,21 @@
         </tbody>
     </table>
 
-    <!-- Phân trang  bắt đầu-->
+    <!-- Phân trang bắt đầu -->
     <div id="pageNavPosition" class="text-right">
         <ul class="pagination">
-            <!-- Hiển thị link đến trang trước (Previous Page) -->
             @if ($users->onFirstPage())
                 <li class="disabled"><span>&laquo;</span></li>
             @else
                 <li><a href="{{ $users->previousPageUrl() }}" rel="prev">&laquo;</a></li>
             @endif
 
-            <!-- Hiển thị các số trang đã có -->
             @for ($i = 1; $i <= $users->lastPage(); $i++)
                 <li class="{{ $i == $users->currentPage() ? 'active' : '' }}">
                     <a href="{{ $users->url($i) }}">{{ $i }}</a>
                 </li>
             @endfor
 
-            <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
             @if ($users->hasMorePages())
                 <li><a href="{{ $users->nextPageUrl() }}" rel="next">&raquo;</a></li>
             @else
@@ -270,7 +293,7 @@
             @endif
         </ul>
     </div>
-    <!-- Phân trang kết thúc-->
+    <!-- Phân trang kết thúc -->
 
     <hr class="hr1">
     <div class="container-fluid end">
@@ -288,50 +311,17 @@
     </div>
     <script src="admin/manager/jquery.min.js"></script>
     <script type="text/javascript">
-        //Tìm kiếm
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
+        $(document).ready(function() {
+            $('#searchForm').on('submit', function(e) {
+                e.preventDefault();
+                const searchTerm = $('#searchInput').val().trim();
+                if (searchTerm !== '') {
+                    window.location.href = "{{ route('searchUser') }}?searchTerm=" + searchTerm;
                 }
-            }
-        }
+            });
+        });
 
-        //Lọc bảng
-        function sortTable() {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("myTable");
-            switching = true;
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[0];
-                    y = rows[i + 1].getElementsByTagName("TD")[0];
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
-                }
-            }
-        }
+
 
         //Thời Gian
         function time() {
@@ -375,75 +365,77 @@
         }
 
         //Thêm
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html();
-            $(".add-new").click(function () {
-                $(this).attr("disabled", "disabled");
-                var index = $("table tbody tr:last-child").index();
-                var row = '<tr>' +
-                    '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
-                    '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
-                    '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
-                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
-                    '<td>' + actions + '</td>' +
-                    '</tr>';
-                $("table").append(row);
-                $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-            //Kiểm tra rỗng
-            $(document).on("click", ".add", function () {
-                var empty = false;
-                var input = $(this).parents("tr").find('input[type="text"]');
-                input.each(function () {
-                    if (!$(this).val()) {
-                        $(this).addClass("error");
-                        swal("Thông Báo!", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
-                        empty = true;
-                    } else {
-                        $(this).removeClass("error");
-                        swal("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "warning");
-                    }
-                });
-                $(this).parents("tr").find(".error").first().focus();
-                if (!empty) {
-                    input.each(function () {
-                        $(this).parent("td").html($(this).val());
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
-                    });
-                    $(this).parents("tr").find(".add, .edit").toggle();
-                    $(".add-new").removeAttr("disabled");
+        // $(document).ready(function () {
+        //     $('[data-toggle="tooltip"]').tooltip();
+        //     var actions = $("table td:last-child").html();
+        //     $(".add-new").click(function () {
+        //         $(this).attr("disabled", "disabled");
+        //         var index = $("table tbody tr:last-child").index();
+        //         var row = '<tr>' +
+        //             '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
+        //             '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
+        //             '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
+        //             '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
+        //             '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
+        //             '<td>' + actions + '</td>' +
+        //             '</tr>';
+        //         $("table").append(row);
+        //         $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+        //         $('[data-toggle="tooltip"]').tooltip();
+        //     });
+        //
+        //Kiểm tra rỗng
+        $(document).on("click", ".add", function () {
+            var empty = false;
+            var input = $(this).parents("tr").find('input[type="text"]');
+            input.each(function () {
+                if (!$(this).val()) {
+                    $(this).addClass("error");
+                    swal("Thông Báo!", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
+                    empty = true;
+                } else {
+                    $(this).removeClass("error");
+                    swal("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "warning");
                 }
             });
-            // Sửa
-            // Thêm thông báo khi nhấn nút "Lưu Lại"
-            $(document).on("click", ".add", function () {
-                Swal.fire(
-                    'Thành Công!',
-                    'Bạn Đã Sửa Thành Công',
-                    'success'
-                );
-            });
-
-// Sửa
-            $(document).on("click", ".edit", function () {
-                $(this).parents("tr").find("td:not(:last-child)").each(function () {
-                    const text = $(this).text().trim();
-                    $(this).html('<input type="text" class="form-control" value="' + text + '">');
+            $(this).parents("tr").find(".error").first().focus();
+            if (!empty) {
+                input.each(function () {
+                    $(this).parent("td").html($(this).val());
+                    swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
                 });
                 $(this).parents("tr").find(".add, .edit").toggle();
-                $(".add-new").attr("disabled", "disabled");
-            });
-
-            // Xóa
-            $(document).on("click", ".delete", function () {
-                $(this).parents("tr").remove();
-                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
-            });
+            }
         });
+        // Sửa
+        // Thêm thông báo khi nhấn nút "Lưu Lại"
+        $(document).on("click", ".add", function () {
+            Swal.fire(
+                'Thành Công!',
+                'Bạn Đã Sửa Thành Công',
+                'success'
+            );
+        });
+
+        // Sửa
+        $(document).on("click", ".edit", function () {
+            $(this).parents("tr").find("td:not(:last-child)").each(function () {
+                const text = $(this).text().trim();
+                $(this).html('<input type="text" class="form-control" value="' + text + '">');
+            });
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-new").attr("disabled", "disabled");
+        });
+
+        // Xóa
+        $(document).on("click", ".delete", function () {
+            $(this).parents("tr").remove();
+            swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
+            $(".add-new").removeAttr("disabled");
+        });
+        })
+        ;
         //Not use
         jQuery(function () {
             jQuery(".cog").click(function () {

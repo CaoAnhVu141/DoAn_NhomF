@@ -57,7 +57,9 @@ Route::get('/',[AdminShoppingController::class,'showIndexShopping'])->name('haha
 
 ///show thanh toán
 
-Route::get('checkout',[AdminShoppingController::class,'showCart'])->name('cartpro');
+Route::get('checkout',[CheckOutProduct::class,'showCheckOut'])->name('checkout');
+
+
 
 //_____@Giỏ hàng ________
 
@@ -72,13 +74,13 @@ Route::get('contact',[ContactController::class,'showIndexContact'])->name('conta
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');
 //Show Register
-Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
+Route::get('register1',[AdminLoginAndRegisterController::class,'ShowRegister']);
 
 // Thực thi dăng nhập
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
 Route::post('logout',[AdminLoginAndRegisterController::class,'logoutUser'])->name('logout');
 // Thực thi đăng ký
-Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'adminRegister']);
+Route::get('register/registerrun',[AdminLoginAndRegisterController::class,'UserRegister']);
 
 
 Route::get('admin-login',[LoginAdminController::class,'showAminLogin'])->name('showadminlogin');
@@ -112,6 +114,9 @@ Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEdit
 Route::get('checkactive-category/{id}',[AdminCategoryProductController::class, 'checkactivecategory'])->name('activecategory');
 //xoa danh muc boi le hoang thinh
 Route::get('delete-category/{id}',[AdminCategoryProductController::class, 'deleteCategory'])->name('deletecategory');
+//sua danh muc
+Route::get('edit-category/{id}',[AdminCategoryProductController::class,'showEditCategory'])->name('editcategory');
+Route::post('update-category/{id}',[AdminCategoryProductController::class, 'updateCategory'])->name('updatecategory');
 
 
 // @@Thực thi với danh mục liên quan (2)
@@ -166,17 +171,14 @@ Route::get('delete-attribute/{id}',[AdminAttributeController::class, 'deleteAttr
 Route::get('product',[AdminProductsController::class,'showIndexProduct'])->name('indexproduct');
 
 
-
+//Product
 // thêm sản phẩm
 
 Route::get('add-product',[AdminProductsController::class,'showCreateProduct'])->name('addproduct');
 Route::post('add-product',[AdminProductsController::class,'addDataProduct'])->name('adddataproduct');
-
 ///xoá sản phẩm
-
 Route::get('delete-product/{id}',[AdminProductsController::class,'deleteProducts'])->name('deleteproducts');
-
-//sửa sản phẩm
+//hiển thị trang sửa sản phẩm
 Route::get('edit-product/{id}',[AdminProductsController::class,'EditProduct'])->name('editproduct');
 
 //Hiển Thị form update
@@ -207,8 +209,16 @@ Route::get('product-type',[AdminProductTypeController::class,'showProductType'])
 Route::get('add-producttype',[AdminProductTypeController::class,'showAddProductType'])->name('addproducttype');
 
 //sửa loại sản phẩm
-
 Route::get('edit-producttype',[AdminProductTypeController::class,'showEditProductType'])->name('editproducttype');
+
+//hàm add producttype
+Route::get('add-producttype/run',[AdminProductTypeController::class,'addProductType']);
+// hàm sửa producttype theo id
+Route::get('editproducttype/{id}',[AdminProductTypeController::class,'editProductType']);
+//Hàm xóa product type
+Route::get('deleteproducttype/{id}',[AdminProductTypeController::class,'deleteProductTypes']);
+
+
 
 // @@ Thực thi với bài viết (7)
 
@@ -261,7 +271,7 @@ Route::get('addproduct/addrun',[AdminProductTypeController::class,'AddNewProduct
 
 
 
-/// thực thi cho nhà cung cấp (9)
+/// thực thi cho nhà cung cấp boi le hoang thinh
 
 Route::get('supplier',[AdminSupplierController::class, 'showIndexSupplier'])->name('indexsupplier');
 
@@ -283,13 +293,19 @@ Route::post('update-supplier/{id}',[AdminSupplierController::class,'updateDataSu
 
 Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->name('manageruser');
 Route::post('manager',[AdminManagerUsersController::class,'showAllUser'])->name('manageruse');
+
+//sap xep user
+Route::get('manager-users/sort', [AdminManagerUsersController::class, 'orderByName'])->name('orderByName');
 //Xoa User
 Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
 //Sua User
 Route::get('/users/edit/{id}', [AdminManagerUsersController::class, 'edit'])->name('editUser');
-Route::put('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
-
-
+Route::post('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])->name('updateUser');
+// Dang Ky User
+Route::get('/register', [AdminManagerUsersController::class, 'showRegistrationForm'])->name('showRegisterForm');
+Route::post('/register', [AdminManagerUsersController::class, 'register'])->name('registerUser');
+// Tim kiem user
+Route::get('/search-user', [AdminManagerUsersController::class, 'searchUser'])->name('searchUser');
 
 ////demo senmail
 
@@ -330,3 +346,23 @@ Route::get('remove-cart/{rowId}', [CartShopping::class, 'deleteCartShopping'])->
 
 Route::post('update-cart',[CartShopping::class,'updateCartShopping'])->name('cart.update');
 
+//cập nhật số lượng sản phẩm chi tiết
+
+// Route::post('update-amount',[DetailProductController::class, 'updateDetailProduct'])->name('update.amount');
+// Route::post('/cart/update', [CartShopping::class, 'updateDetailProduct'])->name('update.amount');
+// Route::put('cart/update/{rowId}', [CartShopping::class, 'updateDetailProduct'])->name('cart.now');
+
+
+
+
+///Mua hàng
+
+// Route::post('odersproduct',[CheckOutProduct::class, 'enforcementCart'])->name('oderproduct');
+
+//thanh toán
+
+Route::post('checkout',[CheckOutProduct::class, 'enforcementCart'])->name('checkoutnow');
+
+//thanh thoán thành công
+
+Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');

@@ -3,12 +3,12 @@
 <section class="content-header">
     <h1>
        Suppliers
-      <small>Carete</small>
+      <small>Update</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="">Attribute</a></li>
-      <li class="active">Create</li>
+      <li><a href="">Supplier</a></li>
+      <li class="active">Update</li>
 
     </ol>
   </section>
@@ -18,43 +18,53 @@
     <div class="row">
 
     <div class="box box-primary">
-        <form action="{{ route('updatedatasupplier',$suppliers->id_supplier) }}" method="POST">
+        <form action="{{ route('updatedatasupplier',$suppliers->id_supplier) }}" method="POST"  enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Name <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" value="{{ $suppliers->name }}" name="name" placeholder="Name ......">
-                     
+                    <div class="form-group {{ $errors->first('phone') ? 'has-error' : '' }}">
+                        <label>Name<span class="text-danger">(*)</span></label>
+                        <input class="form-control" name="name" value="{{ $suppliers->name }}" rows="3" placeholder="Enter ..." required></input>
+                        @if ($errors->first('name'))
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group {{ $errors->first('description') ? 'has-error' : '' }}">
+                        <label>Description<span class="text-danger">(*)</span></label>
+                        <textarea class="form-control" name="description" rows="3"
+                                  placeholder="Enter ..." required>{{ $suppliers->description }}</textarea>
+                        @if ($errors->first('description'))
+                            <span class="text-danger">{{ $errors->first('description') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group {{ $errors->first('email') ? 'has-error' : '' }}">
+                        <label>Email<span class="text-danger">(*)</span></label>
+                        <input class="form-control" name="email" value="{{ $suppliers->email }}" rows="3" placeholder="Enter ..." required></input>
+                        @if ($errors->first('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group {{ $errors->first('phone') ? 'has-error' : '' }}">
+                        <label>Phone<span class="text-danger">(*)</span></label>
+                        <input class="form-control" name="phone" value="{{ $suppliers->phone }}" rows="3" placeholder="Enter ..." required></input>
+                        @if ($errors->first('phone'))
+                            <span class="text-danger">{{ $errors->first('phone') }}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description" rows="3" placeholder="Enter ...">{{ $suppliers->description }}</textarea>
-                        </div>
+                        <label for="fileInput">Image</label>
+                        <input type="file" class="form-control-file" id="fileInput" name="image">
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Email <span class="text-danger">(*)</span></label>
-                        <input type="email" class="form-control" name="email" value="{{ $suppliers->email }}" placeholder="Email ......">
-                     
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Phone <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="phone" value="{{ $suppliers->phone }}" placeholder="Phone ......">
-                     
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="name">Address <span class="text-danger">(*)</span></label>
-                        <input type="text" class="form-control" name="address" value="{{ $suppliers->address }}" placeholder="Address ......">
-                     
+                    <div>
+                        <img src="{{ asset($suppliers->image) }}" alt="Ảnh hiện tại" height="300px">
                     </div>
                 </div>
             </div>

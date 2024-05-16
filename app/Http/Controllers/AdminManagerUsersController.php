@@ -6,10 +6,12 @@ use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 
 class AdminManagerUsersController extends Controller
 {
@@ -48,7 +50,6 @@ class AdminManagerUsersController extends Controller
         // Trả về view để hiển thị form chỉnh sửa thông tin
         return view('admin.manageruser.edit_user', compact('user'));
     }
-
     public function update(Request $request, $id): RedirectResponse
     {
 
@@ -74,26 +75,94 @@ class AdminManagerUsersController extends Controller
         $user->address = $request->input('address');
 
 
-        // Xử lý ảnh đại diện nếu có
-        if ($request->hasFile('newAvatar')) {
-            // Xóa ảnh cũ nếu có
-            if ($user->avatar && Storage::exists($user->avatar)) {
-                Storage::delete($user->avatar);
+        $file = $request->file('avatar'); // Lấy file từ request
+
+        if ($file) {
+            $file_name = $file->getClientOriginalName();
+
+            // Kiểm tra xem thư mục public/uploads đã tồn tại chưa
+            $directory = 'uploads';
+            if (!File::exists($directory)) {
+                // Nếu thư mục không tồn tại, hãy tạo nó
+                File::makeDirectory($directory);
             }
 
-            // Lưu ảnh mới
-            $image = $request->file('newAvatar');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            $path = $image->storeAs('public/avatars', $imageName);
+            // Di chuyển tệp tải lên vào thư mục public/uploads
+            $path = $file->move($directory, $file_name);
 
-            // Cập nhật tên ảnh trong database
-            $user->avatar = 'avatars/'.$imageName;
+            // Tạo đường dẫn của ảnh từ thư mục uploads
+            $thumbnail = $directory . '/' . $file_name;
+        } else {
+            $thumbnail = $user->avatar; // Nếu không có tệp tải lên, sử dụng giá trị null cho thumbnail
         }
-
+        $user->avatar = $thumbnail;
         // Lưu lại thông tin người dùng
         $user->save();
 
         return redirect()->route('manageruser')->with('success', 'Thông tin người dùng đã được cập nhật thành công.');
     }
+    // Hiển thị form đăng ký
+    public function showRegistrationForm(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('admin.manageruser.register');
+    }
+    // Xử lý yêu cầu đăng ký
+    public function register(Request $request): RedirectResponse
+    {
+        // Validate dữ liệu đầu vào
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users,email',
+            'phone' => 'required|string',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'address' => 'required|string',
+            'password' => 'required|string|min:8',
+        ]);
 
+        $file = $request->file('avatar'); // Lấy file từ request
+
+        if ($file) {
+            $file_name = time() . '_' . $file->getClientOriginalName();
+
+            // Kiểm tra xem thư mục public/uploads đã tồn tại chưa
+            $directory = 'uploads';
+            if (!File::exists(public_path($directory))) {
+                // Nếu thư mục không tồn tại, hãy tạo nó
+                File::makeDirectory(public_path($directory), 0755, true);
+            }
+
+            // Di chuyển tệp tải lên vào thư mục public/uploads
+            $path = $file->move(public_path($directory), $file_name);
+
+            // Tạo đường dẫn của ảnh từ thư mục uploads
+            $thumbnail = $directory . '/' . $file_name;
+        } else {
+            $thumbnail = null; // Nếu không có tệp tải lên, sử dụng giá trị null cho thumbnail
+        }
+
+        // Tạo người dùng mới
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'address' => $request->input('address'),
+            'password' => Hash::make($request->input('password')),
+            'avatar' => $thumbnail, // Đường dẫn tới ảnh đại diện
+        ]);
+
+        return redirect()->route('manageruser')->with('success', 'Người dùng đã được thêm thành công.');
+    }
+    public function orderByName()
+    {
+        $users = User::orderBy('name', 'asc')->paginate(5);
+        return view('admin.manageruser.indexuser', compact('users'));
+    }
+    // Tìm Kiếm User theo tên
+    public function searchUser(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+        $users = User::where('name', 'LIKE', '%' . $searchTerm . '%')->paginate(5);
+
+        return view('admin.manageruser.search_results', compact('users', 'searchTerm'));
+    }
 }
