@@ -131,7 +131,6 @@ Route::get('add-related',[AdminRelatedcategoryController::class,'showCreateRelat
 Route::get('edit-related',[AdminRelatedcategoryController::class,'showEditRelated'])->name('editrelated');
 
 // @@thực thi với thuộc tính (3)
-
 Route::get('attribute',[AdminAttributeController::class,'showIndexAattribute'])->name('indexattribute');
 
 //thêm thuộc tính
@@ -181,17 +180,23 @@ Route::get('oders',[AdminOdersController::class,'showIndexOder'])->name('indexod
 
 Route::get('oders-detail',[AdminOdersController::class,'showDetailIndexOder'])->name('indexoderdetail');
 
-// @@ Thực thi với loại sản phẩm (6)
-
+//Thực thi với loại sản phẩm (6)
 Route::get('product-type',[AdminProductTypeController::class,'showProductType'])->name('indexproducttype');
 
-//thêm loại sản phẩm
-
+//hiểnsản phẩm
 Route::get('add-producttype',[AdminProductTypeController::class,'showAddProductType'])->name('addproducttype');
 
 //sửa loại sản phẩm
-
 Route::get('edit-producttype',[AdminProductTypeController::class,'showEditProductType'])->name('editproducttype');
+
+//hàm add producttype
+Route::get('add-producttype/run',[AdminProductTypeController::class,'addProductType']);
+// hàm sửa producttype theo id
+Route::get('editproducttype/{id}',[AdminProductTypeController::class,'editProductType']);
+//Hàm xóa product type
+Route::get('deleteproducttype/{id}',[AdminProductTypeController::class,'deleteProductTypes']);
+
+
 
 // @@ Thực thi với bài viết (7)
 
