@@ -78,6 +78,30 @@
 
                   </tbody>
                 </table>
+                  <div id="pageNavPosition" class="text-right">
+                      <ul class="pagination">
+                          <!-- Hiển thị link đến trang trước (Previous Page) -->
+                          @if ($posts->onFirstPage())
+                              <li class="disabled"><span>&laquo;</span></li>
+                          @else
+                              <li><a href="{{ $posts->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                          @endif
+
+                          <!-- Hiển thị các số trang đã có -->
+                          @for ($i = 1; $i <= $posts->lastPage(); $i++)
+                              <li class="{{ $i == $posts->currentPage() ? 'active' : '' }}">
+                                  <a href="{{ $posts->url($i) }}">{{ $i }}</a>
+                              </li>
+                          @endfor
+
+                          <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
+                          @if ($posts->hasMorePages())
+                              <li><a href="{{ $posts->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                          @else
+                              <li class="disabled"><span>&raquo;</span></li>
+                          @endif
+                      </ul>
+                  </div>
               </div>
               <!-- /.box-body -->
               {{-- <div>{!! $articles->links() !!}</div> --}}

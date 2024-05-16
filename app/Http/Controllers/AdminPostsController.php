@@ -18,15 +18,16 @@ class AdminPostsController extends Controller
     public function showIndexPost(Request $request)
     {
         $key = "";
-        if($request->input('key'))
-        {
-          $key = $request->input('key');
+        if ($request->input('key')) {
+            $key = $request->input('key');
         }
-        $posts = Post::where('name','LIKE',"%$key%")->paginate(10);
-        return view('admin.posts.index', compact('posts'));
+        $posts = Post::where('name', 'LIKE', "%$key%")->paginate(3);
+
+        return view('admin.posts.index', ['posts' => $posts]);
+
     }
 
-    //show giao diện thêm 
+    //show giao diện thêm
 
     public function showCreatePost()
     {

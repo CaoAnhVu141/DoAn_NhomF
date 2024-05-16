@@ -60,7 +60,7 @@
                     @endphp
                           <tr>
                               <td>{{ $count }}</td>
-                             
+
                               <td>{{ $item->name }}</td>
                               {{-- <td><span class="{{ $item->getType($item->atb_type)['class'] }}"></span></td> --}}
                               <td>{{ $item->discription }}</td>
@@ -82,9 +82,33 @@
                     @else
                      <h3>Rất tiêc, dữ liệu không tìm thấy</h3>
                     @endif
-                   
+
                   </tbody>
                 </table>
+                  <div id="pageNavPosition" class="text-right">
+                      <ul class="pagination">
+                          <!-- Hiển thị link đến trang trước (Previous Page) -->
+                          @if ($categorypost->onFirstPage())
+                              <li class="disabled"><span>&laquo;</span></li>
+                          @else
+                              <li><a href="{{ $categorypost->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                          @endif
+
+                          <!-- Hiển thị các số trang đã có -->
+                          @for ($i = 1; $i <= $categorypost->lastPage(); $i++)
+                              <li class="{{ $i == $categorypost->currentPage() ? 'active' : '' }}">
+                                  <a href="{{ $categorypost->url($i) }}">{{ $i }}</a>
+                              </li>
+                          @endfor
+
+                          <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
+                          @if ($categorypost->hasMorePages())
+                              <li><a href="{{ $categorypost->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                          @else
+                              <li class="disabled"><span>&raquo;</span></li>
+                          @endif
+                      </ul>
+                  </div>
               </div>
               <!-- /.box-body -->
               {{--  {!! $attribute->links() !!}  --}}
