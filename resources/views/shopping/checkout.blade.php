@@ -26,19 +26,19 @@
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label> Name</label>
-                        <input class="form-control" type="text" name="name" placeholder="Doe">
+                        <input class="form-control" type="text" name="name">
                     </div>
                     <div class="col-md-6 form-group">
-                        <label>E-mail</label>
-                        <input class="form-control" type="text" name="email" placeholder="example@email.com">
+                        <label> District</label>
+                        <input class="form-control" type="text" name="district">
                     </div>
+                    <div class="col-md-6 form-group">
+                        <label>City</label>
+                        <input class="form-control" type="text" name="saigon">
+                    </div>                 
                     <div class="col-md-6 form-group">
                         <label>Mobile No</label>
                         <input class="form-control" type="text" name="phone" placeholder="+84...">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label>Address</label>
-                        <input class="form-control" type="text" name="address" placeholder="123 Street">
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Transportation Method</label>
@@ -46,68 +46,16 @@
                             @foreach ($transprort as $item)
                             <option value="{{ $item->id_transport }}">{{ $item->name }}</option>
                             @endforeach
-                            
                         </select>
                     </div>
                    
                     <div class="col-md-6 form-group">
-                        <label>State</label>
+                        <label>Note</label>
                         <input class="form-control" type="text" placeholder="New York">
                     </div>
                 </div>
             </div>
-            <div class="collapse mb-5" id="shipping-address">
-                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Shipping Address</span></h5>
-                <div class="bg-light p-30">
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>First Name</label>
-                            <input class="form-control" type="text" placeholder="John">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Last Name</label>
-                            <input class="form-control" type="text" placeholder="Doe">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="123">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
         <div class="col-lg-4">
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Order Total</span></h5>

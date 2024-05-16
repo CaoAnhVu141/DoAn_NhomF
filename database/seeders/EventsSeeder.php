@@ -30,7 +30,7 @@ class EventsSeeder extends Seeder
             [
                 'name' => 'Event 2',
                 'content' => 'Content for Event 2',
-                'image' => 'image2.jpg',
+                'image' => 'uploads/1715874018_images.jpg',
                 'linkevent' => 'https://example.com/event2',
                 'checkactive' => true,
                 'start_date' => '2024-06-01',
@@ -40,5 +40,19 @@ class EventsSeeder extends Seeder
             ],
             // Thêm dữ liệu cho các sự kiện khác ở đây
         ]);
+        for ($i = 1; $i <= 9; $i++) {
+            DB::table('events')->insert([
+                'name' => 'Event ',
+                'content' => 'Content for Event ',
+                'image' => 'uploads/1715874018_images.jpg',
+                'linkevent' => 'https://example.com/eventnew',
+                'checkactive' => true,
+                'start_date' => '2024-06-0'.$i,
+                'end_date' => '2024-10-30',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
+
 }

@@ -29,7 +29,8 @@
                     </button> 
                 </form>
             </div><br> --}}
-            <figure class="highcharts-figure">
+            {{-- @@todo --}}
+            {{-- <figure class="highcharts-figure">
                 <div id="container2" 
                 data-list-day="{{ $listDay }}" 
                 data-money-default="{{ $arrRevenueTransactionMonthDefault }}"
@@ -38,13 +39,14 @@
                 data-money-cancel="{{ $arrRevenueTransactionMonthCancel }}"
                 data-mt = "{{ $mt }}"
                 ></div>
-            </figure>
+            </figure> --}}
         </div>
-        <div class="col-sm-4">
+        {{-- @@todo --}}
+        {{-- <div class="col-sm-4">
             <figure class="highcharts-figure">
                 <div id="container" data-json="{{ $statusTransaction }}"></div>
             </figure>
-        </div>
+        </div> --}}
     </div> 
     <div class="row" style="margin-bottom: 20px">
         <div class="col-md-7">

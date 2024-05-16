@@ -30,12 +30,52 @@ class AdminAndUserSeeder extends Seeder
                 'avatar' => 'uploads/avatar.jpg',
             ],
             [
-                'name' => 'Jane Smith',
+                'name' => 'Le Hoang Thinh',
+                'password' => bcrypt('12345678'), // Băm mật khẩu trước khi lưu vào cơ sở dữ liệu
+                'email' => 'le.hamthang21@gmail.com',
+                'id_role' => 2, // ID của quyền (nếu có)
+                'phone' => '123456789',
+                'avatar' => 'uploads/avatar.jpg',
+            ],
+            [
+                'name' => 'Khoái',
                 'password' => bcrypt('12345678'),
                 'email' => 'ok1@gmail.com',
                 'id_role' => 2,
                 'phone' => '12345678',
                 'avatar' => 'uploads/avatar.jpg',
+            ],
+            [
+                'name' => 'Lỏ',
+                'password' => bcrypt('12345678'),
+                'email' => 'khabanh@gmail.com',
+                'id_role' => 2,
+                'phone' => '12345678',
+                'avatar' => '
+
+                uploads/avatar.jpg',
+            ],
+
+            [
+                'name' => 'Jack',
+                'password' => bcrypt('12345678'),
+                'email' => 'demo@gmail.com',
+                'id_role' => 2,
+                'phone' => '12345678',
+                'avatar' => '
+
+                uploads/avatar.jpg',
+            ],
+
+            [
+                'name' => 'MTA',
+                'password' => bcrypt('12345678'),
+                'email' => 'trungnguyen@gmail.com',
+                'id_role' => 2,
+                'phone' => '12345678',
+                'avatar' => '
+
+                uploads/avatar.jpg',
             ],
             // Thêm dữ liệu mẫu khác ở đây
         ];

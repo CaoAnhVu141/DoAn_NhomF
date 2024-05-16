@@ -1,3 +1,5 @@
+php artisan migrate:rollback
+php artisan migrate
 php artisan db:seed --class=UserTableSeeder
 php artisan db:seed --class=UserRolesTableSeeder
 php artisan db:seed --class=RolesTableSeeder
@@ -24,3 +26,8 @@ php artisan db:seed --class=EventsSeeder
 php artisan db:seed --class=DiscountsSeeder
 @REM php artisan db:seed --class=ProductSeeder
 php artisan db:seed --class=ProductTypeSeeder
+php artisan db:seed --class=CategoriesSeeder
+
+
+php artisan optimize
+php artisan serve

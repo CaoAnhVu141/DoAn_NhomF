@@ -11,14 +11,14 @@ class SendMaill extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $text; // Định nghĩa thuộc tính $text
+    public $order; // Định nghĩa thuộc tính oder
 
     /**
      * Create a new message instance.
      */
-    public function __construct($text)
+    public function __construct($order)
     {
-        $this->text = $text; // Gán giá trị cho thuộc tính $text khi khởi tạo
+        $this->order = $order; // Gán giá trị cho thuộc tính $text khi khởi tạo
     }
 
     /**
@@ -28,7 +28,6 @@ class SendMaill extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.sendby')->from('caoanhvu.tdc2223@gmail.com','Shop của em')->subject('[Shopcuaem.vn] Cảm ơn bạn đã mua hàng ha')
-        ->with($this->text);
+        return $this->view('mails.sendby')->from('caoanhvu.tdc2223@gmail.com','Shop của em')->subject('[Shopcuaem.vn] Cảm ơn bạn đã mua hàng ha');
     }
 }

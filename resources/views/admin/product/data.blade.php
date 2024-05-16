@@ -45,15 +45,14 @@
                                     VND</span>
                             @endif
                         </td>
-
-
                         <td>
                             @if ($item->checkactive == 1)
-                                <a href="#" class="label label-info status-actives">Active</a>
+                            <a href="{{ route('toggleaproduct',['id'=>$item->id_product]) }}" class="label label-info status-active">Hot</a>
                             @else
-                                <a href="#" class="label label-default status-actives">Hide</a>
-                            @endif
+                             <a href="{{ route('toggleaproduct',['id'=>$item->id_product]) }}" class="label label-default status-active">No</a>
+                             @endif
                         </td>
+                        
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <a href="{{ route('editproduct', ['id' => $item->id_product]) }}"
@@ -70,5 +69,27 @@
         </tbody>
         
     </table>
-
+    <div id="pageNavPosition" class="text-right">
+        <ul class="pagination">
+            <!-- Hiển thị link đến trang trước (Previous Page) -->
+            @if ($products->onFirstPage())
+                <li class="disabled"><span>&laquo;</span></li>
+            @else
+                <li><a href="{{ $products->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+            @endif
+    
+            <!-- Hiển thị các số trang đã có -->
+            @for ($i = 1; $i <= $products->lastPage(); $i++)
+                <li class="{{ $i == $products->currentPage() ? 'active' : '' }}">
+                    <a href="{{ $products->url($i) }}">{{ $i }}</a>
+                </li>
+            @endfor
+            <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
+            @if ($products->hasMorePages())
+                <li><a href="{{ $products->nextPageUrl() }}" rel="next">&raquo;</a></li>
+            @else
+                <li class="disabled"><span>&raquo;</span></li>
+            @endif
+        </ul>
+    </div>
 </div>

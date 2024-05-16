@@ -13,7 +13,7 @@ class AdminShoppingController extends Controller
 
     public function showIndexShopping()
     {
-        $products = Product::paginate(5);
+        $products = Product::paginate(4);
         return view('shopping.dashboard',compact('products'));
     }
 
@@ -21,10 +21,26 @@ class AdminShoppingController extends Controller
 
     public function showDetailShopping($id)
     {
+        // lấy chi tiết từ id
         $productdetail = Product::find($id);
+        // chia chuỗi đươc luu trong sizes , hàm explode chia chuỗi dựa trên dấu phẩy
         $sizesArray = explode(',', $productdetail->sizes);
+        //tạo mảng lưu dưới dạng chuỗi
         $listImages = json_decode($productdetail->list_images, true);
+        //trả về trang detail
         return view('shopping.detail',compact('productdetail','sizesArray','listImages'));
+    }
+
+
+    ///viết hàm thực thi checkactive nè
+
+    public function checkActiveProduct($id)
+    {
+        $products = Product::find($id);
+        $products->checkactive = !$products->checkactive;
+        $products->save();
+
+        return redirect()->route('indexproduct')->with('status',"Thành công rồi nè");
     }
 
     
