@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/event/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/event/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2024_05_06_051445_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2024_05_06_051445_create_events_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/LayOut/admin-dashboard/master_admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/LayOut/admin-dashboard/master_admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/manageruser/indexuser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageruser/indexuser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/manageruser/search_results.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageruser/search_results.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +163,7 @@
       <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
       <path value="$PROJECT_DIR$/vendor/league/event" />
       <path value="$PROJECT_DIR$/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -248,6 +243,7 @@
       <workItem from="1715749449007" duration="1230000" />
       <workItem from="1715788931024" duration="2016000" />
       <workItem from="1715833568600" duration="8260000" />
+      <workItem from="1715876185374" duration="3045000" />
     </task>
     <servers />
   </component>

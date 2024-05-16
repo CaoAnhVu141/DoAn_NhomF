@@ -257,7 +257,7 @@
                     <a href="{{ route('editUser', ['id' => $user->user_id]) }}">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>
-                    <form action="{{ route('deleteUser', ['id' => $user->user_id]) }}" method="POST">
+                    <form action="{{ route('deleteUser', ['id' => $user->user_id]) }}" method="POST" >
                         @csrf <!-- Blade directive để tạo CSRF token -->
                         @method('DELETE') <!-- Blade directive để thiết lập phương thức HTTP là DELETE -->
                         <button type="submit" class="btn btn-danger" title="Xóa" data-toggle="tooltip"
