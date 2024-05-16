@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/event/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/event/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminSupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminSupplierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Supplier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/image1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/image1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2024_05_06_051445_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2024_05_06_051445_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/LayOut/admin-dashboard/master_admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/LayOut/admin-dashboard/master_admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +169,6 @@
       <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
       <path value="$PROJECT_DIR$/vendor/league/event" />
       <path value="$PROJECT_DIR$/vendor/league/uri" />
-      <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -186,7 +186,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "lht__show__supplier",
+    "git-widget-placeholder": "caoanhvu-index",
     "last_opened_file_path": "D:/ThanhPhong/BE2/DoAn_NhomF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -246,6 +246,8 @@
       <workItem from="1715741687057" duration="856000" />
       <workItem from="1715743658391" duration="5708000" />
       <workItem from="1715749449007" duration="1230000" />
+      <workItem from="1715788931024" duration="2016000" />
+      <workItem from="1715833568600" duration="8260000" />
     </task>
     <servers />
   </component>

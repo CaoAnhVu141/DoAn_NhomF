@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryPost;
 use App\Http\Controllers\AdminCategoryProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminEventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminManagerUsersController;
 use App\Http\Controllers\AdminOdersController;
@@ -74,7 +75,7 @@ Route::get('contact',[ContactController::class,'showIndexContact'])->name('conta
 //Show Login
 Route::get('login',[AdminLoginAndRegisterController::class,'ShowLogin'])->name('showlogin');
 //Show Register
-Route::get('register',[AdminLoginAndRegisterController::class,'ShowRegister']);
+Route::get('register1',[AdminLoginAndRegisterController::class,'ShowRegister']);
 
 // Thực thi dăng nhập
 Route::get('login/loginrun',[AdminLoginAndRegisterController::class,'UserLogin']);
@@ -273,7 +274,7 @@ Route::get('manager',[AdminManagerUsersController::class,'showManagerUsers'])->n
 Route::post('manager',[AdminManagerUsersController::class,'showAllUser'])->name('manageruse');
 
 //sap xep user
-Route::get('manager-users/sort', [AdminManagerUsersController::class, 'orderBy'])->name('managerusers.orderBy');
+Route::get('manager-users/sort', [AdminManagerUsersController::class, 'orderByName'])->name('orderByName');
 //Xoa User
 Route::delete('/users/{id}', [AdminManagerUsersController::class, 'deleteUser'])->name('deleteUser');
 //Sua User
@@ -283,6 +284,7 @@ Route::post('/users/edit/{id}', [AdminManagerUsersController::class, 'update'])-
 Route::get('/register', [AdminManagerUsersController::class, 'showRegistrationForm'])->name('showRegisterForm');
 Route::post('/register', [AdminManagerUsersController::class, 'register'])->name('registerUser');
 // Tim kiem user
+Route::get('/search-user', [AdminManagerUsersController::class, 'searchUser'])->name('searchUser');
 
 ////demo senmail
 
@@ -343,3 +345,10 @@ Route::post('checkout',[CheckOutProduct::class, 'enforcementCart'])->name('check
 //thanh thoán thành công
 
 Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
+
+///Event
+//Hien thi event
+Route::get('admin/event/index', [AdminEventController::class, 'indexEvent'])->name('indexEvent');
+Route::get('admin/event/add', [AdminEventController::class, 'create'])->name('addEvent');
+Route::post('admin/event/store', [AdminEventController::class, 'store'])->name('storeEvent');
+Route::get('admin/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('deleteEvent');

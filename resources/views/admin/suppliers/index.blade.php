@@ -10,14 +10,22 @@
             <li><a href="">Attribute</a></li>
             <li class="active">list</li>
 
-        </ol>
-    </section>
-    <!-- Main content -->
-    <section class="content">
-        <!-- Small boxes (Stat box) -->
-        @if(session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
+<section class="content-header">
+    <h1>
+      Suppliers
+      <small>index</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="">Attribute</a></li>
+      <li class="active">list</li>
+
+    </ol>
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    @if(session('status'))
             </div>
         @endif
         <div class="row">
