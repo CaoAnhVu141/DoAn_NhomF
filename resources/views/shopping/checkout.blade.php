@@ -77,16 +77,14 @@
                             @foreach (Cart::content() as $item)
                                 <div class="d-flex justify-content-between">
                                     <p>{{ $item->name }}</p>
-                                    <p>{{ $item->price }}</p>
+                                    <p>{{ number_format($item->price, 0, ',', '.') }} VND</p>
+                                    {{-- <td class="align-middle">{{ number_format($item->price, 0, ',', '.') }} VND</td> --}}
                                 </div>
                             @endforeach
 
                         </div>
                         <div class="border-bottom pt-3 pb-2">
-                            <div class="d-flex justify-content-between">
-                                <h6 class="font-weight-medium">Shipping</h6>
-                                <h6 class="font-weight-medium">$10</h6>
-                            </div>
+                            
                             <div class="d-flex justify-content-between">
                                 <h6 class="font-weight-medium">Amount</h6>
                                 <h6 class="font-weight-medium">{{ Cart::count() }}</h6>
@@ -94,8 +92,7 @@
                         </div>
                         <div class="pt-2">
                             <div class="d-flex justify-content-between mt-2">
-                                <h5>{{ Cart::total() }}</h5>
-                                <h5>$160</h5>
+                                <h5>{{ number_format(str_replace(',', '', Cart::total()), 0, ',', '.') }} VND</h5>
                             </div>
                         </div>
                     </div>
