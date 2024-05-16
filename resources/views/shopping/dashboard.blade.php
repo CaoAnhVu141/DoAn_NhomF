@@ -17,7 +17,8 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion
                                     </h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Chuyên phân phối giày dép chính hãng và siêu cấp vip pro</p>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Chuyên phân phối giày dép
+                                        chính hãng và siêu cấp vip pro</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
                                 </div>
@@ -28,14 +29,16 @@
                                 style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Shop của em</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Chuyên phân phối giày dép chính hãng và siêu cấp vip pro</p>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Shop của em
+                                    </h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Chuyên phân phối giày dép
+                                        chính hãng và siêu cấp vip pro</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="carousel-item position-relative" style="height: 430px;">
                             <img class="position-absolute w-100 h-100" src="admin/dashboard/img/carousel-3.jpg"
                                 style="object-fit: cover;">
@@ -43,7 +46,8 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Kids Fashion
                                     </h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Chuyên phân phối giày dép chính hãng và siêu cấp vip pro</p>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Chuyên phân phối giày dép
+                                        chính hãng và siêu cấp vip pro</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
                                 </div>
@@ -284,7 +288,8 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                         <div class="product-item bg-light mb-4">
                             <div class="product-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ asset($item->image) }}" alt="" height="200px" width="150px">
+                                <img class="img-fluid w-100" src="{{ asset($item->image) }}" alt=""
+                                    height="200px" width="150px">
                                 <div class="product-action">
                                     <a class="btn btn-outline-dark btn-square" href=""><i
                                             class="fa fa-shopping-cart"></i></a>
@@ -297,11 +302,16 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="{{ route('detailpro',$item->id_product) }}">{{ $item->name }}</a>
+                                <a class="h6 text-decoration-none text-truncate"
+                                    href="{{ route('detailpro', $item->id_product) }}">{{ $item->name }}</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
                                     {{-- Giảm giá --}}
-                                    <h5>{{ $item->price }}</h5>
-                                    <h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                    @php
+                                        $price = $item->price * (1 - $item->discount / 100);
+                                    @endphp
+                                    {{-- <h5>{{ $item->price }}</h5> --}}
+                                    <h5>{{ number_format($price, 0, ',', '.') }} VND</h5>
+                                    <h6 class="text-muted ml-2"><del>{{ number_format($item->price, 0, ',', '.') }} VND</del></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>

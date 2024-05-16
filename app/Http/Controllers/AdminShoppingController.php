@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class AdminShoppingController extends Controller
@@ -23,14 +24,8 @@ class AdminShoppingController extends Controller
         $productdetail = Product::find($id);
         $sizesArray = explode(',', $productdetail->sizes);
         $listImages = json_decode($productdetail->list_images, true);
-       
         return view('shopping.detail',compact('productdetail','sizesArray','listImages'));
     }
 
-    //hiển thị giỏ hàng
-
-    public function showCart()
-    {
-        return view('shopping.checkout');
-    }
+    
 }

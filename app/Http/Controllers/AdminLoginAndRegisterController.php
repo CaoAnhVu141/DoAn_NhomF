@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AdminLoginAndRegisterController extends Controller
 {
@@ -33,4 +36,44 @@ class AdminLoginAndRegisterController extends Controller
          Auth::logout();
          return redirect('login')->with('message','Đăng Xuất Thành Công !');
      }
+
+     // Hàm Đăng ký
+     public function UserRegister(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        $user = $this->create($request->all());
+
+        // Login the user immediately after registration
+        Auth()->login($user);
+
+        return redirect('login')->with('thongbao','khong dk đc');
+    }
+
+    // hàm xử lý điều kiện đăng ký
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required', 'string', 'max:15'],
+            'avatar' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'address' => ['required', 'string', 'max:255'],
+        ]);
+    }
+
+    // hàm truyền dữ liệu vào db
+    protected function create(array $data)
+    {
+        $avatarPath = $data['avatar']->store('avatars', 'public');
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'phone' => $data['phone'],
+            'avatar' => $avatarPath,
+            'address' => $data['address'],
+        ]);
+    }
 }
