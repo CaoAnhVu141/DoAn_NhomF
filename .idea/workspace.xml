@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="" />
+    <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminManagerUsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminManagerUsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/manageruser/edit_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageruser/edit_user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/manageruser/indexuser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageruser/indexuser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/manageruser/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageruser/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +183,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "caoanhvu-index",
+    "git-widget-placeholder": "QuanlyUser",
     "last_opened_file_path": "D:/ThanhPhong/BE2/DoAn_NhomF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -228,9 +236,13 @@
       <workItem from="1715519184372" duration="15000" />
       <workItem from="1715519202156" duration="7989000" />
       <workItem from="1715586891098" duration="49000" />
-      <workItem from="1715586941705" duration="2322000" />
-      <workItem from="1715667195368" duration="1709000" />
-      <workItem from="1715743231725" duration="5727000" />
+      <workItem from="1715586941705" duration="7262000" />
+      <workItem from="1715651850542" duration="530000" />
+      <workItem from="1715666412728" duration="348000" />
+      <workItem from="1715668537531" duration="523000" />
+      <workItem from="1715741687057" duration="856000" />
+      <workItem from="1715743658391" duration="5708000" />
+      <workItem from="1715749449007" duration="1230000" />
     </task>
     <servers />
   </component>

@@ -28,7 +28,7 @@
                         <td>{{ $item->amount }}</td>
                         <td>{{ $item->category->name }}</td>
                         {{-- <td><span class="label label-warning">{{ $item->category->c_name ?? "[N\A]" }}</span></td> --}}
-                        <td><img src="{{ asset($item->image) }}" alt="" width="150px" height="100px"> </td>
+                        <td><img src="{{asset($item->image) }}" alt="" width="150px" height="100px"> </td>
                         <td>{{ $item->price }}</td>
                         <td>
                             @if ($item->discount)
@@ -57,7 +57,7 @@
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <a href="{{ route('editproduct', ['id' => $item->id_product]) }}"
-                                class="btn btn-xs btn-primary" onclick="return confirm('Bạn có chắc xoá không nè')"><i
+                                class="btn btn-xs btn-primary" onclick="return confirm('Bạn có Sửa không nè')"><i
                                     class="fa fa-pencil"></i> Edit</a>
                             <a href="{{ route('deleteproducts', ['id' => $item->id_product]) }}"
                                 class="btn btn-xs btn-danger js-delete-confirm"
@@ -69,5 +69,5 @@
             @endif
         </tbody>
     </table>
-    {{-- <div>{!! $products->appends($query ?? [])->links() !!}</div> --}}
+
 </div>

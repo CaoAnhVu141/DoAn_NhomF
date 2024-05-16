@@ -11,16 +11,12 @@ class AdminRelatedcategoryController extends Controller
     {
         return view('admin.relatedcategory.index');
     }
-
     //show giao diện thêm
-
     public function showCreateRelated()
     {
         return view('admin.relatedcategory.create');
     }
-
     //giao diện sửa
-
     public function showEditRelated()
     {
         return view('admin.relatedcategory.update');
