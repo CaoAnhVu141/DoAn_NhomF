@@ -329,6 +329,7 @@ Route::post('checkout', [CheckOutProduct::class, 'enforcementCart'])->name('chec
 //thanh thoán thành công
 
 
+
 Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
 Route::get('payment', [Paymentsucces::class, 'showPayment'])->name('payment');
 
@@ -338,6 +339,7 @@ Route::get('admin/event/index', [AdminEventController::class, 'indexEvent'])->na
 Route::get('admin/event/add', [AdminEventController::class, 'create'])->name('addEvent');
 Route::post('admin/event/store', [AdminEventController::class, 'store'])->name('storeEvent');
 Route::get('admin/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('deleteEvent');
+
 
 // Route::get('payment/{id_oder}',[Paymentsucces::class, 'showPayment'])->name('payment');
 Route::get('payment/{id_order}', [Paymentsucces::class, 'showPayment'])->name('paymentnow');
