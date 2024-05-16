@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('status')->default('Đã tiếp nhận')->comment('tình trạng đơn hàng nè');
             $table->unsignedBigInteger('amount')->comment('số lượng nè');
             $table->unsignedBigInteger('intomoney')->comment('thành tiền nè');
-            $table->string('address');
             $table->unsignedBigInteger('id_pay')->comment('hình thức thanh toán nè');
             $table->timestamps();
         });

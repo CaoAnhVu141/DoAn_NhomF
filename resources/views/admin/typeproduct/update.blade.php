@@ -32,8 +32,7 @@
             
                     <div class="form-group ">
                         <label>Danh Mục (*)</label>
-                        <select name="category_id" class="form-control">
-                            
+                        <select name="category_id" class="form-control">            
                             @error('category_id')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror

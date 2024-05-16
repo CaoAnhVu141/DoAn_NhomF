@@ -12,13 +12,13 @@ class CartShopping extends Controller
 
     public function addCartShopping(Request $request, $id)
     {
+        // return redirect()->route('indexcart');
         $cartproduct = Product::find($id);
         $qty = $request->input('amount');
         //tìm kiếm sản phẩm
         $dataProduct = Cart::search(function ($cartItem, $rowId) use ($id) {
             return $cartItem->id_product == $id;
         });
-
         // Kiểm tra sản phẩm có tồn tại?
         if ($dataProduct->isNotEmpty()) {
             // Lấy rowId của sản phẩm
@@ -29,6 +29,7 @@ class CartShopping extends Controller
             // Cập nhật số lượng của sản phẩm bằng tổng của số lượng hiện tại và số lượng mới
             Cart::update($rowId, $currentQty + $qty);
         } else {
+        
             $sizes = $request->get('sizes'); // Lấy giá trị của size từ request
 
             // Tạo một mảng options với size và các thông tin khác
@@ -36,9 +37,6 @@ class CartShopping extends Controller
                 'sizes' => $sizes,
                 'image' => $cartproduct->image
             ];
-
-            // dd($options);
-
             // Thêm sản phẩm vào giỏ hàng với mảng options
             Cart::add([
                 [

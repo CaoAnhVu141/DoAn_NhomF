@@ -49,14 +49,12 @@ class AdminLoginAndRegisterController extends Controller
           'avatar' => 'nullable|string|max:255',
           'address' => 'nullable|string|max:255',
       ]);
-
       // Kiểm tra nếu lỗi trả về lỗi 
       if ($validator->fails()) {
           return redirect('register')
                       ->withErrors($validator)
                       ->withInput();
       }
-
       // Create a new user
           User::create([
           'name' => $request->name,
