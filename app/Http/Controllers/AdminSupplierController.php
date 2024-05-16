@@ -14,7 +14,7 @@ class AdminSupplierController extends Controller
 
     public function showIndexSupplier(Request $request)
     {
-        $suppliers = Supplier::paginate(5);
+        $suppliers = Supplier::paginate(3);
         return view('admin.suppliers.index', ['suppliers' => $suppliers]);
     }
 
@@ -27,7 +27,7 @@ class AdminSupplierController extends Controller
 
     //thực thi thêm nhà cung cấp
 
-    public function addDataSupplier(Request $request)
+    public function addDataSupplier(Request $request): \Illuminate\Http\RedirectResponse
     {
         $request->validate([
             'name' => 'required|string|max:255', // Kiểm tra trường name, bắt buộc, chuỗi, tối đa 255 ký tự
@@ -36,22 +36,17 @@ class AdminSupplierController extends Controller
             'phone' => 'required|string', // Kiểm tra trường phone, bắt buộc, chuỗi
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // Kiểm tra trường image, bắt buộc, định dạng ảnh hợp lệ
         ]);
-
         $file = $request->file('image'); // Lấy file từ request
-
         if ($file) {
             $file_name = time() . '_' . $file->getClientOriginalName();
-
             // Kiểm tra xem thư mục public/uploads đã tồn tại chưa
             $directory = 'uploads';
             if (!File::exists(public_path($directory))) {
                 // Nếu thư mục không tồn tại, hãy tạo nó
                 File::makeDirectory(public_path($directory), 0755, true);
             }
-
             // Di chuyển tệp tải lên vào thư mục public/uploads
             $path = $file->move(public_path($directory), $file_name);
-
             // Tạo đường dẫn của ảnh từ thư mục uploads
             $thumbnail = $directory . '/' . $file_name;
         } else {
@@ -68,7 +63,6 @@ class AdminSupplierController extends Controller
                 'image' => $thumbnail,
                 'id' => $userId,
             ]);
-
             return redirect()->route('indexsupplier')->with('status', 'Thêm thành công rồi nè');
         }
         return redirect()->back()->withErrors(['status' => 'Bạn phải đăng nhập để thêm thuộc tính']);
@@ -79,13 +73,11 @@ class AdminSupplierController extends Controller
     public function deleteSupplier($id): \Illuminate\Http\RedirectResponse
     {
         $supplier = Supplier::find($id);
-        if(!empty($supplier))
-        {
+        if (!empty($supplier)) {
             $supplier->delete();
-            return redirect()->route('indexsupplier')->with('status',"Bạn xoá thành công");
-        }
-        else{
-            return redirect()->route('indexsupplier')->with('status',"Nhà cung cấp không tồn tại");
+            return redirect()->route('indexsupplier')->with('status', "Bạn xoá thành công");
+        } else {
+            return redirect()->route('indexsupplier')->with('status', "Nhà cung cấp không tồn tại");
         }
     }
 
@@ -100,20 +92,16 @@ class AdminSupplierController extends Controller
     public function updateDataSupplier(Request $request, $id)
     {
         $file = $request->file('image'); // Lấy file từ request
-
         if ($file) {
             $file_name = time() . '_' . $file->getClientOriginalName();
-
             // Kiểm tra xem thư mục public/uploads đã tồn tại chưa
             $directory = 'uploads';
             if (!File::exists(public_path($directory))) {
                 // Nếu thư mục không tồn tại, hãy tạo nó
                 File::makeDirectory(public_path($directory), 0755, true);
             }
-
             // Di chuyển tệp tải lên vào thư mục public/uploads
             $path = $file->move(public_path($directory), $file_name);
-
             // Tạo đường dẫn của ảnh từ thư mục uploads
             $thumbnail = $directory . '/' . $file_name;
         } else {
@@ -131,8 +119,7 @@ class AdminSupplierController extends Controller
                 'phone' => $request->input('phone'),
                 'image' => $thumbnail,
             ]);
-        }
-        else{
+        } else {
             $suppliers->update([
                 'name' => $request->input('name'),
                 'description' => $request->input('description'),

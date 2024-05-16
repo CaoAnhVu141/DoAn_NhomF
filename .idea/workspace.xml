@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EventsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manageruser/indexuser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageruser/indexuser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manageruser/search_results.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageruser/search_results.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryPost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminPostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminPostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminSupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminSupplierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/image6.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/image6.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categorypost/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categorypost/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/suppliers/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/suppliers/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +190,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "lht__phan__trang__1",
+    "git-widget-placeholder": "le__hoang__thinh",
     "last_opened_file_path": "D:/ThanhPhong/BE2/DoAn_NhomF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -243,7 +252,7 @@
       <workItem from="1715749449007" duration="1230000" />
       <workItem from="1715788931024" duration="2016000" />
       <workItem from="1715833568600" duration="8260000" />
-      <workItem from="1715876185374" duration="3045000" />
+      <workItem from="1715876257539" duration="2717000" />
     </task>
     <servers />
   </component>

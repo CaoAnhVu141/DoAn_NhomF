@@ -22,9 +22,7 @@ class AdminPostsController extends Controller
             $key = $request->input('key');
         }
         $posts = Post::where('name', 'LIKE', "%$key%")->paginate(3);
-
         return view('admin.posts.index', ['posts' => $posts]);
-
     }
 
     //show giao diện thêm
@@ -102,7 +100,7 @@ class AdminPostsController extends Controller
 
     //thực thi sửa nè
 
-    public function updateIndexDataPost(Request $request,$id)
+    public function updateIndexDataPost(Request $request, $id)
     {
         $file = $request->file('avatar'); // Lấy file từ request
 
@@ -125,8 +123,7 @@ class AdminPostsController extends Controller
             $thumbnail = null; // Nếu không có tệp tải lên, sử dụng giá trị null cho thumbnail
         }
 
-        if(Auth::guard('admin')->check())
-        {
+        if (Auth::guard('admin')->check()) {
             // $userId = Auth::guard('admin')->user()->id;
 
             // Post::where('id',$id)->update([

@@ -16,14 +16,11 @@ class AdminCategoryPost extends Controller
     public function showIndexCategoryPost(Request $request)
     {
         $key = "";
-        if($request->input('key'))
-        {
+        if ($request->input('key')) {
             $key = $request->input('key');
         }
         $categorypost = CategoryPost::where('name', 'LIKE', "%$key%")->paginate(3);
-
         return view('admin.categorypost.index', ['categorypost' => $categorypost]);
-
     }
 
     //show giao diện them danh mục bài viết
