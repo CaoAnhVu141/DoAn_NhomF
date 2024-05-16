@@ -17,18 +17,13 @@ class SendMailController extends Controller
 
     Mail::to('caovu5541@gmail.com')->send(new SendMaill($content));
     }
-  
 
-
-        
-
-    // public function sendMailOdersProduct()
-    // {
-    //    $user = Auth::user();
-    //    $order = $user->oders;
-    //    Mail::to($user->email)->send(new SendMaill($order));
-
-    // }
+    public function sendMailOdersProduct($id)
+    {
+       $user = Auth::user();
+       $order = $user->oders;
+       Mail::to($user->email)->send(new SendMaill($order));
+    }
 
 
 }

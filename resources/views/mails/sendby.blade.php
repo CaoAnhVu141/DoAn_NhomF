@@ -85,8 +85,9 @@
                                                                                         <div
                                                                                             style="display:inline-block">
                                                                                             <span
-                                                                                                style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;color:#27272a;font-weight:500">An
-                                                                                                tâm mua sắm</span>
+                                                                                                style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;color:#27272a;font-weight:500">Sàn
+                                                                                                mua sắm giày chính hãng
+                                                                                                số 1 Việt Nam</span>
                                                                                         </div>
                                                                                         <div
                                                                                             style="text-align:left;margin-top:4px;line-height:1">
@@ -295,11 +296,9 @@
 
                                                                 </td>
                                                             </tr>
-
                                                             <tr>
                                                                 <td align="left"
                                                                     style="font-size:0px;padding:0;padding-top:12px;word-break:break-word">
-
                                                                     <div
                                                                         style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:24px;font-weight:600;line-height:1.2;text-align:left;color:black">
                                                                         Cảm ơn bạn đã đặt hàng tại <span
@@ -307,23 +306,23 @@
 
                                                                 </td>
                                                             </tr>
-
                                                             <tr>
                                                                 <td align="left"
                                                                     style="font-size:0px;padding:0;padding-top:12px;word-break:break-word">
 
                                                                     <div
                                                                         style="font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;text-align:left;color:#27272a">
-                                                                        <span class="il">Shop của em</span> rất vui thông
+                                                                        <span class="il">Shop của em</span> rất vui
+                                                                        thông
                                                                         báo đơn hàng của bạn đã được tiếp nhận và đang
                                                                         trong quá trình xử lý. <span
-                                                                            class="il">Shop của em</span> sẽ thông báo đến
+                                                                            class="il">Shop của em</span> sẽ thông
+                                                                        báo đến
                                                                         bạn ngay khi hàng chuẩn bị được giao.
                                                                     </div>
 
                                                                 </td>
                                                             </tr>
-
                                                             <tr>
                                                                 <td align="center"
                                                                     style="font-size:0px;padding:8px 0;word-break:break-word">
@@ -337,7 +336,7 @@
                                                                                     role="presentation"
                                                                                     style="border:1px solid #0a68ff;border-radius:4px;background:#0a68ff"
                                                                                     valign="middle">
-                                                                                    <a href="https://x64km.mjt.lu/lnk/BAAABUNOplEAAAAKFZgAADSgfHsAAAAA3NwAAAAAABPsQgBl5GVH_c-2o2ZFQRCEQTdxykKxsAAPBhU/1/34LzOsXII7TS8K-ilQPl_Q/aHR0cHM6Ly90aWtpLnZuL3NhbGVzL29yZGVyL3ZpZXcvNDQ1ODc1NTI3"
+                                                                                    <a href="{{ route('haha') }}"
                                                                                         style="display:inline-block;background:#0a68ff;color:white;font-family:Inter,'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.5;margin:0;text-decoration:none;text-transform:none;padding:8px 12px;border-radius:4px"
                                                                                         target="_blank"
                                                                                         data-saferedirecturl="https://www.google.com/url?q=https://x64km.mjt.lu/lnk/BAAABUNOplEAAAAKFZgAADSgfHsAAAAA3NwAAAAAABPsQgBl5GVH_c-2o2ZFQRCEQTdxykKxsAAPBhU/1/34LzOsXII7TS8K-ilQPl_Q/aHR0cHM6Ly90aWtpLnZuL3NhbGVzL29yZGVyL3ZpZXcvNDQ1ODc1NTI3&amp;source=gmail&amp;ust=1715487700047000&amp;usg=AOvVaw3c5YxyivO_I2SemeeY2y1w">
@@ -347,32 +346,20 @@
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
-
                                                                 </td>
                                                             </tr>
-
                                                         </tbody>
                                                     </table>
-
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-
                                 </div>
-
-
                             </td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
-
-
-
-
-
             <div style="margin:0px auto;max-width:632px">
 
                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
@@ -380,32 +367,22 @@
                     <tbody>
                         <tr>
                             <td style="direction:ltr;font-size:0px;padding:0 16px;text-align:center">
-
-
                                 <div class="m_-6643906155351583590mj-column-per-100"
                                     style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%">
-
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation"
                                         width="100%">
                                         <tbody>
                                             <tr>
                                                 <td style="vertical-align:top;padding:0">
-
                                                     <table border="0" cellpadding="0" cellspacing="0"
                                                         role="presentation" width="100%">
                                                         <tbody>
-
                                                             <tr>
                                                                 <td align="center"
                                                                     style="font-size:0px;padding:0;word-break:break-word">
-
                                                                     <p
                                                                         style="border-top:solid 1px #ebebf0;font-size:1px;margin:0px auto;width:100%">
                                                                     </p>
-
-
-
-
                                                                 </td>
                                                             </tr>
 
@@ -416,17 +393,12 @@
                                             </tr>
                                         </tbody>
                                     </table>
-
                                 </div>
-
-
                             </td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
-
 
 
 
@@ -476,6 +448,7 @@
                                                                                                     style="font-weight:600">THÔNG
                                                                                                     TIN ĐƠN HÀNG <span
                                                                                                         style="white-space:nowrap;display:inline-block">#445875527</span></span>
+                                                                                                        {{-- @todo --}}
                                                                                                 <span
                                                                                                     style="white-space:nowrap;display:inline-block;color:#718096">(Ngày
                                                                                                     03 Tháng 03 Năm 2024
@@ -701,19 +674,15 @@
                                                                             <tr>
                                                                                 <td align="left"
                                                                                     style="border-bottom:1px solid #ebebf0;padding:16px 0px">
-                                                                                    <img style="margin-right:8px"
-                                                                                        align="left" height="auto"
-                                                                                        src="https://ci3.googleusercontent.com/meips/ADKq_NZ68nWst0prn0xfhO85mfG2QFD2FEnaoiPuhYw6p7PsJAG-tVTaJXR6--ZUMHBK2NI7f_Rv5_WzhfSbbnp4Vr2uRt-wDbnKnxHTV_PhvcPAhzDsocSyfMfionq5HiBvSggQB1t0ZHEeMkMOOcZtWckwYlVP9w=s0-d-e1-ft#https://salt.tikicdn.com/cache/200x280/ts/product/62/63/f8/38a81c10ee236cf758b1ebb800560586.png"
-                                                                                        width="80px" class="CToWUd"
-                                                                                        data-bit="iit">
-                                                                                    <span>{{ $order->product->name}}</span>
+                                                                                    
+                                                                                    <span>{{ $order->product->name }}</span>
                                                                                 </td>
                                                                                 <td align="center"
                                                                                     style="border-bottom:1px solid #ebebf0;padding:16px 0px">
-                                                                                    1</td>
+                                                                                    {{ $order->amount }}</td>
                                                                                 <td align="right"
                                                                                     style="border-bottom:1px solid #ebebf0;padding:16px 0px">
-                                                                                    {{ $order->intomoney }}</td>
+                                                                                    {{ number_format($order->intomoney) }}</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><u></u> <u></u><u></u> <u></u>
@@ -757,10 +726,19 @@
                                                                                                     Tạm tính</td>
                                                                                                 <td align="left"
                                                                                                     style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
-                                                                                                    {{ $order->intomoney }}</td>
+                                                                                                    {{ number_format($order->intomoney) }} VND
+                                                                                                </td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><u></u> <u></u></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td align="right"
+                                                                                                    style="padding-top:4px;padding-bottom:4px;padding-right:24px">
+                                                                                                    Đơn vị vận chuyển</td>
+                                                                                                <td align="left"
+                                                                                                    style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
+                                                                                                    {{ $order->transport->name }}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td align="right"
@@ -803,7 +781,8 @@
                                                                                                     hàng</td>
                                                                                                 <td align="left"
                                                                                                     style="white-space:nowrap;display:inline-block;font-weight:600;padding-top:4px;padding-bottom:4px">
-                                                                                                    {{ $order->intomoney }}</td>
+                                                                                                    {{ number_format($order->intomoney) }} VND
+                                                                                                </td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><u></u> <u></u></td>

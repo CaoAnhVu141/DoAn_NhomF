@@ -327,7 +327,12 @@
                 @endforeach
             @endif
         </div>
+        <div class="d-flex justify-content-end">
+            {{  $products->links() }}
+        </div>
+
     </div>
+    {{-- {{  $products->links() }} --}}
     <!-- Products End -->
 
 

@@ -13,7 +13,7 @@ class AdminShoppingController extends Controller
 
     public function showIndexShopping()
     {
-        $products = Product::paginate(16);
+        $products = Product::paginate(4);
         return view('shopping.dashboard',compact('products'));
     }
 

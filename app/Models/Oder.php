@@ -15,6 +15,7 @@ class Oder extends Model
    
     protected $fillable = [
         'id_user',
+        'id_product',
         'id_transport',
         'status',
         'amount',
@@ -25,7 +26,7 @@ class Oder extends Model
         'district',
         'id_pay',
         'id',
-        'id_product',
+        
     ];
 
     /// thiết lập mối quan hệ giữa đặt hàng và người mua 1-n

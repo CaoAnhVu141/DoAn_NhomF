@@ -78,77 +78,77 @@ class CheckOutProduct extends Controller
     // public function enforcementCart(Request $request)
     // {
 
-        // Lấy thông tin người dùng đăng nhập
-        // $userId = Auth::guard('admin')->user()->id;
-        // dd($userId); die();
+    // Lấy thông tin người dùng đăng nhập
+    // $userId = Auth::guard('admin')->user()->id;
+    // dd($userId); die();
 
-        // day neay
-        // $cartItems = Cart::content();
+    // day neay
+    // $cartItems = Cart::content();
 
-        // // Lưu danh sách sản phẩm vào session
-        // session()->put('id_product', $cartItems);
-
-
-        // //lấy id tài khoản khách hàng đang đăng nhập
-        // $id_user = Auth::id();
-
-        // // Lấy thông tin thanh toán từ request
-        // $billingInfo = $request->only(['name', 'id_transport', 'id_pay', 'phone', 'district']);
-
-        // // $ccc = floatval(str_replace(',', '', Cart::total()));
-        // $email = Auth::user()->email;
+    // // Lưu danh sách sản phẩm vào session
+    // session()->put('id_product', $cartItems);
 
 
-        // // Tạo một mảng để lưu các giá trị mặc định
-        // $orderData = [
-        //     // 'id' => $userId,
-        //     'id_user' => $id_user,
-        //     'email' => $email,
-        //     'name' => $billingInfo['name'],
-        //     'phone' => $billingInfo['phone'],
-        //     'district' => $billingInfo['district'],
-        //     'id_transport' => $billingInfo['id_transport'] ?? null,
-        //     'id_pay' => $billingInfo['id_pay'] ?? null,
-        //     'amount' => Cart::count(),
-        //     'intomoney' => floatval(str_replace(',', '', Cart::total())),
+    // //lấy id tài khoản khách hàng đang đăng nhập
+    // $id_user = Auth::id();
 
-        // ];
-        // // $idProducts = [];
-        // // foreach ($cartItems as $item) {
-        // //     $idProducts[] = $item->id; // Giả sử id của sản phẩm là id
-        // // }
-        // // $orderData['id_product'] = $idProducts;
-        // // Lấy danh sách ID sản phẩm từ giỏ hàng
-        // $productIds = $cartItems->pluck('id');
-        // foreach ($productIds as $productId) {
-        //     $product = Product::find($productId);
-        //     if ($product) {
-        //         // Lấy ID của người bán từ sản phẩm và gán vào đơn hàng
-        //         $orderData['id_product'] = $product->id;
-        //     }
-        // }
+    // // Lấy thông tin thanh toán từ request
+    // $billingInfo = $request->only(['name', 'id_transport', 'id_pay', 'phone', 'district']);
+
+    // // $ccc = floatval(str_replace(',', '', Cart::total()));
+    // $email = Auth::user()->email;
 
 
-        // // Tạo đơn hàng mới và gán thông tin thanh toán
-        // $order = Oder::create($orderData);
+    // // Tạo một mảng để lưu các giá trị mặc định
+    // $orderData = [
+    //     // 'id' => $userId,
+    //     'id_user' => $id_user,
+    //     'email' => $email,
+    //     'name' => $billingInfo['name'],
+    //     'phone' => $billingInfo['phone'],
+    //     'district' => $billingInfo['district'],
+    //     'id_transport' => $billingInfo['id_transport'] ?? null,
+    //     'id_pay' => $billingInfo['id_pay'] ?? null,
+    //     'amount' => Cart::count(),
+    //     'intomoney' => floatval(str_replace(',', '', Cart::total())),
 
-        // // Xử lý khi tạo đơn hàng không thành công
-        // if (!$order) {
-        //     return redirect()->back()->with('error', 'Failed to create order');
-        // }
+    // ];
+    // // $idProducts = [];
+    // // foreach ($cartItems as $item) {
+    // //     $idProducts[] = $item->id; // Giả sử id của sản phẩm là id
+    // // }
+    // // $orderData['id_product'] = $idProducts;
+    // // Lấy danh sách ID sản phẩm từ giỏ hàng
+    // $productIds = $cartItems->pluck('id');
+    // foreach ($productIds as $productId) {
+    //     $product = Product::find($productId);
+    //     if ($product) {
+    //         // Lấy ID của người bán từ sản phẩm và gán vào đơn hàng
+    //         $orderData['id_product'] = $product->id;
+    //     }
+    // }
 
-        // // Xử lý khi tạo đơn hàng thành công
-        // // Xóa giỏ hàng sau khi đặt hàng thành công
-        // Cart::destroy();
 
-        // // Chuyển hướng người dùng đến trang cảm ơn hoặc trang xác nhận đơn hàng
-        // return redirect()->route('payment', ['id_oder' => $order->id_oder])->with('success', 'Order placed successfully');
+    // // Tạo đơn hàng mới và gán thông tin thanh toán
+    // $order = Oder::create($orderData);
 
-        // Lấy thông tin người dùng đăng nhập
-        // Lấy thông tin người dùng đăng nhập
-        // 11111111111111
-         public function enforcementCart(Request $request)
-        {
+    // // Xử lý khi tạo đơn hàng không thành công
+    // if (!$order) {
+    //     return redirect()->back()->with('error', 'Failed to create order');
+    // }
+
+    // // Xử lý khi tạo đơn hàng thành công
+    // // Xóa giỏ hàng sau khi đặt hàng thành công
+    // Cart::destroy();
+
+    // // Chuyển hướng người dùng đến trang cảm ơn hoặc trang xác nhận đơn hàng
+    // return redirect()->route('payment', ['id_oder' => $order->id_oder])->with('success', 'Order placed successfully');
+
+    // Lấy thông tin người dùng đăng nhập
+    // Lấy thông tin người dùng đăng nhập
+    // 11111111111111
+    public function enforcementCart(Request $request)
+    {
         $userId = Auth::guard('admin')->user()->id;
 
         // Lấy thông tin sản phẩm từ giỏ hàng
@@ -159,14 +159,14 @@ class CheckOutProduct extends Controller
 
         // Lặp qua từng sản phẩm trong giỏ hàng và lấy id_product
         foreach ($products as $product) {
-            // Lấy thuộc tính options từ sản phẩm
-            $options = $product->options;
-            // Kiểm tra xem options có tồn tại và có chứa id_product hay không
-            if ($options && isset($options['id_product'])) {
-                $idProduct = $options['id_product'];
+            // Lấy id_product từ thuộc tính id của mỗi mục trong giỏ hàng
+            $idProduct = $product->id;
+            // Kiểm tra nếu id_product tồn tại, thêm vào mảng $idProducts
+            if ($idProduct) {
                 $idProducts[] = $idProduct;
             }
         }
+
         // Chuyển mảng id_product thành chuỗi để lưu vào session
         $idProductsString = implode(',', $idProducts);
 
@@ -190,6 +190,7 @@ class CheckOutProduct extends Controller
             'id_product' => $idProductsString,
             'intomoney' => floatval(str_replace(',', '', Cart::total())),
         ];
+
         // Tạo đơn hàng mới và gán thông tin thanh toán
         $order = Oder::create($orderData);
 
@@ -197,15 +198,16 @@ class CheckOutProduct extends Controller
         if (!$order) {
             return redirect()->back()->with('error', 'Failed to create order');
         }
-        $order = Oder::find($order->id); // Lấy thông tin đơn hàng mới nhất
+
+        // Gửi email thông báo đơn hàng
+        // Mail::to(Auth::user()->email)->send(new SendMaill($order));
         Mail::to(Auth::user()->email)->send(new SendMaill($order));
-        // Xử lý khi tạo đơn hàng thành công
+
         // Xóa giỏ hàng sau khi đặt hàng thành công
         Cart::destroy();
+
         // Chuyển hướng người dùng đến trang cảm ơn hoặc trang xác nhận đơn hàng
-        return redirect()->route('payment', ['id_order' => $order->id])->with('success', 'Order placed successfully');
-
-
-        
+        return redirect()->route('paymentnow', ['id_order' => $order->id_oder])->with('success', 'Order placed successfully');
     }
 }
+
