@@ -60,7 +60,7 @@
                     @endphp
                           <tr>
                               <td>{{ $count }}</td>
-                             
+
                               <td>{{ $item->name }}</td>
                               {{-- <td><span class="{{ $item->getType($item->atb_type)['class'] }}"></span></td> --}}
                               <td>{{ $item->discription }}</td>
@@ -82,9 +82,32 @@
                     @else
                      <h3>Rất tiêc, dữ liệu không tìm thấy</h3>
                     @endif
-                   
+
                   </tbody>
                 </table>
+                  <!-- Phân trang bắt đầu -->
+                  <div id="pageNavPosition" class="text-right">
+                      <ul class="pagination">
+                          @if ($item->onFirstPage())
+                              <li class="disabled"><span>&laquo;</span></li>
+                          @else
+                              <li><a href="{{ $item->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                          @endif
+
+                          @for ($i = 1; $i <= $item->lastPage(); $i++)
+                              <li class="{{ $i == $item->currentPage() ? 'active' : '' }}">
+                                  <a href="{{ $item->url($i) }}">{{ $i }}</a>
+                              </li>
+                          @endfor
+
+                          @if ($item->hasMorePages())
+                              <li><a href="{{ $item->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                          @else
+                              <li class="disabled"><span>&raquo;</span></li>
+                          @endif
+                      </ul>
+                  </div>
+                  <!-- Phân trang kết thúc -->
               </div>
               <!-- /.box-body -->
               {{--  {!! $attribute->links() !!}  --}}
