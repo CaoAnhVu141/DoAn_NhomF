@@ -19,7 +19,7 @@ class AdminCategoryProductController extends Controller
     // show giao diện danh mục
     public function showCategory(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $categories = Category::paginate(10);
+        $categories = Category::paginate(4);
         return view('admin.category.index', ['category' => $categories]);
     }
 
