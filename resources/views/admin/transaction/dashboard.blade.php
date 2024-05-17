@@ -19,7 +19,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Tổng Số Đơn Hàng</span>
-               <span class="info-box-number"> <small><a href="">(Chi Tiết)</a></small></span> 
+               <span class="info-box-number">{{ $countOder }}<small><a href="">(Chi Tiết)</a></small></span> 
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
             <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
             <div class="info-box-content">
               <span class="info-box-text">Sản Phẩm</span>
-               <span class="info-box-number"><small><a href="">(Chi Tiết)</a></small></span> 
+               <span class="info-box-number">{{ $countProduct }}<small><a href="">(Chi Tiết)</a></small></span> 
             </div>
           </div>
         </div>

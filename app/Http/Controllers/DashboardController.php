@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Oder;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -12,10 +14,14 @@ class DashboardController extends Controller
 
     public function showDashBoard()
     {
-        // $dataDashboard = Oder::orderBy('created_at', 'desc')->paginate(5);
+        // Lấy ID người dùng hiện tại
+        $userId = Auth::id();
+        // Đếm số lượng đơn hàng của người dùng hiện tại
+        $countOder = Oder::where('id_user', $userId)->count();
+        $countProduct = Product::where('id_product', $userId)->count();
         $minutes = Carbon::now()->subMinutes(10);
         $dataDashboard = Oder::where('created_at', '>=', $minutes)->orderBy('created_at', 'desc')->paginate(5);
-        return view('admin.transaction.dashboard', compact('dataDashboard'));
+        return view('admin.transaction.dashboard', compact('dataDashboard','countOder','countProduct'));
     }
 
     //show trang danh sách sản phẩm đã đặt và cập nhật hé
