@@ -46,4 +46,27 @@
       </tbody>
     </table>
     {{-- {!! $type_products->appends($query ?? [])->links() !!} --}}
+    <div id="pageNavPosition" class="text-right">
+      <ul class="pagination">
+          <!-- Hiển thị link đến trang trước (Previous Page) -->
+          @if ($producttypes->onFirstPage())
+              <li class="disabled"><span>&laquo;</span></li>
+          @else
+              <li><a href="{{ $producttypes->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+          @endif
+  
+          <!-- Hiển thị các số trang đã có -->
+          @for ($i = 1; $i <= $producttypes->lastPage(); $i++)
+              <li class="{{ $i == $producttypes->currentPage() ? 'active' : '' }}">
+                  <a href="{{ $producttypes->url($i) }}">{{ $i }}</a>
+              </li>
+          @endfor
+          <!-- Hiển thị link đến trang tiếp theo (Next Page) -->
+          @if ($producttypes->hasMorePages())
+              <li><a href="{{ $producttypes->nextPageUrl() }}" rel="next">&raquo;</a></li>
+          @else
+              <li class="disabled"><span>&raquo;</span></li>
+          @endif
+      </ul>
+  </div>
   </div>

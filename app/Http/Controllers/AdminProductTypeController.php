@@ -14,7 +14,8 @@ class AdminProductTypeController extends Controller
 
     public function showProductType()
     {
-        $producttypes = ProductType::all();
+        // $producttypes = ProductType::all();
+        $producttypes = ProductType::paginate(2);
         return view('admin.typeproduct.index', compact('producttypes'));
     }
 
