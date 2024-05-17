@@ -198,10 +198,12 @@ Route::get('edit-producttype',[AdminProductTypeController::class,'showEditProduc
 //hàm add producttype
 Route::get('add-producttype/run',[AdminProductTypeController::class,'addProductType']);
 // hàm sửa producttype theo id
-Route::get('editproducttype/{id}',[AdminProductTypeController::class,'editProductType']);
+Route::get('editProductType/{id}',[AdminProductTypeController::class,'editProductType']);
 //Hàm xóa product type
 Route::get('deleteproducttype/{id}',[AdminProductTypeController::class,'deleteProductTypes']);
 
+// Thực thi hàm cập nhật
+Route::Post('updateproducttype/{id}',[AdminProductTypeController::class,'update']);
 
 
 // @@ Thực thi với bài viết (7)

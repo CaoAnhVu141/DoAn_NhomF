@@ -15,7 +15,7 @@ class ProductTypesTableSeeder extends Seeder
             [
 
                 'name' => 'Loại A',
-                'discription' => 'Mô tả cho loại A',
+                'description' => 'Mô tả cho loại A',
                 'checkactive' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -24,11 +24,29 @@ class ProductTypesTableSeeder extends Seeder
             [
 
                 'name' => 'Loại B',
-                'discription' => 'Mô tả cho loại B',
+                'description' => 'Mô tả cho loại B',
                 'checkactive' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
                 'id' => 2,
+            ],
+            [
+
+                'name' => 'Loại D',
+                'description' => 'Mô tả cho loại D',
+                'checkactive' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'id' => 3,
+            ],
+            [
+
+                'name' => 'Loại C',
+                'description' => 'Mô tả cho loại C',
+                'checkactive' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'id' => 4,
             ],
             // Thêm dữ liệu khác nếu cần
         ]);

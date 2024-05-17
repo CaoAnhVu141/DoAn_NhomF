@@ -18,7 +18,7 @@
     <div class="row">
 
     <div class="box box-primary">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('updateproducttype',['id_producttype' => $producttypes->id_producttype]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="col-sm-8">
@@ -29,19 +29,10 @@
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-            
-                    <div class="form-group ">
-                        <label>Danh Mục (*)</label>
-                        <select name="category_id" class="form-control">            
-                            @error('category_id')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </select>
-                    </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">(*)</span></label>
-                            <textarea class="form-control" name="description" placeholder="Description ....." required>{{$producttypes->discription}}</textarea>
+                            <textarea class="form-control" name="description" placeholder="Description ....." required>{{$producttypes->description}}</textarea>
                             @error('description')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
