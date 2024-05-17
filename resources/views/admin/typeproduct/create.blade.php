@@ -29,16 +29,6 @@
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    
-                    <div class="form-group ">
-                        <label>Danh Mục (*)</label>
-                        <select name="category_id" class="form-control">
-                            
-                            @error('category_id')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </select>
-                    </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">(*)</span></label>
