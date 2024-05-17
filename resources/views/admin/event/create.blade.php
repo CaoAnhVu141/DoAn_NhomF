@@ -39,8 +39,11 @@
                                 <textarea name="content" id="content" class="form-control" rows="5" required>{{ old('content') }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="image">Image</label>
-                                <input type="file" name="image" class="form-control" id="image">
+                                <label for="fileInput">Image<span class="text-danger">(*)</span></label>
+                                <input type="file" class="form-control-file" id="fileInput" name="image"
+                                       required>
+                                
+                                
                             </div>
                             <div class="form-group">
                                 <label for="linkevent">Event Link</label>
