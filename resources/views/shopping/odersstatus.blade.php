@@ -52,21 +52,28 @@
                 <th>Sản phẩm</th>
                 <th>Trạng thái<i></i></th>
                 <th>Giá</th>
+                <th>Số lượng</th>
                 <th>Ngày đặt hàng</th>
             </tr>
+            @php
+                $count =0;
+            @endphp
+            @foreach ($orders as $item)
+            @php
+            $count ++;
+            @endphp
             <tr>
-                <td>1</td>
-                <td>Áo thun</td>
-                <td>$10</td>
-                <td>Ok nè</td>
-                <td>2024-05-14</td>
+                <td>{{ $count }}</td>
+                <td>{{ $item->product->name }}</td>
+                <td>{{$item->status  }}</td>
+                <td>{{ $item->intomoney }}</td>
+                <td>{{ $item->amount }}</td>
+                <td>{{ $item->created_at }}</td>
+
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Quần jeans</td>
-                <td>$20</td>
-                <td>2024-05-12</td>
-            </tr>
+            @endforeach
+            
+            
             <!-- Thêm các dòng khác tương ứng với đơn hàng khác nếu cần -->
         </table>
     </div>

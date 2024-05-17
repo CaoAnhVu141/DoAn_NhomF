@@ -48,7 +48,7 @@
                                 <td class="align-middle"><img src="{{ asset($item->options->image) }}" alt=""
                                     style="width: 100px;"></td>
                                 <td class="align-middle">{{ $item->name }}</td>
-                                <td class="align-middle">{{ $item->price }}</td>
+                                <td class="align-middle">{{ number_format($item->price, 0, ',', '.') }} VND</td>
                                 <td class="align-middle">
                                     <div class="input-group quantity mx-auto" style="width: 100px;">
                                         <div class="input-group-btn">
@@ -69,7 +69,9 @@
 
                                     </div>
                                 </td>
-                                <td class="align-middle">{{ $item->total }}</td>
+                                {{-- <td class="align-middle">{{ $item->total }}</td> --}}
+                                <td class="align-middle">{{ number_format($item->total, 0, ',', '.') }} VND</td>
+
                                 <td class="align-middle">         
                                    <a href="{{ route('cart.remove', $item->rowId) }}">Xoá</a>
                                 </td>
@@ -92,19 +94,13 @@
                         Summary</span></h5>
                 <div class="bg-light p-30 mb-5">
                     <div class="border-bottom pb-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h6>Subtotal</h6>
-                            <h6>$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
-                        </div>
+                       
+                        
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            <h5>{{ Cart::total() }}</h5>
+                            <h5>{{ number_format(str_replace(',', '', Cart::total()), 0, ',', '.') }} VND</h5>
                         </div>
                         <a href="{{ route('checkout') }}" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</a>
                     </div>

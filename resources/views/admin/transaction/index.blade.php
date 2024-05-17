@@ -118,7 +118,7 @@
                 </table>
               </div>
               <!-- /.box-body -->
-              {{-- {!! $transactions->appends($query)->links() !!} --}}
+              {!! $listOder->links() !!}
               <div></div>
             </div>
             <!-- /.box -->
