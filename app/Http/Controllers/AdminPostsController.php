@@ -21,7 +21,7 @@ class AdminPostsController extends Controller
         if ($request->input('key')) {
             $key = $request->input('key');
         }
-        $posts = Post::where('name', 'LIKE', "%$key%")->paginate(3);
+        $posts = Post::where('name', 'LIKE', "%$key%")->paginate(2);
         return view('admin.posts.index', ['posts' => $posts]);
     }
 
