@@ -14,7 +14,7 @@ class AdminShoppingController extends Controller
 
     public function showIndexShopping()
     {
-        $products = Product::paginate(4);
+        $products = Product::paginate(8);
         $categories = Category::all();
         return view('shopping.dashboard', compact('products','categories'));
     }
