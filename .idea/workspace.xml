@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CategoriesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CategoriesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/image1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/image1.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/OIP.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/OIP.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/R (1).jfif" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/R (1).jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/R.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/R.jfif" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,6 +244,7 @@
       <workItem from="1715788931024" duration="2016000" />
       <workItem from="1715833568600" duration="8260000" />
       <workItem from="1715876257539" duration="2717000" />
+      <workItem from="1715905160720" duration="3218000" />
     </task>
     <servers />
   </component>
