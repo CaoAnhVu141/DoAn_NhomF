@@ -161,7 +161,7 @@ Route::get('product',[AdminProductsController::class,'showIndexProduct'])->name(
 
 ///checkactive
 
-Route::get('toggle-product/{id}',[AdminShoppingController::class, 'checkActiveProduct'])->name('toggleaproduct');
+Route::get('toggle-product/{id}',[AdminProductsController::class, 'checkActiveProduct'])->name('toggleaproduct');
 
 
 //Product
