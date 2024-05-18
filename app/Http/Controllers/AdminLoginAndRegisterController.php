@@ -37,37 +37,35 @@ class AdminLoginAndRegisterController extends Controller
          return redirect('login')->with('message','Đăng Xuất Thành Công !');
      }
 
-  //Hàm Đăng Ký
+     //Hàm Đăng Ký
   public function UserRegister(Request $request)
-    {
-        // Hàm kiểm tra dữ liệu nhập vào
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'phone' => 'required|string|max:15',
-            'avatar' => 'nullable|string|max:255',
-            'address' => 'nullable|string|max:255',
-        ]);
+  {
+      // Hàm kiểm tra dữ liệu nhập vào
+      $validator = Validator::make($request->all(), [
+          'name' => 'required|string|max:255',
+          'email' => 'required|string|email|max:255|unique:users',
+          'password' => 'required|string|min:8|confirmed',
+          'phone' => 'required|string|max:15',
+          'avatar' => 'nullable|string|max:255',
+          'address' => 'nullable|string|max:255',
+      ]);
+      // Kiểm tra nếu lỗi trả về lỗi 
+      if ($validator->fails()) {
+          return redirect('register')
+                      ->withErrors($validator)
+                      ->withInput();
+      }
+      // Create a new user
+          User::create([
+          'name' => $request->name,
+          'email' => $request->email,
+          'password' => Hash::make($request->password),
+          'phone' => $request->phone,
+          'avatar' => $request->avatar,
+          'address' => $request->address,
+      ]);
 
-        // Kiểm tra nếu lỗi trả về lỗi 
-        if ($validator->fails()) {
-            return redirect('register')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
-
-        // Create a new user
-            User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'phone' => $request->phone,
-            'avatar' => $request->avatar,
-            'address' => $request->address,
-        ]);
-
-        // Redirect to the login 
-        return redirect('login')->with('success', 'Registration successful. Please log in.');
-    }
+      // Redirect to the login 
+      return redirect('login')->with('success', 'Registration successful. Please log in.');
+  }
 }

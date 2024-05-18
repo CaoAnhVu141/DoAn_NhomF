@@ -8,26 +8,30 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->increments('id_event');
+            $table->id('id_event');
             $table->string('name');
             $table->text('content');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('linkevent');
-            $table->boolean('checkactive')->default(true)->comment('kiểm tra hoạt động á');
-            $table->dateTime('start_date')->comment('bắt đầu');
-            $table->dateTime('end_date')->comment('kết thúc');
-            $table->timestamps();
+            $table->boolean('checkactive')->default(false);
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->timestamps(); // created_at và updated_at
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('events');
     }

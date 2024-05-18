@@ -23,7 +23,7 @@ class LoginAdminController extends Controller
                 if ($user->id_role === 1) {
                     return redirect()->route('manageruser');
                 } elseif ($user->id_role === 2) {
-                    return redirect()->route('indexcategory');
+                    return redirect()->route('indexdashboard');
                 }
             }
             else{

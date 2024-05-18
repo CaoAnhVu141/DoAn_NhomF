@@ -184,14 +184,16 @@
     <form action="">
     </form>
     <b>CHỨC NĂNG CHÍNH:</b><Br>
-    <a href="{{ route('showRegisterForm') }}" class="nv btn add-new" data-toggle="tooltip"
-       data-placement="top" title="Thêm Người dùng">
-        <i class="fas fa-user-plus"></i>
-    </a>
-    <a href="{{ route('managerusers.orderBy') }}" class="nv" data-toggle="tooltip" data-placement="top"
-       title="Lọc Dữ Liệu">
-        <i class="fa fa-filter" aria-hidden="true"></i>
-    </a>
+    <div class="container mt-5">
+        <form id="searchForm" action="{{ route('searchUser') }}" method="GET">
+            <input type="text" id="searchInput" name="searchTerm" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
+            <button type="submit" class="btn btn-primary mt-2">Tìm kiếm</button>
+        </form>
+    </div>
+{{--    <a href="{{ route('managerusers.orderBy') }}" class="nv" data-toggle="tooltip" data-placement="top"--}}
+{{--       title="Lọc Dữ Liệu">--}}
+{{--        <i class="fa fa-filter" aria-hidden="true"></i>--}}
+{{--    </a>--}}
     <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
             class="fas fa-file-import"></i></button>
     <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
@@ -202,9 +204,6 @@
         </div>
 
     </div>
-    <form id="searchForm">
-        <input type="text" id="searchInput" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
-    </form>
     <div class="container mt-5">
         <h2>Kết Quả Tìm Kiếm cho "{{ $searchTerm }}"</h2>
         <table class="table table-bordered mt-3">

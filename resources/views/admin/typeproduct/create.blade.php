@@ -18,7 +18,7 @@
     <div class="row">
 
     <div class="box box-primary">
-        <form action="{{url('add-producttype/run')}}" method="get" enctype="multipart/form-data">
+        <form action="{{url('add-producttype/run')}}" method="GET" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="col-sm-8">
@@ -28,17 +28,7 @@
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
-                    </div>
-                    
-                    <div class="form-group ">
-                        <label>Danh Mục (*)</label>
-                        <select name="category_id" class="form-control">
-                            
-                            @error('category_id')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </select>
-                    </div>
+                    </div>              
                     <div class="form-group">
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">(*)</span></label>

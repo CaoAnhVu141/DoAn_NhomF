@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="752ffd00-bda1-4512-ace0-8fcd1c186494" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DoAn_NhomF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DoAn_NhomF.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminPostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminPostsController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,19 +175,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lht__delete__category&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ThanhPhong/BE2/DoAn_NhomF&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "caoanhvu-index",
+    "last_opened_file_path": "D:/ThanhPhong/BE2/DoAn_NhomF",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -236,9 +231,17 @@
       <workItem from="1715519184372" duration="15000" />
       <workItem from="1715519202156" duration="7989000" />
       <workItem from="1715586891098" duration="49000" />
-      <workItem from="1715586941705" duration="2322000" />
-      <workItem from="1715667195368" duration="1709000" />
-      <workItem from="1715784502424" duration="1272000" />
+      <workItem from="1715586941705" duration="7262000" />
+      <workItem from="1715651850542" duration="530000" />
+      <workItem from="1715666412728" duration="348000" />
+      <workItem from="1715668537531" duration="523000" />
+      <workItem from="1715741687057" duration="856000" />
+      <workItem from="1715743658391" duration="5708000" />
+      <workItem from="1715749449007" duration="1230000" />
+      <workItem from="1715788931024" duration="2016000" />
+      <workItem from="1715833568600" duration="8260000" />
+      <workItem from="1715876257539" duration="2717000" />
+      <workItem from="1715905160720" duration="3218000" />
     </task>
     <servers />
   </component>

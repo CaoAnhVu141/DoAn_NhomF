@@ -22,21 +22,24 @@
                         <div class="col-sm-8">
                             <div class="form-group {{ $errors->first('category_name') ? 'has-error' : '' }}">
                                 <label for="name">Name<span class="text-danger">(*)</span></label>
-                                <input type="text" class="form-control" name="category_name" placeholder="Name ......" required>
+                                <input type="text" class="form-control" name="category_name" placeholder="Name ......"
+                                       required>
                                 @if ($errors->first('category_name'))
                                     <span class="text-danger">{{ $errors->first('category_name') }}</span>
                                 @endif
                             </div>
                             <div class="form-group {{ $errors->first('category_description') ? 'has-error' : '' }}">
                                 <label>Description<span class="text-danger">(*)</span></label>
-                                <textarea class="form-control" name="category_description" rows="3" placeholder="Enter ..." required></textarea>
+                                <textarea class="form-control" name="category_description" rows="3"
+                                          placeholder="Enter ..." required></textarea>
                                 @if ($errors->first('category_description'))
                                     <span class="text-danger">{{ $errors->first('category_description') }}</span>
                                 @endif
                             </div>
                             <div class="form-group {{ $errors->first('category_image') ? 'has-error' : '' }}">
                                 <label for="fileInput">Image<span class="text-danger">(*)</span></label>
-                                <input type="file" class="form-control-file" id="fileInput" name="category_image" required>
+                                <input type="file" class="form-control-file" id="fileInput" name="category_image"
+                                       required>
                                 @if ($errors->first('category_image'))
                                     <span class="text-danger">{{ $errors->first('category_image') }}</span>
                                 @endif
@@ -47,9 +50,8 @@
                         <a href="{{ route('indexcategory') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Trở Lại</a>
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Submit</button>
                     </div>
+                </form>
             </div>
-            </form>
-        </div>
         </div>
         <!-- /.row -->
         <!-- Main row -->

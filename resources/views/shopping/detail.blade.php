@@ -49,10 +49,13 @@
                         </div>
                         <small class="pt-1">(99 Reviews)</small>
                     </div>
-                    <h3 class="font-weight-semi-bold mb-4">$150.00</h3>
-                    <p class="mb-4">Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit
-                        clita ea. Sanc ipsum et, labore clita lorem magna duo dolor no sea
-                        Nonumy</p>
+                    @php
+                    $price = $productdetail->price * (1 - $productdetail->discount / 100);
+                @endphp
+                {{-- <h5>{{ $item->price }}</h5> --}}
+                {{-- <h5>{{ number_format($price, 0, ',', '.') }} VND</h5> --}}
+                    <h3 class="font-weight-semi-bold mb-4">{{ number_format($price, 0, ',', '.') }} VND</h3>
+                    <p class="mb-4">{{ $productdetail->content }}</p>
                     <div class="d-flex mb-3">
                         <strong class="text-dark mr-3">Sizes:</strong>
                         @if (isset($sizesArray) && !empty($sizesArray))

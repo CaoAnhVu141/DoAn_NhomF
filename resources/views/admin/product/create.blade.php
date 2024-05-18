@@ -64,7 +64,7 @@
                                 <label>Description</label>
                                 <textarea class="form-control" name="description" rows="3" placeholder="Enter ...">{{ old('description', '') }}</textarea>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label>Danh Mục (*)</label>
                                 <select name="category_id" class="form-control js-check-type" data-url="">
@@ -107,10 +107,12 @@
                             </div> --}}
                             <div class="form-group">
                                 <label for="pro_name">Size</label>
-                                <input type="text" name="sizes" class="form-control" placeholder="Enter sizes separated by commas">
-                                <small class="form-text text-muted">Enter sizes separated by commas (e.g., Small, Medium, Large).</small>
+                                <input type="text" name="sizes" class="form-control"
+                                    placeholder="Enter sizes separated by commas">
+                                <small class="form-text text-muted">Enter sizes separated by commas (e.g., Small, Medium,
+                                    Large).</small>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -132,23 +134,25 @@
                             </div>
                         </div>
                         <div class="box-body js-attribute">
-                            @if (isset($attributes))
-                                <div class="row">
-                                    @foreach ($attributes as $attribute)
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="attribute[]" value="{{ $attribute->id_attribute }}">{{ $attribute->name }}
-                                                    </label>
+                            @if ($attributes)  
+                                    <div class="row">
+                                        @foreach ($attributes as $attribute)
+                                        @if ($attribute->checkactive == 1)
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="attribute[]"
+                                                                value="{{ $attribute->id_attribute }}">{{ $attribute->name }}
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
-                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
                             @endif
                         </div>
-                                       
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -197,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-5">
                     <div class="box box-warning">
                         <div class="box-header">

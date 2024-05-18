@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminCartController;
 use App\Http\Controllers\AdminCategoryPost;
 use App\Http\Controllers\AdminCategoryProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminEventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminManagerUsersController;
 use App\Http\Controllers\AdminOdersController;
@@ -23,6 +24,8 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\CheckOutProduct;
+use App\Http\Controllers\CheckStatusOders;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Paymentsucces;
 
 
@@ -148,15 +151,7 @@ Route::post('edit-attribute/{id}',[AdminAttributeController::class,'updateAttrib
 Route::GET('productupdate',[AdminProductsController::class,'showUpdateProduct']);
 
 
-//tìm id sản phẩm Cần sửa
-Route::get('edit-product/{id}',[AdminProductsController::class,'EditProduct'])->name('editproduct');
 
-// Thực thi cập nhật sản phẩm
-Route::post('updateproduct/{id}',[AdminProductsController::class,'updateDataProduct']);
-
-// Hàm thưc thi tìm kiếm
-
-Route::GET('SearchProduct',[AdminProductsController::class,'Search']);
 
 // hiện và ẩn checkactive của thuộc tính
 
@@ -169,6 +164,10 @@ Route::get('delete-attribute/{id}',[AdminAttributeController::class, 'deleteAttr
 // @@ Thực thi với sản phẩm (4)
 
 Route::get('product',[AdminProductsController::class,'showIndexProduct'])->name('indexproduct');
+
+///checkactive
+
+Route::get('toggle-product/{id}',[AdminProductsController::class, 'checkActiveProduct'])->name('toggleaproduct');
 
 
 //Product
@@ -200,12 +199,10 @@ Route::get('oders',[AdminOdersController::class,'showIndexOder'])->name('indexod
 
 Route::get('oders-detail',[AdminOdersController::class,'showDetailIndexOder'])->name('indexoderdetail');
 
-// @@ Thực thi với loại sản phẩm (6)
-
+//Thực thi với loại sản phẩm (6)
 Route::get('product-type',[AdminProductTypeController::class,'showProductType'])->name('indexproducttype');
 
-//thêm loại sản phẩm
-
+//hiểnsản phẩm
 Route::get('add-producttype',[AdminProductTypeController::class,'showAddProductType'])->name('addproducttype');
 
 //sửa loại sản phẩm
@@ -214,10 +211,12 @@ Route::get('edit-producttype',[AdminProductTypeController::class,'showEditProduc
 //hàm add producttype
 Route::get('add-producttype/run',[AdminProductTypeController::class,'addProductType']);
 // hàm sửa producttype theo id
-Route::get('editproducttype/{id}',[AdminProductTypeController::class,'editProductType']);
+Route::get('editProductType/{id}',[AdminProductTypeController::class,'editProductType']);
 //Hàm xóa product type
 Route::get('deleteproducttype/{id}',[AdminProductTypeController::class,'deleteProductTypes']);
 
+// Thực thi hàm cập nhật
+Route::Post('updateproducttype/{id}',[AdminProductTypeController::class,'update']);
 
 
 // @@ Thực thi với bài viết (7)
@@ -352,6 +351,12 @@ Route::post('update-cart',[CartShopping::class,'updateCartShopping'])->name('car
 // Route::post('/cart/update', [CartShopping::class, 'updateDetailProduct'])->name('update.amount');
 // Route::put('cart/update/{rowId}', [CartShopping::class, 'updateDetailProduct'])->name('cart.now');
 
+///Event
+//Hien thi event
+Route::get('admin/event/index', [AdminEventController::class, 'indexEvent'])->name('indexEvent');
+Route::get('admin/event/add', [AdminEventController::class, 'create'])->name('addEvent');
+Route::post('admin/event/store', [AdminEventController::class, 'store'])->name('storeEvent');
+Route::get('admin/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('deleteEvent');
 
 
 
@@ -365,4 +370,39 @@ Route::post('checkout',[CheckOutProduct::class, 'enforcementCart'])->name('check
 
 //thanh thoán thành công
 
+
+// Route::get('payment/{id_oder}',[Paymentsucces::class, 'showPayment'])->name('payment');
+Route::get('payment/{id_order}', [Paymentsucces::class, 'showPayment'])->name('paymentnow');
+
+//check trạng thái đơn hàng
+
+Route::get('checkoder',[CheckStatusOders::class,'showCheckOders'])->name('checkstatusoders');
+
+
+///(10)  Thực thi với dashboard
+
+Route::get('dashboard',[DashboardController::class,'showDashBoard'])->name('indexdashboard');
+
+///danh sách đặt hàng
+
+Route::get('list-oder',[DashboardController::class,'showListOders'])->name('indexlistoder');
+
+//thong tin người dùng chi tiết thông qua đặt hàng
+
+Route::get('detail-user/{id_oder}',[DashboardController::class,'viewDetailOders'])->name('viewdetailuser');
+
+///thực thi cập nhập cho trạng thái đơn hàng bên admin
+//cập nhật
+Route::get('update-status/{id_oder}/{status}',[DashboardController::class,'handleOdersProduct'])->name('updatelisroder');
+//Xoá đơn hàng
+
+Route::get('delete-listoder/{id_oder}',[DashboardController::class, 'deleteOdersProduct'])->name('deletelistoder');
+
 Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
+
+
+///Trang chủ
+///thao tác với trang chủ
+// Route::get('listcategory',[AdminShoppingController::class, 'showIndexCategory'])->name('listcategory');
+
+Route::get('listcategory/{category}', [AdminShoppingController::class, 'showProductForCate'])->name('productsByCategory');
