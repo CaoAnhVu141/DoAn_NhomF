@@ -16,20 +16,19 @@ class AttributesSeeder extends Seeder
     {
         $advertisements = [
             [
-                'name' => 'thuoc tinh 1',
+                'name' => 'Hàng Quảng Châu',
                 'discription' => 'path/to/image1.jpg',
                 'checkactive' => 1,
                 'id' => 1, // ID của thông tin chương trình (nếu có)
             ],
             [
-                'name' => 'thuoc tinh 2',
+                'name' => 'Hàng Nội Địa',
                 'discription' => 'path/to/image1.jpg',
                 'checkactive' => 1,
                 'id' => 2,
             ],
             // Thêm dữ liệu mẫu khác ở đây
         ];
-
         // Thêm dữ liệu vào bảng advertisements
         foreach ($advertisements as $advertisement) {
             Attribute::create($advertisement);

@@ -27,7 +27,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description for Product 1',
                 'discount' => 10,
                 'image' => 'images/1715907312.jpeg', 
-                'list_images' => "[\"images\\\/1715907312_image1.jpeg\",\"images\\\/1715907312_image2.jpeg\",\"images\\\/1715907312_image3.jpeg\",\"images\\\/1715907312_image4.jpeg\",\"images\\\/1715907312_image5.jpeg\",\"images\\\/1715907312_image6.jpeg\"]",
+                'list_images' => "1715907312.jpeg",
                 'id_category' => 1,    
                 'id_producttype' => 1,           
                 'id_supplier' => 1,

@@ -1,81 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch sử mua hàng</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-        }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Lịch sử mua hàng</h2>
-        <table>
-            <tr>
-                <th>STT</th>
-                <th>Sản phẩm</th>
-                <th>Trạng thái<i></i></th>
-                <th>Giá</th>
-                <th>Số lượng</th>
-                <th>Ngày đặt hàng</th>
-            </tr>
-            @php
-                $count =0;
-            @endphp
-            @foreach ($orders as $item)
-            @php
-            $count ++;
-            @endphp
-            <tr>
-                <td>{{ $count }}</td>
-                <td>{{ $item->product->name }}</td>
-                <td>{{$item->status  }}</td>
-                <td>{{ $item->intomoney }}</td>
-                <td>{{ $item->amount }}</td>
-                <td>{{ $item->created_at }}</td>
-
-            </tr>
-            @endforeach
-            
-            
-            <!-- Thêm các dòng khác tương ứng với đơn hàng khác nếu cần -->
-        </table>
+@extends('LayOut.admin-dashboard.admin_shopping')
+@section('content')
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-lg-12">
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Lịch sử mua hàng</span>
+                </h5>
+                <div class="bg-light p-30 mb-5">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Số thứ tự</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            @php
+                                $count = 0;
+                            @endphp
+                            <tbody>
+                                @foreach ($orders as $item)
+                                    @php
+                                        $count ++;
+                                    @endphp
+                                    <tr>
+                                        <td>{{ $count }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->product->name }}</td>
+                                        <td>{{ $item->amount }}</td>
+                                        <td>{{ $item->district }}</td>
+                                        <td>{{ $item->intomoney }}</td>
+                                        <td>{{ $item->status }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+@endsection
