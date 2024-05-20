@@ -153,7 +153,7 @@
                                 <div class="product-action">
                                     <a class="btn btn-outline-dark btn-square" href=""><i
                                             class="fa fa-shopping-cart"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href=""><i
+                                    <a class="btn btn-outline-dark btn-square" href="{{ route('favoriteproduct',$item->id_product) }}"><i
                                             class="far fa-heart"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i
                                             class="fa fa-sync-alt"></i></a>

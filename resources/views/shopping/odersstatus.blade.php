@@ -14,6 +14,7 @@
                                 <tr>
                                     <th>Số thứ tự</th>
                                     <th>Tên khách hàng</th>
+                                    {{-- <th>Hình ảnh</th> --}}
                                     <th>Tên sản phẩm</th>
                                     <th>Số lượng</th>
                                     <th>Địa chỉ</th>
@@ -33,6 +34,7 @@
                                         <td>{{ $count }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->product->name }}</td>
+                                        {{-- <td><img src="{{asset($item->image) }}" alt="" width="150px" height="100px"> </td> --}}
                                         <td>{{ $item->amount }}</td>
                                         <td>{{ $item->district }}</td>
                                         <td>{{ $item->intomoney }}</td>

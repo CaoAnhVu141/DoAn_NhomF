@@ -27,12 +27,7 @@ use App\Http\Controllers\CheckOutProduct;
 use App\Http\Controllers\CheckStatusOders;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Paymentsucces;
-
-
-
-
-
-
+use App\Http\Controllers\FavoriteProductController;
 use Faker\Guesser\Name;
 
 /*
@@ -393,3 +388,9 @@ Route::get('payment',[Paymentsucces::class, 'showPayment'])->name('payment');
 // Route::get('listcategory',[AdminShoppingController::class, 'showIndexCategory'])->name('listcategory');
 
 Route::get('listcategory/{category}', [AdminShoppingController::class, 'showProductForCate'])->name('productsByCategory');
+
+//sản phẩm yêu thích
+
+Route::get('show-love',[FavoriteProductController::class, 'showLoveProduct'])->name('indexshowlove');
+
+Route::get('love-product/{id_product}',[FavoriteProductController::class, 'favoriteProduct'])->name('favoriteproduct');

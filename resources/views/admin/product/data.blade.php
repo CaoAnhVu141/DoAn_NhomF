@@ -26,7 +26,7 @@
                         <td>{{ $item->name }}</td>
                         {{-- <td>{{ $item->amount }} - {{ ($item->pro_number-$item->pro_pay) }}</td> --}}
                         <td>{{ $item->amount }}</td>
-                        <td>{{ $item->category->name }}</td>
+                        {{-- <td>{{ $item->category->id_category }}</td> --}}
                         {{-- <td><span class="label label-warning">{{ $item->category->c_name ?? "[N\A]" }}</span></td> --}}
                         <td><img src="{{asset($item->image) }}" alt="" width="150px" height="100px"> </td>
                         <td>{{ $item->price }}</td>
@@ -69,8 +69,8 @@
         </tbody>
         
     </table>
-    <div id="pageNavPosition" class="text-right">
-        <ul class="pagination">
+     <div id="pageNavPosition" class="text-right">
+        {{-- <ul class="pagination">
             <!-- Hiển thị link đến trang trước (Previous Page) -->
             @if ($products->onFirstPage())
                 <li class="disabled"><span>&laquo;</span></li>
@@ -90,6 +90,8 @@
             @else
                 <li class="disabled"><span>&raquo;</span></li>
             @endif
-        </ul>
-    </div>
+        </ul> --}}
+    {{ $products->links() }}
+
+    </div> 
 </div>

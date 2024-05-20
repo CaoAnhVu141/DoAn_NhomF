@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favoriteproduct', function (Blueprint $table) {
-            $table->increments('id_favorite')->comment('yêu thích nhoa');
-            $table->unsignedBigInteger('id_product')->comment('sản phẩm');
-            $table->unsignedBigInteger('id_user')->comment('người mua');
+        Schema::create('favoriteproducts', function (Blueprint $table) {
+            $table->increments('id_favorite');
+            $table->unsignedBigInteger('id_product');
+            $table->unsignedBigInteger('id_user');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('favoriteproduct');
+        Schema::dropIfExists('favoriteproducts');
     }
 };
